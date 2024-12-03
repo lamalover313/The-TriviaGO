@@ -19,24 +19,6 @@ class _LoginPageState extends State<LoginPage> {
   final _passwordController = TextEditingController();
   bool _isLoading = false;
 
-  void _loginUser() async {
-    setState(() {
-      _isLoading = true;
-    });
-
-    try {
-      final email = _emailController.text;
-      final password = _passwordController.text;
-      await LoginController.signInWithEmailPassword(email, password, context);
-    } catch (error) {
-      ScaffoldMessenger.of(context)
-          .showSnackBar(SnackBar(content: Text('Error: $error')));
-    } finally {
-      setState(() {
-        _isLoading = false;
-      });
-    }
-  }
 
   @override
   Widget build(BuildContext context) {
