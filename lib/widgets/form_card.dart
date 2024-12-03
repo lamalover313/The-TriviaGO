@@ -8,40 +8,25 @@ class FormCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 30),
-      margin: const EdgeInsets.symmetric(horizontal: 20),
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(15.0),
-        boxShadow: const [
-          BoxShadow(
-            color: Colors.black12,
-            blurRadius: 15.0,
-            offset: Offset(0, 5),
+    return Column(
+      children: <Widget>[
+        TextFormField(
+          controller: emailController,
+          decoration: const InputDecoration(
+            labelText: "Email",
+            hintText: "Enter your email",
           ),
-        ],
-      ),
-      child: Column(
-        children: <Widget>[
-          TextFormField(
-            controller: emailController,
-            decoration: const InputDecoration(
-              labelText: "Username",
-              hintText: "Enter your username",
-            ),
+        ),
+        const SizedBox(height: 20),
+        TextFormField(
+          controller: passwordController,
+          obscureText: true,
+          decoration: const InputDecoration(
+            labelText: "Password",
+            hintText: "Enter your password",
           ),
-          const SizedBox(height: 20),
-          TextFormField(
-            controller: passwordController,
-            obscureText: true,
-            decoration: const InputDecoration(
-              labelText: "Password",
-              hintText: "Enter your password",
-            ),
-          ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }

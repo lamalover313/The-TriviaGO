@@ -64,13 +64,14 @@ flutter:
   # the material Icons class.
   uses-material-design: true
   assets:
-    - /home/user/myapp/lib/assets/images/background_01.jpg
-    - /home/user/myapp/lib/assets/images/background_02.jpg
-    - /home/user/myapp/lib/assets/images/background_03.jpg
-    - /home/user/myapp/lib/assets/images/illustration.webp
-    - /home/user/myapp/lib/assets/images/profile_bulldog.webp
-    - /home/user/myapp/lib/assets/images/profile_sailboat.webp
-    - /home/user/myapp/lib/assets/images/logo.png
+  - lib/assets/images/background_01.jpg
+  - lib/assets/images/background_02.jpg
+  - lib/assets/images/background_03.jpg
+  - lib/assets/images/illustration.png
+  - lib/assets/images/profile_bulldog.png
+  - lib/assets/images/profile_sailboat.png
+  - lib/assets/images/logo.png
+
   # To add assets to your application, add an assets section, like this:
   # assets:
   #   - images/a_dot_burr.jpeg

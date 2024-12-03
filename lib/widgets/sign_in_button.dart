@@ -11,29 +11,26 @@ class SignInButton extends StatelessWidget {
     return InkWell(
       onTap: onPressed,
       child: Container(
-        width: 200,
-        height: 50,
+        width: double.infinity,
+        height: 50.0,
         decoration: BoxDecoration(
-          gradient: const LinearGradient(
-            colors: [Color(0xFF4CAF50), Color(0xFF2E7D32)], // Updated gradient colors
-          ),
-          borderRadius: BorderRadius.circular(25.0),
+          gradient: const LinearGradient(colors: [Color(0xFF17ead9), Color(0xFF6078ea)]),
+          borderRadius: BorderRadius.circular(6.0),
           boxShadow: [
             BoxShadow(
-              color: Colors.green.withOpacity(0.3),
-              offset: const Offset(0.0, 4.0),
-              blurRadius: 10.0,
-            ),
+                color: const Color(0xFF6078ea).withOpacity(.3),
+                offset: const Offset(0.0, 8.0),
+                blurRadius: 8.0),
           ],
         ),
         child: Center(
           child: isLoading
               ? const CircularProgressIndicator(color: Colors.white)
               : const Text(
-                  "SIGN IN",
+                  "Sign In",
                   style: TextStyle(
                     fontFamily: "Poppins-Bold",
-                    fontSize: 16,
+                    fontSize: 18.0,
                     color: Colors.white,
                   ),
                 ),

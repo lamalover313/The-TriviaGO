@@ -11,7 +11,7 @@ class LogoSection extends StatelessWidget {
         CircleAvatar(
           radius: 55.r,
           backgroundImage: const AssetImage(
-            "/home/user/myapp/lib/assets/images/logo.png",
+            "lib/assets/images/logo.png",
           ),
         ),
         SizedBox(width: 10.w),

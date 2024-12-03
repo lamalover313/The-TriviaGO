@@ -1,24 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:myapp/pages/login_pages/login_controller.dart';
 import 'package:myapp/pages/login_pages/social_icons.dart';
-import 'package:myapp/widgets/form_card.dart';
 import 'package:myapp/widgets/logo_section.dart';
-import 'package:myapp/widgets/sign_in_button.dart';
 import 'package:myapp/widgets/sign_up_section.dart';
+import 'login_form.dart';
 
-class LoginPage extends StatefulWidget {
+class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
-
-  @override
-  _LoginPageState createState() => _LoginPageState();
-}
-
-class _LoginPageState extends State<LoginPage> {
-  final _emailController = TextEditingController();
-  final _passwordController = TextEditingController();
-  bool _isLoading = false;
-
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +19,7 @@ class _LoginPageState extends State<LoginPage> {
             Stack(
               children: [
                 Image.asset(
-                  "assets/images/profile_sailboat.webp", 
+                  "lib/assets/images/profile_sailboat.png",
                   height: 250.h,
                   width: double.infinity,
                   fit: BoxFit.cover,
@@ -47,22 +35,14 @@ class _LoginPageState extends State<LoginPage> {
                   child: CircleAvatar(
                     radius: 50.r,
                     backgroundImage: const AssetImage(
-                      "/home/user/myapp/lib/assets/images/illustration.webp", 
+                      "lib/assets/images/profile_user.jpg",
                     ),
                   ),
                 ),
               ],
             ),
             SizedBox(height: 80.h),
-            FormCard(
-              emailController: _emailController,
-              passwordController: _passwordController,
-            ),
-            SizedBox(height: 40.h),
-            SignInButton(
-              isLoading: _isLoading,
-              onPressed: _loginUser,
-            ),
+            const LoginForm(),
             SizedBox(height: 20.h),
             const SocialIcons(),
             SizedBox(height: 30.h),

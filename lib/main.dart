@@ -1,8 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:myapp/pages/login_pages/login_page.dart';
-import 'package:myapp/pages/home_page.dart';
-import 'package:go_router/go_router.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -15,25 +14,15 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final router = GoRouter(
-      initialLocation: '/',
-      routes: [
-
-        GoRoute(
-          path: '/',
-          builder: (context, state) => const LoginPage(),
-        ),
-
-        GoRoute(
-          path: '/home',
-          builder: (context, state) => const HomePage(),
-        ),
-      ],
-    );
-
-    return MaterialApp.router(
-      debugShowCheckedModeBanner: false,
-      routerConfig: router,
+    return ScreenUtilInit(
+      designSize: const Size(360, 690), 
+      minTextAdapt: true,
+      builder: (context, child) {
+        return const MaterialApp(
+          home: LoginPage(),
+          debugShowCheckedModeBanner: false,
+        );
+      },
     );
   }
 }

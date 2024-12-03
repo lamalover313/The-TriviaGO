@@ -16,7 +16,7 @@ class _LoginFormState extends State<LoginForm> {
   final _passwordController = TextEditingController();
   bool _isLoading = false;
 
-    void _loginUser() async {
+  void _loginUser() async {
     setState(() {
       _isLoading = true;
     });
@@ -24,10 +24,10 @@ class _LoginFormState extends State<LoginForm> {
     try {
       final email = _emailController.text;
       final password = _passwordController.text;
-      await LoginController.signInWithEmailPassword(email, password, context);
+      await LoginController.signInWithEmailPassword(email, password);
     } catch (error) {
-      ScaffoldMessenger.of(context)
-          .showSnackBar(SnackBar(content: Text('Error: $error')));
+      // ignore: use_build_context_synchronously
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Error: $error')));
     } finally {
       setState(() {
         _isLoading = false;
