@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:myapp/pages/login_pages/login_form.dart';
-import 'package:myapp/pages/login_pages/social_icons.dart';
+import 'package:myapp/pages/login_pages/social_icons/social_icons.dart';
 import 'package:myapp/widgets/sign_up_section.dart';
 
 class LoginPage extends StatelessWidget {

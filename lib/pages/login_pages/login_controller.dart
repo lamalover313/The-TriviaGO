@@ -7,7 +7,7 @@ class LoginController {
       email: email,
       password: password,
     );
-    return userCredential.user; // Return the User object
+    return userCredential.user; 
   } on FirebaseAuthException catch (e) {
     if (e.code == 'user-not-found') {
       throw Exception('No user found for that email.');
@@ -18,22 +18,20 @@ class LoginController {
   }
 }
 
-static Future<User?> createUserWithEmailPassword(String email, String password) async {
-  try {
-    final UserCredential userCredential = await FirebaseAuth.instance.createUserWithEmailAndPassword(
-      email: email,
-      password: password,
-    );
-    return userCredential.user; 
-  } on FirebaseAuthException catch (e) {
-    if (e.code == 'weak-password') {
-      throw Exception('The password provided is too weak.');
-    } else if (e.code == 'email-already-in-use') {
-      throw Exception('The account already exists for that email.');
+  static Future<User?> createUserWithEmailPassword(String email, String password) async {
+    try {
+      final UserCredential userCredential = await FirebaseAuth.instance.createUserWithEmailAndPassword(
+        email: email,
+        password: password,
+      );
+      return userCredential.user; 
+    } on FirebaseAuthException catch (e) {
+      if (e.code == 'weak-password') {
+        throw Exception('The password provided is too weak.');
+      } else if (e.code == 'email-already-in-use') {
+        throw Exception('The account already exists for that email.');
+      }
+     throw Exception(e.message);
     }
-    throw Exception(e.message);
   }
-}
-
-
 }
