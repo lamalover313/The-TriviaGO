@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:myapp/pages/login_pages/login_controller.dart';
 import 'package:myapp/widgets/form_card.dart';
+import 'package:go_router/go_router.dart';
 import 'package:myapp/widgets/sign_in_button.dart';
-import 'login_controller.dart';
 
 class LoginForm extends StatefulWidget {
   const LoginForm({super.key});
@@ -25,13 +26,15 @@ class _LoginFormState extends State<LoginForm> {
       final email = _emailController.text;
       final password = _passwordController.text;
       await LoginController.signInWithEmailPassword(email, password);
+      if (context.mounted) context.go('/home'); 
     } catch (error) {
-      // ignore: use_build_context_synchronously
-      ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Error: $error')));
+      ScaffoldMessenger.of(context)
+          .showSnackBar(SnackBar(content: Text('Error: $error')));
     } finally {
-      setState(() {
-        _isLoading = false;
-      });
+        setState(() {
+          _isLoading = false;
+        },
+      );
     }
   }
 

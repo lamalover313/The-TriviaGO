@@ -6,7 +6,6 @@ class SocialIcons extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Define the social icons and their corresponding actions
     final socialPlatforms = [
       {'icon': Icons.facebook, 'onPressed': () {}},
       {'icon': FontAwesomeIcons.google, 'onPressed': () {}},
