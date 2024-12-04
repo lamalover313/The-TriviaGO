@@ -29,7 +29,7 @@ class LoginPage extends StatelessWidget {
                   child: CircleAvatar(
                     radius: 50.r,
                     backgroundImage: const AssetImage(
-                      "lib/assets/images/profile_bulldog.png",
+                      "lib/assets/images/TriviaLUJO.gif",
                     ),
                   ),
                 ),

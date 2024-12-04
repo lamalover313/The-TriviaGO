@@ -22,19 +22,37 @@ class _LoginFormState extends State<LoginForm> {
       _isLoading = true;
     });
 
-    try {
-      final email = _emailController.text;
-      final password = _passwordController.text;
-      await LoginController.signInWithEmailPassword(email, password);
-      if (context.mounted) context.go('/home'); 
+    final email = _emailController.text.trim();
+    final password = _passwordController.text.trim();
+
+  
+   if (email.isEmpty || password.isEmpty) {
+     ScaffoldMessenger.of(context).showSnackBar(
+       const SnackBar(content: Text('Please provide both email and password.')),
+      );
+      setState(() {
+       _isLoading = false;
+     });
+     return; 
+   }
+
+   try {
+      final user = await LoginController.signInWithEmailPassword(email, password);
+
+      if (user != null) {
+       print('Navigation triggered for user: ${user.email}');
+       if (context.mounted) context.go('/home');
+     } else {
+       throw Exception('User is null after sign-in.');
+     }
     } catch (error) {
+      print('Login error: $error');
       ScaffoldMessenger.of(context)
           .showSnackBar(SnackBar(content: Text('Error: $error')));
     } finally {
-        setState(() {
-          _isLoading = false;
-        },
-      );
+      setState(() {
+        _isLoading = false;
+     });
     }
   }
 
