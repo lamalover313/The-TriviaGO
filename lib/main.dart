@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final _router = GoRouter(
+    final router = GoRouter(
       routes: [
         GoRoute(
           path: '/',
@@ -34,7 +34,7 @@ class MyApp extends StatelessWidget {
       minTextAdapt: true,
       builder: (context, child) {
         return MaterialApp.router(
-          routerConfig: _router,
+          routerConfig: router,
           debugShowCheckedModeBanner: false,
         );
       },
