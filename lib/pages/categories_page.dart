@@ -1,8 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-class CategoriesPage extends StatelessWidget {
+class CategoriesPage extends StatefulWidget {
   const CategoriesPage({super.key});
+
+  @override
+  _CategoriesPageState createState() => _CategoriesPageState();
+}
+
+class _CategoriesPageState extends State<CategoriesPage> {
+  bool _isExpanded = false;
 
   @override
   Widget build(BuildContext context) {
@@ -31,9 +38,37 @@ class CategoriesPage extends StatelessWidget {
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(10),
             ),
-            child: const ListTile(
-              contentPadding: EdgeInsets.all(15),
-              title: Text(''),
+            child: ExpansionTile(
+              title: const ListTile(
+                contentPadding: EdgeInsets.all(15),
+                title: Text(''),
+              ),
+              trailing: Icon(
+                _isExpanded ? Icons.expand_less : Icons.expand_more,
+              ),
+              onExpansionChanged: (expanded) {
+                setState(() {
+                  _isExpanded = expanded;
+                });
+              },
+              children: [
+                Column(
+                  children: [
+                    ElevatedButton(
+                      onPressed: () {},
+                      child: const Text('Botón 1'),
+                    ),
+                    ElevatedButton(
+                      onPressed: () {},
+                      child: const Text('Botón 2'),
+                    ),
+                    ElevatedButton(
+                      onPressed: () {},
+                      child: const Text('Botón 3'),
+                    ),
+                  ],
+                ),
+              ],
             ),
           );
         },
