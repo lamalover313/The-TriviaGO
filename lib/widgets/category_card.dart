@@ -97,7 +97,12 @@ class CategoryCard extends StatelessWidget {
                             onPressed: () {},
                             style: TextButton.styleFrom(
                                 fixedSize: const Size.fromWidth(500)),
-                            child: const Text("Dificil"),
+                            child: const Text(
+                              "Dificil",
+                              style: TextStyle(
+                                  color: Colors.white70,
+                                  fontWeight: FontWeight.bold),
+                            ),
                           ),
                         ),
                       ],
