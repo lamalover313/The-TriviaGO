@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 import 'package:myapp/widgets/category_card.dart';
 
 class CategoriesPage extends StatefulWidget {
@@ -36,7 +35,7 @@ class CategoriesPageState extends State<CategoriesPage> {
         leading: IconButton(
           icon: const Icon(Icons.arrow_back),
           onPressed: () {
-            context.go('/home');
+            Navigator.pop(context);
           },
         ),
       ),
@@ -48,7 +47,6 @@ class CategoriesPageState extends State<CategoriesPage> {
               text: 'Arte',
               color: Colors.red,
               imagePath: 'lib/assets/images/arte.png',
-              onTap: () {},
               isExpanded: _expandedIndex == index,
               toggleExpansion: () => _toggleExpansion(index),
             );
@@ -57,7 +55,6 @@ class CategoriesPageState extends State<CategoriesPage> {
               text: 'Ciencia',
               color: Colors.green,
               imagePath: 'lib/assets/images/ciencia.png',
-              onTap: () {},
               isExpanded: _expandedIndex == index,
               toggleExpansion: () => _toggleExpansion(index),
             );
@@ -66,7 +63,6 @@ class CategoriesPageState extends State<CategoriesPage> {
               text: 'Deportes',
               color: Colors.orange,
               imagePath: 'lib/assets/images/deporte.jpg',
-              onTap: () {},
               isExpanded: _expandedIndex == index,
               toggleExpansion: () => _toggleExpansion(index),
             );
@@ -75,7 +71,6 @@ class CategoriesPageState extends State<CategoriesPage> {
               text: 'Geografía',
               color: Colors.blue,
               imagePath: 'lib/assets/images/geografia.png',
-              onTap: () {},
               isExpanded: _expandedIndex == index,
               toggleExpansion: () => _toggleExpansion(index),
             );
@@ -84,7 +79,6 @@ class CategoriesPageState extends State<CategoriesPage> {
               text: 'Historia',
               color: Colors.yellow,
               imagePath: 'lib/assets/images/historia.jpg',
-              onTap: () {},
               isExpanded: _expandedIndex == index,
               toggleExpansion: () => _toggleExpansion(index),
             );

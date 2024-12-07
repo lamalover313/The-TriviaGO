@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class CategoryCard extends StatelessWidget {
   final String text;
   final Color color;
   final String imagePath;
-  final VoidCallback onTap;
   final bool isExpanded;
   final VoidCallback toggleExpansion;
 
@@ -13,10 +13,35 @@ class CategoryCard extends StatelessWidget {
     required this.text,
     required this.color,
     required this.imagePath,
-    required this.onTap,
     required this.isExpanded,
     required this.toggleExpansion,
   });
+
+  void _navigateToPage(BuildContext context) {
+    String route = '';
+    
+    switch (text) {
+      case 'Arte':
+        route = '/arte';
+        break;
+      case 'Ciencia':
+        route = '/ciencia';
+        break;
+      case 'Deportes':
+        route = '/deporte';
+        break;
+      case 'Geografía':
+        route = '/geografia';
+        break;
+      case 'Historia':
+        route = '/historia';
+        break;
+      default:
+        route = '/';
+    }
+
+    context.go(route);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -70,7 +95,9 @@ class CategoryCard extends StatelessWidget {
                           color: Colors.white,
                           alignment: Alignment.center,
                           child: TextButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              _navigateToPage(context);
+                            },
                             style: TextButton.styleFrom(
                                 fixedSize: const Size.fromWidth(500)),
                             child: const Text("Facil"),
@@ -82,7 +109,9 @@ class CategoryCard extends StatelessWidget {
                           color: Colors.grey.shade300,
                           alignment: Alignment.center,
                           child: TextButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              _navigateToPage(context);
+                            },
                             style: TextButton.styleFrom(
                                 fixedSize: const Size.fromWidth(500)),
                             child: const Text("Medio"),
@@ -94,7 +123,9 @@ class CategoryCard extends StatelessWidget {
                           color: Colors.grey.shade700,
                           alignment: Alignment.center,
                           child: TextButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              _navigateToPage(context);
+                            },
                             style: TextButton.styleFrom(
                                 fixedSize: const Size.fromWidth(500)),
                             child: const Text(
