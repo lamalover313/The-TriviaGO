@@ -29,7 +29,7 @@ class SocialPlatforms {
               );
             } else {
               SocialSnackbar.show(context, 'Google Sign-In failed.');
-            };
+            }
           } catch (e) {
             SocialSnackbar.show(context, 'Google Sign-In failed: $e');
           }

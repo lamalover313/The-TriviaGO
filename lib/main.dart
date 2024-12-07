@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:myapp/pages/login_pages/login_page.dart';
-import 'package:myapp/pages/home_page.dart';
-import 'package:myapp/pages/categories_page.dart';  // Importar CategoriesPage
+import 'package:myapp/pages/categories_page.dart';
+import 'package:myapp/services/auth_streams.dart';  // Importar CategoriesPage
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
       routes: [
         GoRoute(
           path: '/',
-          builder: (context, state) => const HomePage(),
+          builder: (context, state) => const AuthStreamWidget(),
         ),
         GoRoute(
           path: '/home',

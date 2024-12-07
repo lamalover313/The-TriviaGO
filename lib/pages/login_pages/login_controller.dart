@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 
 class LoginController {
+  static Stream<User?> get authStateStream => FirebaseAuth.instance.authStateChanges();
   static Future<User?> signInWithEmailPassword(String email, String password) async {
   try {
     final UserCredential userCredential = await FirebaseAuth.instance.signInWithEmailAndPassword(
@@ -33,5 +34,8 @@ class LoginController {
       }
      throw Exception(e.message);
     }
+  }
+  static Future<void> signOut() async {
+    await FirebaseAuth.instance.signOut();
   }
 }
