@@ -10,11 +10,15 @@ class CategoriesPage extends StatefulWidget {
 }
 
 class CategoriesPageState extends State<CategoriesPage> {
-  bool _isExpanded = false;
+  int? _expandedIndex;
 
-  void _toggleExpansion() {
+  void _toggleExpansion(int index) {
     setState(() {
-      _isExpanded = !_isExpanded;
+      if (_expandedIndex == index) {
+        _expandedIndex = null;
+      } else {
+        _expandedIndex = index;
+      }
     });
   }
 
@@ -37,14 +41,14 @@ class CategoriesPageState extends State<CategoriesPage> {
         ),
       ),
       body: ListView.builder(
-        itemCount: 1,
+        itemCount: 2,
         itemBuilder: (context, index) {
           return CategoryCard(
-            text: 'Arte',
-            color: Colors.red,
+            text: index == 0 ? 'Arte' : 'Ciencia',
+            color: index == 0 ? Colors.red : Colors.green,
             onTap: () {},
-            isExpanded: _isExpanded,
-            toggleExpansion: _toggleExpansion,
+            isExpanded: _expandedIndex == index,
+            toggleExpansion: () => _toggleExpansion(index),
           );
         },
       ),
