@@ -1,9 +1,10 @@
-import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_core/firebase_core.dart'; 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:myapp/pages/login_pages/login_page.dart';
-import 'pages/home_page.dart';
+import 'package:myapp/pages/home_page.dart';
+import 'package:myapp/pages/categories_page.dart';  // Importar CategoriesPage
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -19,12 +20,16 @@ class MyApp extends StatelessWidget {
     final router = GoRouter(
       routes: [
         GoRoute(
-          path: '/home',
+          path: '/',
           builder: (context, state) => const LoginPage(),
         ),
         GoRoute(
-          path: '/',
+          path: '/home',
           builder: (context, state) => const HomePage(),
+        ),
+        GoRoute(
+          path: '/categories',  // Ruta agregada para CategoriesPage
+          builder: (context, state) => const CategoriesPage(),
         ),
       ],
     );
