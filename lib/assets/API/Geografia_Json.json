@@ -1,0 +1,485 @@
+{
+    "geography_questions": [
+      {
+        "difficulty": "easy",
+        "question": "¿Cuál es el país más grande del mundo por superficie?",
+        "correct_answer": "Rusia",
+        "incorrect_answers": [
+          "Canadá",
+          "China",
+          "Estados Unidos"
+        ]
+      },
+      {
+        "difficulty": "easy",
+        "question": "¿Cuál es el río más largo del mundo?",
+        "correct_answer": "Nilo",
+        "incorrect_answers": [
+          "Amazonas",
+          "Yangtsé",
+          "Misisipi"
+        ]
+      },
+      {
+        "difficulty": "easy",
+        "question": "¿En qué continente se encuentra el desierto del Sahara?",
+        "correct_answer": "África",
+        "incorrect_answers": [
+          "Asia",
+          "América del Sur",
+          "Australia"
+        ]
+      },
+      {
+        "difficulty": "easy",
+        "question": "¿Cuál es la capital de Francia?",
+        "correct_answer": "París",
+        "incorrect_answers": [
+          "Madrid",
+          "Roma",
+          "Berlín"
+        ]
+      },
+      {
+        "difficulty": "easy",
+        "question": "¿En qué país se encuentra la Torre Eiffel?",
+        "correct_answer": "Francia",
+        "incorrect_answers": [
+          "Italia",
+          "Reino Unido",
+          "España"
+        ]
+      },
+      {
+        "difficulty": "easy",
+        "question": "¿Cuál es el océano más grande del mundo?",
+        "correct_answer": "Océano Pacífico",
+        "incorrect_answers": [
+          "Océano Atlántico",
+          "Océano Índico",
+          "Océano Ártico"
+        ]
+      },
+      {
+        "difficulty": "easy",
+        "question": "¿Cuál es la capital de Japón?",
+        "correct_answer": "Tokio",
+        "incorrect_answers": [
+          "Pekín",
+          "Seúl",
+          "Bangkok"
+        ]
+      },
+      {
+        "difficulty": "easy",
+        "question": "¿Qué país tiene la mayor población del mundo?",
+        "correct_answer": "China",
+        "incorrect_answers": [
+          "India",
+          "Estados Unidos",
+          "Indonesia"
+        ]
+      },
+      {
+        "difficulty": "easy",
+        "question": "¿Cuál es la montaña más alta del mundo?",
+        "correct_answer": "Monte Everest",
+        "incorrect_answers": [
+          "Monte Kilimanjaro",
+          "Monte Aconcagua",
+          "Monte McKinley"
+        ]
+      },
+      {
+        "difficulty": "easy",
+        "question": "¿En qué país se encuentra el río Amazonas?",
+        "correct_answer": "Brasil",
+        "incorrect_answers": [
+          "Perú",
+          "Colombia",
+          "Venezuela"
+        ]
+      },
+      {
+        "difficulty": "easy",
+        "question": "¿Cuál es el país más pequeño del mundo por superficie?",
+        "correct_answer": "Ciudad del Vaticano",
+        "incorrect_answers": [
+          "Mónaco",
+          "Nauru",
+          "San Marino"
+        ]
+      },
+      {
+        "difficulty": "easy",
+        "question": "¿Cuál es el mar más grande del mundo?",
+        "correct_answer": "Mar Mediterráneo",
+        "incorrect_answers": [
+          "Mar Caribe",
+          "Mar de China Meridional",
+          "Mar Rojo"
+        ]
+      },
+      {
+        "difficulty": "easy",
+        "question": "¿Cuál es el continente más poblado del mundo?",
+        "correct_answer": "Asia",
+        "incorrect_answers": [
+          "África",
+          "Europa",
+          "América"
+        ]
+      },
+      {
+        "difficulty": "easy",
+        "question": "¿En qué país se encuentra el río Nilo?",
+        "correct_answer": "Egipto",
+        "incorrect_answers": [
+          "Sudán",
+          "Etiopía",
+          "Uganda"
+        ]
+      },
+      {
+        "difficulty": "easy",
+        "question": "¿Cuál es la capital de Italia?",
+        "correct_answer": "Roma",
+        "incorrect_answers": [
+          "Milán",
+          "Florencia",
+          "Venecia"
+        ]
+      },
+      {
+        "difficulty": "medium",
+        "question": "¿Cuál es el segundo país más grande del mundo por superficie?",
+        "correct_answer": "Canadá",
+        "incorrect_answers": [
+          "China",
+          "Estados Unidos",
+          "Brasil"
+        ]
+      },
+      {
+        "difficulty": "medium",
+        "question": "¿Cuál es el país más grande de América del Sur?",
+        "correct_answer": "Brasil",
+        "incorrect_answers": [
+          "Argentina",
+          "Colombia",
+          "Perú"
+        ]
+      },
+      {
+        "difficulty": "medium",
+        "question": "¿Qué cordillera separa a Europa de Asia?",
+        "correct_answer": "Montes Urales",
+        "incorrect_answers": [
+          "Cordillera de los Andes",
+          "Montes Cárpatos",
+          "Montes Alpes"
+        ]
+      },
+      {
+        "difficulty": "medium",
+        "question": "¿Qué país tiene la mayor cantidad de islas en el mundo?",
+        "correct_answer": "Suecia",
+        "incorrect_answers": [
+          "Indonesia",
+          "Filipinas",
+          "Canadá"
+        ]
+      },
+      {
+        "difficulty": "medium",
+        "question": "¿Cuál es la capital de Australia?",
+        "correct_answer": "Canberra",
+        "incorrect_answers": [
+          "Sídney",
+          "Melbourne",
+          "Brisbane"
+        ]
+      },
+      {
+        "difficulty": "medium",
+        "question": "¿Cuál es el desierto más grande del mundo?",
+        "correct_answer": "Antártida",
+        "incorrect_answers": [
+          "Sahara",
+          "Gobi",
+          "Kalahari"
+        ]
+      },
+      {
+        "difficulty": "medium",
+        "question": "¿En qué país se encuentra el desierto de Atacama?",
+        "correct_answer": "Chile",
+        "incorrect_answers": [
+          "Argentina",
+          "Perú",
+          "Bolivia"
+        ]
+      },
+      {
+        "difficulty": "medium",
+        "question": "¿Qué río forma la frontera entre México y Estados Unidos?",
+        "correct_answer": "Río Bravo",
+        "incorrect_answers": [
+          "Río Grande",
+          "Río Colorado",
+          "Río Amazonas"
+        ]
+      },
+      {
+        "difficulty": "medium",
+        "question": "¿Cuál es la capital de Canadá?",
+        "correct_answer": "Ottawa",
+        "incorrect_answers": [
+          "Toronto",
+          "Vancouver",
+          "Montreal"
+        ]
+      },
+      {
+        "difficulty": "medium",
+        "question": "¿En qué país se encuentra el Everest?",
+        "correct_answer": "Nepal",
+        "incorrect_answers": [
+          "China",
+          "India",
+          "Bután"
+        ]
+      },
+      {
+        "difficulty": "medium",
+        "question": "¿Qué país es conocido como la tierra de los mil lagos?",
+        "correct_answer": "Finlandia",
+        "incorrect_answers": [
+          "Noruega",
+          "Suecia",
+          "Canadá"
+        ]
+      },
+      {
+        "difficulty": "medium",
+        "question": "¿Qué ciudad es conocida como la capital mundial del vino?",
+        "correct_answer": "Burdeos",
+        "incorrect_answers": [
+          "París",
+          "Oporto",
+          "Florencia"
+        ]
+      },
+      {
+        "difficulty": "medium",
+        "question": "¿Qué país tiene la mayor reserva de petróleo del mundo?",
+        "correct_answer": "Venezuela",
+        "incorrect_answers": [
+          "Arabia Saudita",
+          "Irán",
+          "Canadá"
+        ]
+      },
+      {
+        "difficulty": "medium",
+        "question": "¿Cuál es el país más pequeño de América del Sur?",
+        "correct_answer": "Surinam",
+        "incorrect_answers": [
+          "Guyana",
+          "Uruguay",
+          "Paraguay"
+        ]
+      },
+      {
+        "difficulty": "medium",
+        "question": "¿Qué país se extiende por los continentes de Europa y Asia?",
+        "correct_answer": "Rusia",
+        "incorrect_answers": [
+          "Turquía",
+          "Kazajistán",
+          "Georgia"
+        ]
+      },
+      {
+        "difficulty": "medium",
+        "question": "¿Cuál es el lago más grande de África?",
+        "correct_answer": "Lago Victoria",
+        "incorrect_answers": [
+          "Lago Tanganica",
+          "Lago Malaui",
+          "Lago Chad"
+        ]
+      },
+      {
+        "difficulty": "hard",
+        "question": "¿Cuál es el país menos poblado del mundo?",
+        "correct_answer": "Ciudad del Vaticano",
+        "incorrect_answers": [
+          "Mónaco",
+          "Liechtenstein",
+          "San Marino"
+        ]
+      },
+      {
+        "difficulty": "hard",
+        "question": "¿Cuál es la capital de Mongolia?",
+        "correct_answer": "Ulán Bator",
+        "incorrect_answers": [
+          "Astana",
+          "Bakú",
+          "Dusambé"
+        ]
+      },
+      {
+        "difficulty": "hard",
+        "question": "¿Cuál es el punto más bajo de la Tierra?",
+        "correct_answer": "Mar Muerto",
+        "incorrect_answers": [
+          "Depresión de Caspian",
+          "Gran Cañón",
+          "Valles Marineris"
+        ]
+      },
+      {
+        "difficulty": "hard",
+        "question": "¿Cuál es el país más nuevo del mundo?",
+        "correct_answer": "Sudán del Sur",
+        "incorrect_answers": [
+          "Timor Oriental",
+          "Kosovo",
+          "Montenegro"
+        ]
+      },
+      {
+        "difficulty": "hard",
+        "question": "¿Cuál es el único continente sin un desierto?",
+        "correct_answer": "Europa",
+        "incorrect_answers": [
+          "Oceanía",
+          "Asia",
+          "América del Norte"
+        ]
+      },
+      {
+        "difficulty": "hard",
+        "question": "¿Cuál es el país más alto del mundo en promedio de altitud?",
+        "correct_answer": "Bután",
+        "incorrect_answers": [
+          "Nepal",
+          "Tíbet",
+          "Suiza"
+        ]
+      },
+      {
+        "difficulty": "hard",
+        "question": "¿Cuál es la isla más grande del mundo?",
+        "correct_answer": "Groenlandia",
+        "incorrect_answers": [
+          "Nueva Guinea",
+          "Borneo",
+          "Madagascar"
+        ]
+      },
+      {
+        "difficulty": "hard",
+        "question": "¿Cuál es el río más caudaloso del mundo?",
+        "correct_answer": "Amazonas",
+        "incorrect_answers": [
+          "Congo",
+          "Yangtsé",
+          "Misisipi"
+        ]
+      },
+      {
+        "difficulty": "hard",
+        "question": "¿Cuál es el país más grande de África por superficie?",
+        "correct_answer": "Argelia",
+        "incorrect_answers": [
+          "Sudán",
+          "Libia",
+          "República Democrática del Congo"
+        ]
+      },
+      {
+        "difficulty": "hard",
+        "question": "¿Cuál es la ciudad más poblada de África?",
+        "correct_answer": "Lagos",
+        "incorrect_answers": [
+          "El Cairo",
+          "Kinshasa",
+          "Nairobi"
+        ]
+      },
+      {
+        "difficulty": "hard",
+        "question": "¿Cuál es la cadena montañosa más larga del mundo?",
+        "correct_answer": "Cordillera de los Andes",
+        "incorrect_answers": [
+          "Montes Himalaya",
+          "Montes Rocosos",
+          "Alpes"
+        ]
+      },
+      {
+        "difficulty": "hard",
+        "question": "¿Cuál es el país más montañoso del mundo?",
+        "correct_answer": "Nepal",
+        "incorrect_answers": [
+          "Suiza",
+          "Bután",
+          "Nueva Zelanda"
+        ]
+      },
+      {
+        "difficulty": "hard",
+        "question": "¿Qué país tiene la costa más larga del mundo?",
+        "correct_answer": "Canadá",
+        "incorrect_answers": [
+          "Indonesia",
+          "Australia",
+          "Rusia"
+        ]
+      },
+      {
+        "difficulty": "hard",
+        "question": "¿Qué océano separa África de Australia?",
+        "correct_answer": "Océano Índico",
+        "incorrect_answers": [
+          "Océano Atlántico",
+          "Océano Pacífico",
+          "Mar Mediterráneo"
+        ]
+      },
+      {
+        "difficulty": "hard",
+        "question": "¿Cuál es la capital de Kazajistán?",
+        "correct_answer": "Astaná",
+        "incorrect_answers": [
+          "Almatý",
+          "Tashkent",
+          "Bishkek"
+        ]
+      },
+      {
+        "difficulty": "hard",
+        "question": "¿Qué país sudamericano tiene el mayor número de países limítrofes?",
+        "correct_answer": "Brasil",
+        "incorrect_answers": [
+          "Argentina",
+          "Colombia",
+          "Perú"
+        ]
+      },
+      {
+        "difficulty": "hard",
+        "question": "¿Cuál es la península más grande del mundo?",
+        "correct_answer": "Península Arábiga",
+        "incorrect_answers": [
+          "Península Ibérica",
+          "Península Escandinava",
+          "Península de Yucatán"
+        ]
+      }
+    ]
+}
+  

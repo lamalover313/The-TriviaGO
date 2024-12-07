@@ -1,0 +1,475 @@
+{
+    "science_questions": [
+      {
+        "difficulty": "easy",
+        "question": "¿Cuál es el planeta más cercano al Sol?",
+        "correct_answer": "Mercurio",
+        "incorrect_answers": [
+          "Venus",
+          "Tierra",
+          "Marte"
+        ]
+      },
+      {
+        "difficulty": "easy",
+        "question": "¿Qué gas es esencial para la respiración humana?",
+        "correct_answer": "Oxígeno",
+        "incorrect_answers": [
+          "Nitrógeno",
+          "Dióxido de carbono",
+          "Hidrógeno"
+        ]
+      },
+      {
+        "difficulty": "easy",
+        "question": "¿Cuántos estados de la materia existen?",
+        "correct_answer": "Cuatro",
+        "incorrect_answers": [
+          "Tres",
+          "Cinco",
+          "Seis"
+        ]
+      },
+      {
+        "difficulty": "easy",
+        "question": "¿Cuál es el órgano más grande del cuerpo humano?",
+        "correct_answer": "La piel",
+        "incorrect_answers": [
+          "El hígado",
+          "El cerebro",
+          "El corazón"
+        ]
+      },
+      {
+        "difficulty": "easy",
+        "question": "¿Qué es H2O?",
+        "correct_answer": "Agua",
+        "incorrect_answers": [
+          "Hidrógeno",
+          "Oxígeno",
+          "Dióxido de carbono"
+        ]
+      },
+      {
+        "difficulty": "easy",
+        "question": "¿Cuál es el elemento químico más abundante en la atmósfera terrestre?",
+        "correct_answer": "Nitrógeno",
+        "incorrect_answers": [
+          "Oxígeno",
+          "Argón",
+          "Dióxido de carbono"
+        ]
+      },
+      {
+        "difficulty": "easy",
+        "question": "¿Qué estudia la botánica?",
+        "correct_answer": "Las plantas",
+        "incorrect_answers": [
+          "Los animales",
+          "Los microbios",
+          "Los minerales"
+        ]
+      },
+      {
+        "difficulty": "easy",
+        "question": "¿Cuál es la velocidad de la luz?",
+        "correct_answer": "300,000 km/s",
+        "incorrect_answers": [
+          "150,000 km/s",
+          "500,000 km/s",
+          "100,000 km/s"
+        ]
+      },
+      {
+        "difficulty": "easy",
+        "question": "¿Qué tipo de animal es una ballena?",
+        "correct_answer": "Mamífero",
+        "incorrect_answers": [
+          "Pez",
+          "Reptil",
+          "Anfibio"
+        ]
+      },
+      {
+        "difficulty": "easy",
+        "question": "¿Cuál es el mineral más duro conocido?",
+        "correct_answer": "Diamante",
+        "incorrect_answers": [
+          "Cuarzo",
+          "Topacio",
+          "Corindón"
+        ]
+      },
+      {
+        "difficulty": "easy",
+        "question": "¿Qué planeta es conocido como el planeta rojo?",
+        "correct_answer": "Marte",
+        "incorrect_answers": [
+          "Júpiter",
+          "Saturno",
+          "Venus"
+        ]
+      },
+      {
+        "difficulty": "easy",
+        "question": "¿Cuál es la unidad básica de la vida?",
+        "correct_answer": "La célula",
+        "incorrect_answers": [
+          "El átomo",
+          "La molécula",
+          "El órgano"
+        ]
+      },
+      {
+        "difficulty": "easy",
+        "question": "¿Qué estudia la astronomía?",
+        "correct_answer": "El universo",
+        "incorrect_answers": [
+          "Los océanos",
+          "Los volcanes",
+          "Los fósiles"
+        ]
+      },
+      {
+        "difficulty": "easy",
+        "question": "¿Cuál es la fórmula química del dióxido de carbono?",
+        "correct_answer": "CO2",
+        "incorrect_answers": [
+          "O2",
+          "CO",
+          "H2O"
+        ]
+      },
+      {
+        "difficulty": "easy",
+        "question": "¿Qué tipo de célula carece de núcleo?",
+        "correct_answer": "Procariota",
+        "incorrect_answers": [
+          "Eucariota",
+          "Animal",
+          "Vegetal"
+        ]
+      },
+      {
+        "difficulty": "medium",
+        "question": "¿Cuál es la partícula subatómica con carga positiva?",
+        "correct_answer": "Protón",
+        "incorrect_answers": [
+          "Neutrón",
+          "Electrón",
+          "Fotón"
+        ]
+      },
+      {
+        "difficulty": "medium",
+        "question": "¿Qué científico propuso la teoría de la relatividad?",
+        "correct_answer": "Albert Einstein",
+        "incorrect_answers": [
+          "Isaac Newton",
+          "Galileo Galilei",
+          "Niels Bohr"
+        ]
+      },
+      {
+        "difficulty": "medium",
+        "question": "¿Qué tipo de enlace mantiene unidas las moléculas de agua?",
+        "correct_answer": "Enlace de hidrógeno",
+        "incorrect_answers": [
+          "Enlace iónico",
+          "Enlace covalente",
+          "Enlace metálico"
+        ]
+      },
+      {
+        "difficulty": "medium",
+        "question": "¿Cuál es el metal más abundante en la corteza terrestre?",
+        "correct_answer": "Aluminio",
+        "incorrect_answers": [
+          "Hierro",
+          "Silicio",
+          "Magnesio"
+        ]
+      },
+      {
+        "difficulty": "medium",
+        "question": "¿Qué parte del átomo tiene carga negativa?",
+        "correct_answer": "Electrón",
+        "incorrect_answers": [
+          "Protón",
+          "Neutrón",
+          "Núcleo"
+        ]
+      },
+      {
+        "difficulty": "medium",
+        "question": "¿Cómo se llama la capacidad de un material para conducir electricidad?",
+        "correct_answer": "Conductividad",
+        "incorrect_answers": [
+          "Resistencia",
+          "Capacitancia",
+          "Inductancia"
+        ]
+      },
+      {
+        "difficulty": "medium",
+        "question": "¿Qué es un organismo autótrofo?",
+        "correct_answer": "Un organismo que produce su propio alimento",
+        "incorrect_answers": [
+          "Un organismo que depende de otros para alimentarse",
+          "Un organismo que solo consume carne",
+          "Un organismo que vive en ambientes extremos"
+        ]
+      },
+      {
+        "difficulty": "medium",
+        "question": "¿Cuál es la fuerza que nos mantiene en la Tierra?",
+        "correct_answer": "Gravedad",
+        "incorrect_answers": [
+          "Inercia",
+          "Fricción",
+          "Electromagnetismo"
+        ]
+      },
+      {
+        "difficulty": "medium",
+        "question": "¿Cuál es el órgano encargado de filtrar la sangre?",
+        "correct_answer": "Riñones",
+        "incorrect_answers": [
+          "Hígado",
+          "Pulmones",
+          "Corazón"
+        ]
+      },
+      {
+        "difficulty": "medium",
+        "question": "¿Cómo se llama la unidad de frecuencia?",
+        "correct_answer": "Hercio",
+        "incorrect_answers": [
+          "Newton",
+          "Voltio",
+          "Amperio"
+        ]
+      },
+      {
+        "difficulty": "medium",
+        "question": "¿Qué científico descubrió la penicilina?",
+        "correct_answer": "Alexander Fleming",
+        "incorrect_answers": [
+          "Marie Curie",
+          "Louis Pasteur",
+          "Gregor Mendel"
+        ]
+      },
+      {
+        "difficulty": "medium",
+        "question": "¿Qué elemento tiene el símbolo químico 'O'?",
+        "correct_answer": "Oxígeno",
+        "incorrect_answers": [
+          "Oro",
+          "Osmio",
+          "Oxalato"
+        ]
+      },
+      {
+        "difficulty": "medium",
+        "question": "¿Cuál es el planeta más grande del sistema solar?",
+        "correct_answer": "Júpiter",
+        "incorrect_answers": [
+          "Saturno",
+          "Neptuno",
+          "Urano"
+        ]
+      },
+      {
+        "difficulty": "medium",
+        "question": "¿Qué es la mitocondria?",
+        "correct_answer": "La central energética de la célula",
+        "incorrect_answers": [
+          "El núcleo de la célula",
+          "La membrana celular",
+          "El citoplasma"
+        ]
+      },
+      {
+        "difficulty": "medium",
+        "question": "¿Cuál es el proceso mediante el cual las plantas producen su alimento?",
+        "correct_answer": "Fotosíntesis",
+        "incorrect_answers": [
+          "Respiración",
+          "Fermentación",
+          "Digestión"
+        ]
+      },
+      {
+        "difficulty": "medium",
+        "question": "¿Qué tipo de roca se forma a partir de magma enfriado?",
+        "correct_answer": "Ígnea",
+        "incorrect_answers": [
+          "Sedimentaria",
+          "Metamórfica",
+          "Orgánica"
+        ]
+      },
+      {
+        "difficulty": "hard",
+        "question": "¿Qué es un agujero negro?",
+        "correct_answer": "Una región del espacio con una gravedad tan fuerte que ni la luz puede escapar",
+        "incorrect_answers": [
+          "Una estrella que ha explotado",
+          "Un planeta sin atmósfera",
+          "Una nube de gas y polvo"
+        ]
+      },
+      {
+        "difficulty": "hard",
+        "question": "¿Cuál es la teoría científica que describe el origen del universo?",
+        "correct_answer": "Big Bang",
+        "incorrect_answers": [
+          "Teoría de la relatividad",
+          "Teoría de la evolución",
+          "Teoría del caos"
+        ]
+      },
+      {
+        "difficulty": "hard",
+        "question": "¿Qué partícula se encuentra en el núcleo del átomo y tiene carga neutra?",
+        "correct_answer": "Neutrón",
+        "incorrect_answers": [
+          "Protón",
+          "Electrón",
+          "Quark"
+        ]
+      },
+      {
+        "difficulty": "hard",
+        "question": "¿Cómo se llama el proceso de división celular en las células eucariotas?",
+        "correct_answer": "Mitosis",
+        "incorrect_answers": [
+          "Meiosis",
+          "Fisión binaria",
+          "Citocinesis"
+        ]
+      },
+      {
+        "difficulty": "hard",
+        "question": "¿Qué tipo de macromolécula son las enzimas?",
+        "correct_answer": "Proteínas",
+        "incorrect_answers": [
+          "Lípidos",
+          "Carbohidratos",
+          "Ácidos nucleicos"
+        ]
+      },
+      {
+        "difficulty": "hard",
+        "question": "¿Qué científico desarrolló la tabla periódica moderna?",
+        "correct_answer": "Dmitri Mendeléyev",
+        "incorrect_answers": [
+          "Marie Curie",
+          "Robert Hooke",
+          "Michael Faraday"
+        ]
+      },
+      {
+        "difficulty": "hard",
+        "question": "¿Cuál es el número atómico del carbono?",
+        "correct_answer": "6",
+        "incorrect_answers": [
+          "8",
+          "12",
+          "14"
+        ]
+      },
+      {
+        "difficulty": "hard",
+        "question": "¿Qué rama de la física estudia las partículas subatómicas?",
+        "correct_answer": "Física cuántica",
+        "incorrect_answers": [
+          "Termodinámica",
+          "Electromagnetismo",
+          "Mecánica clásica"
+        ]
+      },
+      {
+        "difficulty": "hard",
+        "question": "¿Qué es la tectónica de placas?",
+        "correct_answer": "La teoría que explica el movimiento de las placas de la corteza terrestre",
+        "incorrect_answers": [
+          "El estudio de los volcanes",
+          "El ciclo de vida de las montañas",
+          "El proceso de formación de minerales"
+        ]
+      },
+      {
+        "difficulty": "hard",
+        "question": "¿Qué es el ADN?",
+        "correct_answer": "El material genético que lleva la información hereditaria",
+        "incorrect_answers": [
+          "Un tipo de proteína",
+          "Una molécula de energía",
+          "Un compuesto químico simple"
+        ]
+      },
+      {
+        "difficulty": "hard",
+        "question": "¿Cuál es la constante de Planck?",
+        "correct_answer": "6.626 x 10^-34 Js",
+        "incorrect_answers": [
+          "9.81 m/s²",
+          "3.00 x 10^8 m/s",
+          "1.602 x 10^-19 C"
+        ]
+      },
+      {
+        "difficulty": "hard",
+        "question": "¿Qué es el bosón de Higgs?",
+        "correct_answer": "Una partícula que otorga masa a otras partículas",
+        "incorrect_answers": [
+          "Una partícula que viaja más rápido que la luz",
+          "Un tipo de neutrino",
+          "Una fuerza fundamental de la naturaleza"
+        ]
+      },
+      {
+        "difficulty": "hard",
+        "question": "¿Qué es la antimateria?",
+        "correct_answer": "Materia compuesta por partículas con carga opuesta a la materia común",
+        "incorrect_answers": [
+          "Materia que no puede interactuar con la materia común",
+          "Un tipo de energía oscura",
+          "Un estado de la materia"
+        ]
+      },
+      {
+        "difficulty": "hard",
+        "question": "¿Cuál es la segunda ley de la termodinámica?",
+        "correct_answer": "La entropía de un sistema aislado siempre aumenta",
+        "incorrect_answers": [
+          "La energía no se crea ni se destruye, solo se transforma",
+          "Para cada acción hay una reacción igual y opuesta",
+          "La energía se conserva en cualquier proceso termodinámico"
+        ]
+      },
+      {
+        "difficulty": "hard",
+        "question": "¿Qué es la fotosíntesis?",
+        "correct_answer": "El proceso por el cual las plantas convierten la luz solar en energía química",
+        "incorrect_answers": [
+          "El proceso de descomposición de la materia orgánica",
+          "La respiración celular en plantas",
+          "La conversión de nutrientes en energía en los animales"
+        ]
+      },
+      {
+        "difficulty": "hard",
+        "question": "¿Qué partícula fue descubierta en el acelerador de partículas LHC en 2012?",
+        "correct_answer": "Bosón de Higgs",
+        "incorrect_answers": [
+          "Quark top",
+          "Neutrino",
+          "Gluón"
+        ]
+      }
+    ]
+  }
+  

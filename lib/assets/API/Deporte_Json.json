@@ -1,0 +1,495 @@
+{
+    "sports_questions": [
+      {
+        "difficulty": "easy",
+        "question": "¿Cuántos jugadores forman un equipo de fútbol en el campo?",
+        "correct_answer": "11",
+        "incorrect_answers": [
+          "10",
+          "12",
+          "9"
+        ]
+      },
+      {
+        "difficulty": "easy",
+        "question": "¿En qué deporte se usa una pelota ovalada?",
+        "correct_answer": "Rugby",
+        "incorrect_answers": [
+          "Fútbol",
+          "Tenis",
+          "Golf"
+        ]
+      },
+      {
+        "difficulty": "easy",
+        "question": "¿Cuántos anillos hay en la bandera olímpica?",
+        "correct_answer": "5",
+        "incorrect_answers": [
+          "4",
+          "6",
+          "7"
+        ]
+      },
+      {
+        "difficulty": "easy",
+        "question": "¿En qué deporte se utiliza una red y una raqueta?",
+        "correct_answer": "Tenis",
+        "incorrect_answers": [
+          "Voleibol",
+          "Bádminton",
+          "Squash"
+        ]
+      },
+      {
+        "difficulty": "easy",
+        "question": "¿Qué deporte es conocido como 'el rey de los deportes'?",
+        "correct_answer": "Fútbol",
+        "incorrect_answers": [
+          "Béisbol",
+          "Baloncesto",
+          "Hockey"
+        ]
+      },
+      {
+        "difficulty": "easy",
+        "question": "¿Cuántos puntos vale un tiro libre en baloncesto?",
+        "correct_answer": "1",
+        "incorrect_answers": [
+          "2",
+          "3",
+          "0"
+        ]
+      },
+      {
+        "difficulty": "easy",
+        "question": "¿En qué deporte se compite en las 500 Millas de Indianápolis?",
+        "correct_answer": "Automovilismo",
+        "incorrect_answers": [
+          "Ciclismo",
+          "Motociclismo",
+          "Atletismo"
+        ]
+      },
+      {
+        "difficulty": "easy",
+        "question": "¿Qué deporte se juega en Wimbledon?",
+        "correct_answer": "Tenis",
+        "incorrect_answers": [
+          "Críquet",
+          "Hockey",
+          "Golf"
+        ]
+      },
+      {
+        "difficulty": "easy",
+        "question": "¿Cuántos puntos se necesitan para ganar un set en el voleibol?",
+        "correct_answer": "25",
+        "incorrect_answers": [
+          "20",
+          "30",
+          "15"
+        ]
+      },
+      {
+        "difficulty": "easy",
+        "question": "¿Cuál es el país de origen del fútbol?",
+        "correct_answer": "Inglaterra",
+        "incorrect_answers": [
+          "Brasil",
+          "Alemania",
+          "Italia"
+        ]
+      },
+      {
+        "difficulty": "easy",
+        "question": "¿Qué deporte se juega en la NBA?",
+        "correct_answer": "Baloncesto",
+        "incorrect_answers": [
+          "Fútbol americano",
+          "Hockey sobre hielo",
+          "Béisbol"
+        ]
+      },
+      {
+        "difficulty": "easy",
+        "question": "¿En qué deporte se usa una tabla y una ola?",
+        "correct_answer": "Surf",
+        "incorrect_answers": [
+          "Esquí acuático",
+          "Kayak",
+          "Windsurf"
+        ]
+      },
+      {
+        "difficulty": "easy",
+        "question": "¿Cuál es la duración de un partido de fútbol estándar?",
+        "correct_answer": "90 minutos",
+        "incorrect_answers": [
+          "80 minutos",
+          "100 minutos",
+          "60 minutos"
+        ]
+      },
+      {
+        "difficulty": "easy",
+        "question": "¿En qué deporte compiten los equipos por la Copa Stanley?",
+        "correct_answer": "Hockey sobre hielo",
+        "incorrect_answers": [
+          "Rugby",
+          "Fútbol",
+          "Críquet"
+        ]
+      },
+      {
+        "difficulty": "easy",
+        "question": "¿Qué deporte es conocido por el término 'home run'?",
+        "correct_answer": "Béisbol",
+        "incorrect_answers": [
+          "Fútbol",
+          "Baloncesto",
+          "Críquet"
+        ]
+      },
+      {
+        "difficulty": "medium",
+        "question": "¿Qué tenista ha ganado más títulos de Grand Slam en individuales?",
+        "correct_answer": "Margaret Court",
+        "incorrect_answers": [
+          "Serena Williams",
+          "Steffi Graf",
+          "Roger Federer"
+        ]
+      },
+      {
+        "difficulty": "medium",
+        "question": "¿En qué país se celebraron los Juegos Olímpicos de 2008?",
+        "correct_answer": "China",
+        "incorrect_answers": [
+          "Grecia",
+          "Australia",
+          "Brasil"
+        ]
+      },
+      {
+        "difficulty": "medium",
+        "question": "¿Qué deportista tiene el récord de más medallas olímpicas ganadas?",
+        "correct_answer": "Michael Phelps",
+        "incorrect_answers": [
+          "Usain Bolt",
+          "Larisa Latynina",
+          "Carl Lewis"
+        ]
+      },
+      {
+        "difficulty": "medium",
+        "question": "¿Cuál es la carrera de ciclismo más prestigiosa del mundo?",
+        "correct_answer": "Tour de Francia",
+        "incorrect_answers": [
+          "Giro de Italia",
+          "Vuelta a España",
+          "París-Roubaix"
+        ]
+      },
+      {
+        "difficulty": "medium",
+        "question": "¿Qué país ganó la Copa Mundial de Fútbol en 2014?",
+        "correct_answer": "Alemania",
+        "incorrect_answers": [
+          "Brasil",
+          "Argentina",
+          "España"
+        ]
+      },
+      {
+        "difficulty": "medium",
+        "question": "¿Cuántos sets debe ganar un jugador para llevarse un partido de tenis en un Grand Slam?",
+        "correct_answer": "3 en mujeres, 5 en hombres",
+        "incorrect_answers": [
+          "2 en mujeres, 3 en hombres",
+          "4 en mujeres, 5 en hombres",
+          "3 en mujeres, 4 en hombres"
+        ]
+      },
+      {
+        "difficulty": "medium",
+        "question": "¿Quién es conocido como 'El Rey del Fútbol'?",
+        "correct_answer": "Pelé",
+        "incorrect_answers": [
+          "Diego Maradona",
+          "Lionel Messi",
+          "Cristiano Ronaldo"
+        ]
+      },
+      {
+        "difficulty": "medium",
+        "question": "¿Qué equipo de baloncesto ha ganado más títulos de la NBA?",
+        "correct_answer": "Los Angeles Lakers",
+        "incorrect_answers": [
+          "Boston Celtics",
+          "Chicago Bulls",
+          "Golden State Warriors"
+        ]
+      },
+      {
+        "difficulty": "medium",
+        "question": "¿Cuál es la distancia de una maratón completa?",
+        "correct_answer": "42.195 km",
+        "incorrect_answers": [
+          "40 km",
+          "45 km",
+          "50 km"
+        ]
+      },
+      {
+        "difficulty": "medium",
+        "question": "¿En qué año se celebró el primer Super Bowl?",
+        "correct_answer": "1967",
+        "incorrect_answers": [
+          "1970",
+          "1955",
+          "1980"
+        ]
+      },
+      {
+        "difficulty": "medium",
+        "question": "¿Qué país ha ganado la mayor cantidad de Copas Mundiales de la FIFA?",
+        "correct_answer": "Brasil",
+        "incorrect_answers": [
+          "Alemania",
+          "Italia",
+          "Argentina"
+        ]
+      },
+      {
+        "difficulty": "medium",
+        "question": "¿Quién es el jugador de baloncesto con más puntos anotados en la historia de la NBA?",
+        "correct_answer": "Kareem Abdul-Jabbar",
+        "incorrect_answers": [
+          "Michael Jordan",
+          "LeBron James",
+          "Kobe Bryant"
+        ]
+      },
+      {
+        "difficulty": "medium",
+        "question": "¿Qué boxeador es conocido como 'The Greatest'?",
+        "correct_answer": "Muhammad Ali",
+        "incorrect_answers": [
+          "Mike Tyson",
+          "Floyd Mayweather",
+          "Manny Pacquiao"
+        ]
+      },
+      {
+        "difficulty": "medium",
+        "question": "¿Qué equipo ganó la primera Copa Mundial de Fútbol en 1930?",
+        "correct_answer": "Uruguay",
+        "incorrect_answers": [
+          "Argentina",
+          "Brasil",
+          "Italia"
+        ]
+      },
+      {
+        "difficulty": "medium",
+        "question": "¿Qué deportista es famoso por su celebración conocida como 'dab'?",
+        "correct_answer": "Cam Newton",
+        "incorrect_answers": [
+          "LeBron James",
+          "Cristiano Ronaldo",
+          "Usain Bolt"
+        ]
+      },
+      {
+        "difficulty": "medium",
+        "question": "¿En qué deporte se utiliza el término 'birdie'?",
+        "correct_answer": "Golf",
+        "incorrect_answers": [
+          "Bádminton",
+          "Tenis",
+          "Ciclismo"
+        ]
+      },
+      {
+        "difficulty": "hard",
+        "question": "¿Quién es el único jugador en ganar el Balón de Oro tres veces consecutivas?",
+        "correct_answer": "Lionel Messi",
+        "incorrect_answers": [
+          "Cristiano Ronaldo",
+          "Michel Platini",
+          "Johan Cruyff"
+        ]
+      },
+      {
+        "difficulty": "hard",
+        "question": "¿Cuál es el récord mundial de velocidad de los 100 metros planos?",
+        "correct_answer": "9.58 segundos",
+        "incorrect_answers": [
+          "9.65 segundos",
+          "9.72 segundos",
+          "9.76 segundos"
+        ]
+      },
+      {
+        "difficulty": "hard",
+        "question": "¿Cuál es el nombre del estadio de fútbol más grande del mundo?",
+        "correct_answer": "Rungrado May Day Stadium",
+        "incorrect_answers": [
+          "Camp Nou",
+          "Maracaná",
+          "Wembley"
+        ]
+      },
+      {
+        "difficulty": "hard",
+        "question": "¿Qué equipo ha ganado la mayor cantidad de Super Bowls?",
+        "correct_answer": "Pittsburgh Steelers",
+        "incorrect_answers": [
+          "Dallas Cowboys",
+          "San Francisco 49ers",
+          "New England Patriots"
+        ]
+      },
+      {
+        "difficulty": "hard",
+        "question": "¿Quién tiene el récord de más goles en la historia de la Copa Mundial de la FIFA?",
+        "correct_answer": "Miroslav Klose",
+        "incorrect_answers": [
+          "Ronaldo",
+          "Pele",
+          "Gerd Muller"
+        ]
+      },
+      {
+        "difficulty": "hard",
+        "question": "¿Qué nadadora ha ganado más medallas olímpicas en la historia?",
+        "correct_answer": "Jenny Thompson",
+        "incorrect_answers": [
+          "Katie Ledecky",
+          "Kristin Otto",
+          "Dara Torres"
+        ]
+      },
+      {
+        "difficulty": "hard",
+        "question": "¿Cuál es el récord de puntos en un solo partido de la NBA?",
+        "correct_answer": "100 puntos",
+        "incorrect_answers": [
+          "81 puntos",
+          "98 puntos",
+          "85 puntos"
+        ]
+      },
+      {
+        "difficulty": "hard",
+        "question": "¿Qué equipo ganó el primer Mundial de Fútbol Femenino?",
+        "correct_answer": "Estados Unidos",
+        "incorrect_answers": [
+          "Noruega",
+          "Alemania",
+          "Suecia"
+        ]
+      },
+      {
+        "difficulty": "hard",
+        "question": "¿Qué ciclista ganó el Tour de Francia 7 veces consecutivas?",
+        "correct_answer": "Lance Armstrong",
+        "incorrect_answers": [
+          "Miguel Induráin",
+          "Chris Froome",
+          "Bernard Hinault"
+        ]
+      },
+      {
+        "difficulty": "hard",
+        "question": "¿Qué boxeador fue conocido como 'Mano de Piedra'?",
+        "correct_answer": "Roberto Durán",
+        "incorrect_answers": [
+          "Julio César Chávez",
+          "Sugar Ray Leonard",
+          "Marvin Hagler"
+        ]
+      },
+      {
+        "difficulty": "hard",
+        "question": "¿Quién es el jugador más joven en ganar un Grand Slam en tenis?",
+        "correct_answer": "Michael Chang",
+        "incorrect_answers": [
+          "Boris Becker",
+          "Bjorn Borg",
+          "Rafael Nadal"
+        ]
+      },
+      {
+        "difficulty": "hard",
+        "question": "¿Qué país ha ganado más Copas del Mundo de Rugby?",
+        "correct_answer": "Nueva Zelanda",
+        "incorrect_answers": [
+          "Australia",
+          "Sudáfrica",
+          "Inglaterra"
+        ]
+      },
+      {
+        "difficulty": "hard",
+        "question": "¿Cuál es el récord mundial de salto con pértiga?",
+        "correct_answer": "6.18 metros",
+        "incorrect_answers": [
+          "6.05 metros",
+          "6.10 metros",
+          "6.15 metros"
+        ]
+      },
+      {
+        "difficulty": "hard",
+        "question": "¿Qué futbolista es conocido como 'El Fenómeno'?",
+        "correct_answer": "Ronaldo Nazário",
+        "incorrect_answers": [
+          "Ronaldinho",
+          "Zinedine Zidane",
+          "Cristiano Ronaldo"
+        ]
+      },
+      {
+        "difficulty": "hard",
+        "question": "¿Qué boxeador fue conocido como 'The Bronx Bull'?",
+        "correct_answer": "Jake LaMotta",
+        "incorrect_answers": [
+          "Joe Frazier",
+          "Rocky Marciano",
+          "Sonny Liston"
+        ]
+      },
+      {
+        "difficulty": "hard",
+        "question": "¿Qué jugador de béisbol es conocido como 'The Sultan of Swat'?",
+        "correct_answer": "Babe Ruth",
+        "incorrect_answers": [
+          "Joe DiMaggio",
+          "Lou Gehrig",
+          "Hank Aaron"
+        ]
+      },
+      {
+        "difficulty": "hard",
+        "question": "¿Cuál es la distancia de la competencia Ironman en triatlón?",
+        "correct_answer": "3.8 km de natación, 180 km de ciclismo, 42.2 km de carrera",
+        "incorrect_answers": [
+          "2.4 km de natación, 112 km de ciclismo, 26.2 km de carrera",
+          "5 km de natación, 200 km de ciclismo, 50 km de carrera",
+          "3 km de natación, 150 km de ciclismo, 35 km de carrera"
+        ]
+      },
+      {
+        "difficulty": "hard",
+        "question": "¿Qué país tiene más títulos de la Copa Davis?",
+        "correct_answer": "Estados Unidos",
+        "incorrect_answers": [
+          "Australia",
+          "Francia",
+          "España"
+        ]
+      }
+    ]
+  }
+  

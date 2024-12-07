@@ -1,0 +1,475 @@
+{
+    "art_questions": [
+      {
+        "difficulty": "easy",
+        "question": "¿Quién pintó la Mona Lisa?",
+        "correct_answer": "Leonardo da Vinci",
+        "incorrect_answers": [
+          "Vincent van Gogh",
+          "Pablo Picasso",
+          "Michelangelo"
+        ]
+      },
+      {
+        "difficulty": "easy",
+        "question": "¿Cuál es el estilo artístico de Salvador Dalí?",
+        "correct_answer": "Surrealismo",
+        "incorrect_answers": [
+          "Cubismo",
+          "Impresionismo",
+          "Barroco"
+        ]
+      },
+      {
+        "difficulty": "easy",
+        "question": "¿En qué país nació Pablo Picasso?",
+        "correct_answer": "España",
+        "incorrect_answers": [
+          "Italia",
+          "Francia",
+          "Países Bajos"
+        ]
+      },
+      {
+        "difficulty": "easy",
+        "question": "¿Qué pintor es famoso por cortar su propia oreja?",
+        "correct_answer": "Vincent van Gogh",
+        "incorrect_answers": [
+          "Claude Monet",
+          "Paul Gauguin",
+          "Edvard Munch"
+        ]
+      },
+      {
+        "difficulty": "easy",
+        "question": "¿Cuál es el nombre de la famosa escultura de mármol creada por Miguel Ángel?",
+        "correct_answer": "David",
+        "incorrect_answers": [
+          "La Piedad",
+          "El Moisés",
+          "El Pensador"
+        ]
+      },
+      {
+        "difficulty": "easy",
+        "question": "¿Qué estilo de pintura es característico de Claude Monet?",
+        "correct_answer": "Impresionismo",
+        "incorrect_answers": [
+          "Expresionismo",
+          "Surrealismo",
+          "Cubismo"
+        ]
+      },
+      {
+        "difficulty": "easy",
+        "question": "¿Cuál es el título de la famosa pintura de Edvard Munch?",
+        "correct_answer": "El Grito",
+        "incorrect_answers": [
+          "La Noche Estrellada",
+          "Las Meninas",
+          "La Última Cena"
+        ]
+      },
+      {
+        "difficulty": "easy",
+        "question": "¿En qué museo se encuentra la pintura 'La Gioconda'?",
+        "correct_answer": "Museo del Louvre",
+        "incorrect_answers": [
+          "Museo del Prado",
+          "Museo de Orsay",
+          "Museo Guggenheim"
+        ]
+      },
+      {
+        "difficulty": "easy",
+        "question": "¿Qué pintor es conocido por su estilo de 'pintura de acción'?",
+        "correct_answer": "Jackson Pollock",
+        "incorrect_answers": [
+          "Andy Warhol",
+          "Mark Rothko",
+          "Willem de Kooning"
+        ]
+      },
+      {
+        "difficulty": "easy",
+        "question": "¿Qué artista es conocido como el maestro del 'pop art'?",
+        "correct_answer": "Andy Warhol",
+        "incorrect_answers": [
+          "Roy Lichtenstein",
+          "Keith Haring",
+          "Jean-Michel Basquiat"
+        ]
+      },
+      {
+        "difficulty": "easy",
+        "question": "¿Qué pintor es famoso por su serie de pinturas de nenúfares?",
+        "correct_answer": "Claude Monet",
+        "incorrect_answers": [
+          "Vincent van Gogh",
+          "Paul Cézanne",
+          "Édouard Manet"
+        ]
+      },
+      {
+        "difficulty": "easy",
+        "question": "¿Qué escultura es famosa por su falta de brazos?",
+        "correct_answer": "Venus de Milo",
+        "incorrect_answers": [
+          "El David",
+          "La Piedad",
+          "La Victoria de Samotracia"
+        ]
+      },
+      {
+        "difficulty": "easy",
+        "question": "¿Qué artista creó la serie de pinturas llamada 'Las Meninas'?",
+        "correct_answer": "Diego Velázquez",
+        "incorrect_answers": [
+          "Francisco Goya",
+          "El Greco",
+          "Bartolomé Esteban Murillo"
+        ]
+      },
+      {
+        "difficulty": "easy",
+        "question": "¿Quién pintó 'La Noche Estrellada'?",
+        "correct_answer": "Vincent van Gogh",
+        "incorrect_answers": [
+          "Pablo Picasso",
+          "Paul Gauguin",
+          "Salvador Dalí"
+        ]
+      },
+      {
+        "difficulty": "easy",
+        "question": "¿Cuál es el nombre del famoso mural pintado por Leonardo da Vinci en Milán?",
+        "correct_answer": "La Última Cena",
+        "incorrect_answers": [
+          "La Creación de Adán",
+          "La Escuela de Atenas",
+          "El Juicio Final"
+        ]
+      },
+      {
+        "difficulty": "medium",
+        "question": "¿Qué técnica de pintura es conocida por su uso de pequeños puntos de color?",
+        "correct_answer": "Puntillismo",
+        "incorrect_answers": [
+          "Frescos",
+          "Acuarela",
+          "Grabado"
+        ]
+      },
+      {
+        "difficulty": "medium",
+        "question": "¿Qué pintor es conocido por su uso del 'sfumato'?",
+        "correct_answer": "Leonardo da Vinci",
+        "incorrect_answers": [
+          "Caravaggio",
+          "Rafael",
+          "Tiziano"
+        ]
+      },
+      {
+        "difficulty": "medium",
+        "question": "¿Qué artista creó la escultura 'El Pensador'?",
+        "correct_answer": "Auguste Rodin",
+        "incorrect_answers": [
+          "Donatello",
+          "Gian Lorenzo Bernini",
+          "Michelangelo"
+        ]
+      },
+      {
+        "difficulty": "medium",
+        "question": "¿En qué ciudad se encuentra el Museo del Prado?",
+        "correct_answer": "Madrid",
+        "incorrect_answers": [
+          "Barcelona",
+          "París",
+          "Roma"
+        ]
+      },
+      {
+        "difficulty": "medium",
+        "question": "¿Qué artista es famoso por sus pinturas de bailarinas?",
+        "correct_answer": "Edgar Degas",
+        "incorrect_answers": [
+          "Pierre-Auguste Renoir",
+          "Édouard Manet",
+          "Henri Toulouse-Lautrec"
+        ]
+      },
+      {
+        "difficulty": "medium",
+        "question": "¿Qué técnica de pintura utilizaba José Clemente Orozco?",
+        "correct_answer": "Muralismo",
+        "incorrect_answers": [
+          "Cubismo",
+          "Impresionismo",
+          "Fauvismo"
+        ]
+      },
+      {
+        "difficulty": "medium",
+        "question": "¿Qué artista pintó 'Las Señoritas de Avignon'?",
+        "correct_answer": "Pablo Picasso",
+        "incorrect_answers": [
+          "Georges Braque",
+          "Juan Gris",
+          "Fernand Léger"
+        ]
+      },
+      {
+        "difficulty": "medium",
+        "question": "¿Qué movimiento artístico es conocido por su rechazo a la lógica y la razón?",
+        "correct_answer": "Dadaísmo",
+        "incorrect_answers": [
+          "Impresionismo",
+          "Futurismo",
+          "Cubismo"
+        ]
+      },
+      {
+        "difficulty": "medium",
+        "question": "¿Qué artista es conocido por sus esculturas de estilo minimalista?",
+        "correct_answer": "Donald Judd",
+        "incorrect_answers": [
+          "Alexander Calder",
+          "Jeff Koons",
+          "Henry Moore"
+        ]
+      },
+      {
+        "difficulty": "medium",
+        "question": "¿Qué pintor es famoso por sus obras de 'naturaleza muerta'?",
+        "correct_answer": "Paul Cézanne",
+        "incorrect_answers": [
+          "Vincent van Gogh",
+          "Claude Monet",
+          "Henri Matisse"
+        ]
+      },
+      {
+        "difficulty": "medium",
+        "question": "¿Qué pintor es conocido por sus escenas de la vida campesina?",
+        "correct_answer": "Jean-François Millet",
+        "incorrect_answers": [
+          "Gustave Courbet",
+          "Camille Corot",
+          "Théodore Rousseau"
+        ]
+      },
+      {
+        "difficulty": "medium",
+        "question": "¿Qué artista es conocido como el padre del 'Impresionismo'?",
+        "correct_answer": "Claude Monet",
+        "incorrect_answers": [
+          "Édouard Manet",
+          "Pierre-Auguste Renoir",
+          "Camille Pissarro"
+        ]
+      },
+      {
+        "difficulty": "medium",
+        "question": "¿Qué pintor es famoso por su serie de pinturas de girasoles?",
+        "correct_answer": "Vincent van Gogh",
+        "incorrect_answers": [
+          "Paul Gauguin",
+          "Georges Seurat",
+          "Paul Signac"
+        ]
+      },
+      {
+        "difficulty": "medium",
+        "question": "¿Qué escultor es conocido por su trabajo en el 'Grito del Ángel'?",
+        "correct_answer": "Lorenzo Ghiberti",
+        "incorrect_answers": [
+          "Donatello",
+          "Filippo Brunelleschi",
+          "Michelangelo"
+        ]
+      },
+      {
+        "difficulty": "medium",
+        "question": "¿Qué pintor es conocido por sus retratos de la corte española?",
+        "correct_answer": "Diego Velázquez",
+        "incorrect_answers": [
+          "Francisco Goya",
+          "El Greco",
+          "Bartolomé Esteban Murillo"
+        ]
+      },
+      {
+        "difficulty": "hard",
+        "question": "¿Qué pintor renacentista es famoso por su uso de la perspectiva en la 'Escuela de Atenas'?",
+        "correct_answer": "Rafael",
+        "incorrect_answers": [
+          "Leonardo da Vinci",
+          "Miguel Ángel",
+          "Sandro Botticelli"
+        ]
+      },
+      {
+        "difficulty": "hard",
+        "question": "¿Quién pintó 'El Jardín de las Delicias'?",
+        "correct_answer": "Hieronymus Bosch",
+        "incorrect_answers": [
+          "Pieter Bruegel el Viejo",
+          "Albrecht Dürer",
+          "Hans Holbein el Joven"
+        ]
+      },
+      {
+        "difficulty": "hard",
+        "question": "¿Qué pintor flamenco es famoso por su serie de 'La Torre de Babel'?",
+        "correct_answer": "Pieter Bruegel el Viejo",
+        "incorrect_answers": [
+          "Peter Paul Rubens",
+          "Anthony van Dyck",
+          "Jan van Eyck"
+        ]
+      },
+      {
+        "difficulty": "hard",
+        "question": "¿Qué artista es conocido por su obra maestra 'La Ronda de Noche'?",
+        "correct_answer": "Rembrandt",
+        "incorrect_answers": [
+          "Johannes Vermeer",
+          "Frans Hals",
+          "Jan Steen"
+        ]
+      },
+      {
+        "difficulty": "hard",
+        "question": "¿Quién pintó 'El nacimiento de Venus'?",
+        "correct_answer": "Sandro Botticelli",
+        "incorrect_answers": [
+          "Tiziano",
+          "Leonardo da Vinci",
+          "Giotto"
+        ]
+      },
+      {
+        "difficulty": "hard",
+        "question": "¿Qué pintor italiano es conocido como 'el Divino'?",
+        "correct_answer": "Miguel Ángel",
+        "incorrect_answers": [
+          "Rafael",
+          "Leonardo da Vinci",
+          "Sandro Botticelli"
+        ]
+      },
+      {
+        "difficulty": "hard",
+        "question": "¿Qué pintor es conocido por su serie de pinturas 'Las Tragedias de la Guerra'?",
+        "correct_answer": "Francisco de Goya",
+        "incorrect_answers": [
+          "El Greco",
+          "Diego Velázquez",
+          "Bartolomé Esteban Murillo"
+        ]
+      },
+      {
+        "difficulty": "hard",
+        "question": "¿Qué escultor es conocido por sus figuras alargadas y estilizadas?",
+        "correct_answer": "Alberto Giacometti",
+        "incorrect_answers": [
+          "Henry Moore",
+          "Constantin Brâncuși",
+          "Alexander Calder"
+        ]
+      },
+      {
+        "difficulty": "hard",
+        "question": "¿Qué pintor renacentista es famoso por su 'Matrimonio Arnolfini'?",
+        "correct_answer": "Jan van Eyck",
+        "incorrect_answers": [
+          "Rogier van der Weyden",
+          "Hans Memling",
+          "Pieter Bruegel el Viejo"
+        ]
+      },
+      {
+        "difficulty": "hard",
+        "question": "¿Qué pintor es conocido por su serie de pinturas de bailarinas?",
+        "correct_answer": "Edgar Degas",
+        "incorrect_answers": [
+          "Pierre-Auguste Renoir",
+          "Henri Toulouse-Lautrec",
+          "Paul Cézanne"
+        ]
+      },
+      {
+        "difficulty": "hard",
+        "question": "¿Qué pintor es conocido por su serie de pinturas 'Las Caprichos'?",
+        "correct_answer": "Francisco de Goya",
+        "incorrect_answers": [
+          "El Greco",
+          "Diego Velázquez",
+          "Bartolomé Esteban Murillo"
+        ]
+      },
+      {
+        "difficulty": "hard",
+        "question": "¿Qué pintor es conocido como el maestro del 'Arte Metafísico'?",
+        "correct_answer": "Giorgio de Chirico",
+        "incorrect_answers": [
+          "René Magritte",
+          "Max Ernst",
+          "Salvador Dalí"
+        ]
+      },
+      {
+        "difficulty": "hard",
+        "question": "¿Qué pintor es conocido por su estilo de 'Impresionismo Tardío'?",
+        "correct_answer": "Paul Cézanne",
+        "incorrect_answers": [
+          "Claude Monet",
+          "Édouard Manet",
+          "Vincent van Gogh"
+        ]
+      },
+      {
+        "difficulty": "hard",
+        "question": "¿Qué pintor es conocido por su obra 'El Bosco'? ",
+        "correct_answer": "Hieronymus Bosch",
+        "incorrect_answers": [
+          "Pieter Bruegel el Viejo",
+          "Jan van Eyck",
+          "Albrecht Dürer"
+        ]
+      },
+      {
+        "difficulty": "hard",
+        "question": "¿Qué artista es famoso por su obra 'Los Fusilamientos del Tres de Mayo'?",
+        "correct_answer": "Francisco de Goya",
+        "incorrect_answers": [
+          "Diego Velázquez",
+          "El Greco",
+          "Bartolomé Esteban Murillo"
+        ]
+      },
+      {
+        "difficulty": "hard",
+        "question": "¿Qué artista es conocido por sus trabajos de arte cinético?",
+        "correct_answer": "Alexander Calder",
+        "incorrect_answers": [
+          "Victor Vasarely",
+          "Julio Le Parc",
+          "Naum Gabo"
+        ]
+      },
+      {
+        "difficulty": "hard",
+        "question": "¿Qué pintor es conocido por sus cuadros de bailarinas?",
+        "correct_answer": "Edgar Degas",
+        "incorrect_answers": [
+          "Pierre-Auguste Renoir",
+          "Henri Toulouse-Lautrec",
+          "Paul Gauguin"
+        ]
+      }
+    ]
+  }
+  

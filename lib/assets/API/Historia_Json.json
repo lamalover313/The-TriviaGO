@@ -1,0 +1,475 @@
+{
+    "history_questions": [
+      {
+        "difficulty": "easy",
+        "question": "¿Quién fue el primer presidente de Estados Unidos?",
+        "correct_answer": "George Washington",
+        "incorrect_answers": [
+          "Thomas Jefferson",
+          "Abraham Lincoln",
+          "John Adams"
+        ]
+      },
+      {
+        "difficulty": "easy",
+        "question": "¿En qué año se descubrió América?",
+        "correct_answer": "1492",
+        "incorrect_answers": [
+          "1500",
+          "1453",
+          "1521"
+        ]
+      },
+      {
+        "difficulty": "easy",
+        "question": "¿Quién es conocido como el Libertador de América?",
+        "correct_answer": "Simón Bolívar",
+        "incorrect_answers": [
+          "José de San Martín",
+          "Bernardo O'Higgins",
+          "Antonio José de Sucre"
+        ]
+      },
+      {
+        "difficulty": "easy",
+        "question": "¿Cuál es el nombre del tratado que puso fin a la Primera Guerra Mundial?",
+        "correct_answer": "Tratado de Versalles",
+        "incorrect_answers": [
+          "Tratado de París",
+          "Tratado de Ginebra",
+          "Tratado de Viena"
+        ]
+      },
+      {
+        "difficulty": "easy",
+        "question": "¿Quién fue el líder de los nazis durante la Segunda Guerra Mundial?",
+        "correct_answer": "Adolf Hitler",
+        "incorrect_answers": [
+          "Benito Mussolini",
+          "Joseph Stalin",
+          "Winston Churchill"
+        ]
+      },
+      {
+        "difficulty": "easy",
+        "question": "¿En qué año comenzó la Revolución Francesa?",
+        "correct_answer": "1789",
+        "incorrect_answers": [
+          "1776",
+          "1799",
+          "1804"
+        ]
+      },
+      {
+        "difficulty": "easy",
+        "question": "¿Qué faraón mandó construir la Gran Pirámide de Guiza?",
+        "correct_answer": "Keops",
+        "incorrect_answers": [
+          "Tutankamón",
+          "Ramsés II",
+          "Akhenatón"
+        ]
+      },
+      {
+        "difficulty": "easy",
+        "question": "¿Quién escribió 'El origen de las especies'?",
+        "correct_answer": "Charles Darwin",
+        "incorrect_answers": [
+          "Isaac Newton",
+          "Galileo Galilei",
+          "Albert Einstein"
+        ]
+      },
+      {
+        "difficulty": "easy",
+        "question": "¿Qué imperio fue gobernado por Julio César?",
+        "correct_answer": "Imperio Romano",
+        "incorrect_answers": [
+          "Imperio Griego",
+          "Imperio Persa",
+          "Imperio Otomano"
+        ]
+      },
+      {
+        "difficulty": "easy",
+        "question": "¿Qué civilización construyó Machu Picchu?",
+        "correct_answer": "Inca",
+        "incorrect_answers": [
+          "Azteca",
+          "Maya",
+          "Tolteca"
+        ]
+      },
+      {
+        "difficulty": "easy",
+        "question": "¿Quién pintó la Mona Lisa?",
+        "correct_answer": "Leonardo da Vinci",
+        "incorrect_answers": [
+          "Miguel Ángel",
+          "Rafael",
+          "Donatello"
+        ]
+      },
+      {
+        "difficulty": "easy",
+        "question": "¿En qué año cayó el Muro de Berlín?",
+        "correct_answer": "1989",
+        "incorrect_answers": [
+          "1991",
+          "1985",
+          "1979"
+        ]
+      },
+      {
+        "difficulty": "easy",
+        "question": "¿Quién es conocido como el padre de la independencia de México?",
+        "correct_answer": "Miguel Hidalgo",
+        "incorrect_answers": [
+          "Benito Juárez",
+          "José María Morelos",
+          "Vicente Guerrero"
+        ]
+      },
+      {
+        "difficulty": "easy",
+        "question": "¿Qué país fue invadido por Alemania para comenzar la Segunda Guerra Mundial?",
+        "correct_answer": "Polonia",
+        "incorrect_answers": [
+          "Francia",
+          "Bélgica",
+          "Dinamarca"
+        ]
+      },
+      {
+        "difficulty": "easy",
+        "question": "¿Quién fue el primer hombre en pisar la luna?",
+        "correct_answer": "Neil Armstrong",
+        "incorrect_answers": [
+          "Buzz Aldrin",
+          "Yuri Gagarin",
+          "John Glenn"
+        ]
+      },
+      {
+        "difficulty": "medium",
+        "question": "¿En qué año ocurrió la Revolución Rusa?",
+        "correct_answer": "1917",
+        "incorrect_answers": [
+          "1905",
+          "1914",
+          "1922"
+        ]
+      },
+      {
+        "difficulty": "medium",
+        "question": "¿Quién fue el rey de Inglaterra durante la Guerra de las Rosas?",
+        "correct_answer": "Enrique VI",
+        "incorrect_answers": [
+          "Ricardo III",
+          "Eduardo IV",
+          "Enrique VIII"
+        ]
+      },
+      {
+        "difficulty": "medium",
+        "question": "¿Qué tratado marcó el final de la Guerra de los Treinta Años?",
+        "correct_answer": "Tratado de Westfalia",
+        "incorrect_answers": [
+          "Tratado de Utrecht",
+          "Tratado de Rijswijk",
+          "Tratado de París"
+        ]
+      },
+      {
+        "difficulty": "medium",
+        "question": "¿Quién fue el último emperador del Imperio Romano de Occidente?",
+        "correct_answer": "Rómulo Augústulo",
+        "incorrect_answers": [
+          "Julio César",
+          "Constantino I",
+          "Nerón"
+        ]
+      },
+      {
+        "difficulty": "medium",
+        "question": "¿En qué año se firmó la Declaración de Independencia de Estados Unidos?",
+        "correct_answer": "1776",
+        "incorrect_answers": [
+          "1783",
+          "1775",
+          "1787"
+        ]
+      },
+      {
+        "difficulty": "medium",
+        "question": "¿Cuál fue el conflicto militar más largo del siglo XX?",
+        "correct_answer": "Guerra de Vietnam",
+        "incorrect_answers": [
+          "Primera Guerra Mundial",
+          "Guerra de Corea",
+          "Guerra Civil Española"
+        ]
+      },
+      {
+        "difficulty": "medium",
+        "question": "¿Qué emperador romano adoptó el cristianismo como religión oficial del Imperio?",
+        "correct_answer": "Constantino I",
+        "incorrect_answers": [
+          "Julio César",
+          "Augusto",
+          "Nerón"
+        ]
+      },
+      {
+        "difficulty": "medium",
+        "question": "¿Quién fue el líder de la Revolución Cubana?",
+        "correct_answer": "Fidel Castro",
+        "incorrect_answers": [
+          "Che Guevara",
+          "Raúl Castro",
+          "Camilo Cienfuegos"
+        ]
+      },
+      {
+        "difficulty": "medium",
+        "question": "¿Qué nación construyó la Gran Muralla?",
+        "correct_answer": "China",
+        "incorrect_answers": [
+          "Japón",
+          "India",
+          "Mongolia"
+        ]
+      },
+      {
+        "difficulty": "medium",
+        "question": "¿Quién fue el principal autor del Manifiesto Comunista?",
+        "correct_answer": "Karl Marx",
+        "incorrect_answers": [
+          "Vladimir Lenin",
+          "Joseph Stalin",
+          "Friedrich Engels"
+        ]
+      },
+      {
+        "difficulty": "medium",
+        "question": "¿En qué batalla Napoleón Bonaparte fue derrotado definitivamente?",
+        "correct_answer": "Batalla de Waterloo",
+        "incorrect_answers": [
+          "Batalla de Austerlitz",
+          "Batalla de Trafalgar",
+          "Batalla de Leipzig"
+        ]
+      },
+      {
+        "difficulty": "medium",
+        "question": "¿En qué país se originó la Reforma Protestante?",
+        "correct_answer": "Alemania",
+        "incorrect_answers": [
+          "Inglaterra",
+          "Francia",
+          "Suiza"
+        ]
+      },
+      {
+        "difficulty": "medium",
+        "question": "¿Quién fue el primer emperador de China?",
+        "correct_answer": "Qin Shi Huang",
+        "incorrect_answers": [
+          "Liu Bang",
+          "Kublai Khan",
+          "Han Wudi"
+        ]
+      },
+      {
+        "difficulty": "medium",
+        "question": "¿Qué líder militar fue apodado 'El Zorro del Desierto'?",
+        "correct_answer": "Erwin Rommel",
+        "incorrect_answers": [
+          "George Patton",
+          "Bernard Montgomery",
+          "Douglas MacArthur"
+        ]
+      },
+      {
+        "difficulty": "medium",
+        "question": "¿En qué país se firmó el Tratado de Tordesillas?",
+        "correct_answer": "España",
+        "incorrect_answers": [
+          "Portugal",
+          "Francia",
+          "Italia"
+        ]
+      },
+      {
+        "difficulty": "medium",
+        "question": "¿Qué conflicto fue conocido como 'La Guerra para acabar con todas las guerras'?",
+        "correct_answer": "Primera Guerra Mundial",
+        "incorrect_answers": [
+          "Segunda Guerra Mundial",
+          "Guerra de Crimea",
+          "Guerra de los Cien Años"
+        ]
+      },
+      {
+        "difficulty": "hard",
+        "question": "¿En qué año fue fundada la Universidad de Oxford?",
+        "correct_answer": "1096",
+        "incorrect_answers": [
+          "1200",
+          "1150",
+          "1300"
+        ]
+      },
+      {
+        "difficulty": "hard",
+        "question": "¿Qué emperador romano legalizó el cristianismo?",
+        "correct_answer": "Constantino I",
+        "incorrect_answers": [
+          "Juliano el Apóstata",
+          "Teodosio I",
+          "Diocleciano"
+        ]
+      },
+      {
+        "difficulty": "hard",
+        "question": "¿Cuál fue el primer código de leyes conocido?",
+        "correct_answer": "Código de Hammurabi",
+        "incorrect_answers": [
+          "Ley de las XII Tablas",
+          "Código Justiniano",
+          "Corpus Juris Civilis"
+        ]
+      },
+      {
+        "difficulty": "hard",
+        "question": "¿En qué año se produjo la Revolución Gloriosa en Inglaterra?",
+        "correct_answer": "1688",
+        "incorrect_answers": [
+          "1642",
+          "1701",
+          "1690"
+        ]
+      },
+      {
+        "difficulty": "hard",
+        "question": "¿Qué civilización precolombina construyó la ciudad de Tikal?",
+        "correct_answer": "Maya",
+        "incorrect_answers": [
+          "Azteca",
+          "Inca",
+          "Olmeca"
+        ]
+      },
+      {
+        "difficulty": "hard",
+        "question": "¿Qué dinastía gobernó China durante el siglo XIV?",
+        "correct_answer": "Dinastía Ming",
+        "incorrect_answers": [
+          "Dinastía Tang",
+          "Dinastía Yuan",
+          "Dinastía Song"
+        ]
+      },
+      {
+        "difficulty": "hard",
+        "question": "¿En qué año comenzó la Revolución Mexicana?",
+        "correct_answer": "1910",
+        "incorrect_answers": [
+          "1810",
+          "1821",
+          "1905"
+        ]
+      },
+      {
+        "difficulty": "hard",
+        "question": "¿Qué faraón egipcio fue encontrado en su tumba intacta en 1922?",
+        "correct_answer": "Tutankamón",
+        "incorrect_answers": [
+          "Ramsés II",
+          "Amenofis III",
+          "Akhenatón"
+        ]
+      },
+      {
+        "difficulty": "hard",
+        "question": "¿Qué líder revolucionario fue asesinado en 1924 en México?",
+        "correct_answer": "Pancho Villa",
+        "incorrect_answers": [
+          "Emiliano Zapata",
+          "Venustiano Carranza",
+          "Porfirio Díaz"
+        ]
+      },
+      {
+        "difficulty": "hard",
+        "question": "¿Qué rey francés fue ejecutado durante la Revolución Francesa?",
+        "correct_answer": "Luis XVI",
+        "incorrect_answers": [
+          "Carlos X",
+          "Luis XIV",
+          "Felipe V"
+        ]
+      },
+      {
+        "difficulty": "hard",
+        "question": "¿Qué líder religioso encabezó la rebelión de los Bóxers en China?",
+        "correct_answer": "Yihequan",
+        "incorrect_answers": [
+          "Hong Xiuquan",
+          "Sun Yat-sen",
+          "Mao Zedong"
+        ]
+      },
+      {
+        "difficulty": "hard",
+        "question": "¿Qué país fue invadido por la URSS en 1979?",
+        "correct_answer": "Afganistán",
+        "incorrect_answers": [
+          "Irán",
+          "Pakistán",
+          "Irak"
+        ]
+      },
+      {
+        "difficulty": "hard",
+        "question": "¿Qué guerra enfrentó a Gran Bretaña y a China en el siglo XIX?",
+        "correct_answer": "Guerra del Opio",
+        "incorrect_answers": [
+          "Guerra Anglo-Zulú",
+          "Guerra Anglo-Bóer",
+          "Guerra de Crimea"
+        ]
+      },
+      {
+        "difficulty": "hard",
+        "question": "¿Qué líder militar fue conocido como 'El León de Panjshir'?",
+        "correct_answer": "Ahmad Shah Massoud",
+        "incorrect_answers": [
+          "Osama bin Laden",
+          "Hamid Karzai",
+          "Gulbuddin Hekmatyar"
+        ]
+      },
+      {
+        "difficulty": "hard",
+        "question": "¿Qué emperador romano es conocido por haber dividido el Imperio en Oriente y Occidente?",
+        "correct_answer": "Diocleciano",
+        "incorrect_answers": [
+          "Constantino",
+          "Juliano el Apóstata",
+          "Teodosio"
+        ]
+      },
+      {
+        "difficulty": "hard",
+        "question": "¿En qué año cayó el Imperio Bizantino?",
+        "correct_answer": "1453",
+        "incorrect_answers": [
+          "1492",
+          "1517",
+          "1325"
+        ]
+      }
+    ]
+  }
+  

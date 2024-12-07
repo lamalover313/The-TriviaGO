@@ -53,6 +53,7 @@ class HomePage extends StatelessWidget {
       ),
       body: const Center(
         child: Text('Welcome to TriviaGo!'),
+        //TODO: hacer conexion con api
       ),
     );
   }
