@@ -19,11 +19,11 @@ class MyApp extends StatelessWidget {
     final router = GoRouter(
       routes: [
         GoRoute(
-          path: '/',
+          path: '/home',
           builder: (context, state) => const LoginPage(),
         ),
         GoRoute(
-          path: '/home',
+          path: '/',
           builder: (context, state) => const HomePage(),
         ),
       ],
