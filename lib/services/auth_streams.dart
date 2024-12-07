@@ -20,7 +20,7 @@ class AuthStreamWidget extends StatelessWidget {
             return const LoginPage();
           } else {
             return HomePage(
-                title: FirebaseAuth.instance.currentUser!.displayName);
+                title: FirebaseAuth.instance.currentUser!.displayName ?? 'Home');
           }
         }
         return const Center(child: CircularProgressIndicator());
