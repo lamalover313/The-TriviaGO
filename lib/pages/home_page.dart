@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:myapp/widgets/sign_out_button.dart';
 
 class HomePage extends StatelessWidget {
@@ -51,9 +52,13 @@ class HomePage extends StatelessWidget {
           ],
         ),
       ),
-      body: const Center(
-        child: Text('Welcome to TriviaGo!'),
-        //TODO: hacer conexion con api
+      body: Center(
+        child: ElevatedButton(
+          onPressed: () {
+            context.go('/categories');
+          },
+          child: const Text('Go to Categories'),
+        ),
       ),
     );
   }

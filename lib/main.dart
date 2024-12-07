@@ -21,11 +21,11 @@ class MyApp extends StatelessWidget {
       routes: [
         GoRoute(
           path: '/',
-          builder: (context, state) => const LoginPage(),
+          builder: (context, state) => const HomePage(),
         ),
         GoRoute(
           path: '/home',
-          builder: (context, state) => const HomePage(),
+          builder: (context, state) => const LoginPage(),
         ),
         GoRoute(
           path: '/categories',  // Ruta agregada para CategoriesPage
