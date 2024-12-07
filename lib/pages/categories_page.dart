@@ -41,15 +41,54 @@ class CategoriesPageState extends State<CategoriesPage> {
         ),
       ),
       body: ListView.builder(
-        itemCount: 2,
+        itemCount: 5,
         itemBuilder: (context, index) {
-          return CategoryCard(
-            text: index == 0 ? 'Arte' : 'Ciencia',
-            color: index == 0 ? Colors.red : Colors.green,
-            onTap: () {},
-            isExpanded: _expandedIndex == index,
-            toggleExpansion: () => _toggleExpansion(index),
-          );
+          if (index == 0) {
+            return CategoryCard(
+              text: 'Arte',
+              color: Colors.red,
+              imagePath: 'lib/assets/images/arte.png',
+              onTap: () {},
+              isExpanded: _expandedIndex == index,
+              toggleExpansion: () => _toggleExpansion(index),
+            );
+          } else if (index == 1) {
+            return CategoryCard(
+              text: 'Ciencia',
+              color: Colors.green,
+              imagePath: 'lib/assets/images/ciencia.png',
+              onTap: () {},
+              isExpanded: _expandedIndex == index,
+              toggleExpansion: () => _toggleExpansion(index),
+            );
+          } else if (index == 2) {
+            return CategoryCard(
+              text: 'Deportes',
+              color: Colors.orange,
+              imagePath: 'lib/assets/images/deporte.jpg',
+              onTap: () {},
+              isExpanded: _expandedIndex == index,
+              toggleExpansion: () => _toggleExpansion(index),
+            );
+          } else if (index == 3) {
+            return CategoryCard(
+              text: 'Geografía',
+              color: Colors.blue,
+              imagePath: 'lib/assets/images/geografia.png',
+              onTap: () {},
+              isExpanded: _expandedIndex == index,
+              toggleExpansion: () => _toggleExpansion(index),
+            );
+          } else {
+            return CategoryCard(
+              text: 'Historia',
+              color: Colors.yellow,
+              imagePath: 'lib/assets/images/historia.jpg',
+              onTap: () {},
+              isExpanded: _expandedIndex == index,
+              toggleExpansion: () => _toggleExpansion(index),
+            );
+          }
         },
       ),
     );
