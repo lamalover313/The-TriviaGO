@@ -69,21 +69,36 @@ class CategoryCard extends StatelessWidget {
                           height: 50,
                           color: Colors.white,
                           alignment: Alignment.center,
-                          child: const Text('Fácil'),
+                          child: TextButton(
+                            onPressed: () {},
+                            style: TextButton.styleFrom(
+                                fixedSize: const Size.fromWidth(500)),
+                            child: const Text("Facil"),
+                          ),
                         ),
-                        SizedBox(height: 10),
+                        const SizedBox(height: 10),
                         Container(
                           height: 50,
                           color: Colors.grey.shade300,
                           alignment: Alignment.center,
-                          child: const Text('Medio'),
+                          child: TextButton(
+                            onPressed: () {},
+                            style: TextButton.styleFrom(
+                                fixedSize: const Size.fromWidth(500)),
+                            child: const Text("Medio"),
+                          ),
                         ),
-                        SizedBox(height: 10),
+                        const SizedBox(height: 10),
                         Container(
                           height: 50,
                           color: Colors.grey.shade700,
                           alignment: Alignment.center,
-                          child: const Text('Difícil'),
+                          child: TextButton(
+                            onPressed: () {},
+                            style: TextButton.styleFrom(
+                                fixedSize: const Size.fromWidth(500)),
+                            child: const Text("Dificil"),
+                          ),
                         ),
                       ],
                     ),
