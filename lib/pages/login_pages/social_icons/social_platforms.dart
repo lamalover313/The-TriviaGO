@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:myapp/pages/home_page.dart';
+import 'package:myapp/pages/home_page/home_page.dart';
 import 'package:myapp/pages/login_pages/social_icons/social_snackbar.dart';
 import 'package:myapp/services/auth_services.dart';
 

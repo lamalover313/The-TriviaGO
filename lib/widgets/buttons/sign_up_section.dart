@@ -38,12 +38,16 @@ class SignUpSection extends StatelessWidget {
                   final email = emailController.text;
                   final password = passwordController.text;
                   await LoginController.createUserWithEmailPassword(email, password);
+                  // ignore: use_build_context_synchronously
                   Navigator.pop(context);
+                  // ignore: use_build_context_synchronously
                   ScaffoldMessenger.of(context).showSnackBar(
                     const SnackBar(content: Text('Account created successfully!')),
                   );
                 } catch (e) {
+                  // ignore: use_build_context_synchronously
                   Navigator.pop(context);
+                  // ignore: use_build_context_synchronously
                   ScaffoldMessenger.of(context).showSnackBar(
                     SnackBar(content: Text('Error: $e')),
                   );

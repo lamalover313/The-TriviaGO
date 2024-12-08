@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/classes/models.dart';
 import 'package:myapp/classes/providerArte.dart';
-import 'package:myapp/widgets/custum/custum_appbar.dart';
+import 'package:myapp/widgets/custom/custom_app_bar.dart';
 
 class ArtePage extends StatelessWidget {
   ArtePage({super.key});

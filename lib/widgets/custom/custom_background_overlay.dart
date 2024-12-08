@@ -9,8 +9,8 @@ class BackgroundWithOverlay extends StatelessWidget {
     required this.imagePath,
     required this.overlayText,
     required this.overlayColor,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/classes/providerArte.dart';
-import 'package:myapp/widgets/custum/custom_elevatedButton.dart';
-import 'package:myapp/widgets/custum/custum_appbar.dart';
-import 'package:myapp/widgets/custum/custum_backgroundOverlay.dart';
+import 'package:myapp/widgets/custom/custom_elevated_button.dart';
+import 'package:myapp/widgets/custom/custom_app_bar.dart';
+import 'package:myapp/widgets/custom/custom_background_overlay.dart';
 
 class DeportePage extends StatelessWidget {
   final deprovider = DEProvider();
