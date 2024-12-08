@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:myapp/widgets/sign_out_button.dart';
+import 'package:myapp/widgets/buttons/sign_out_button.dart';
 
 class HomePage extends StatelessWidget {
   final String? title;

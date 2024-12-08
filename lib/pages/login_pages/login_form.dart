@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:myapp/pages/login_pages/login_controller.dart';
-import 'package:myapp/widgets/form_card.dart';
+import 'package:myapp/widgets/cards/form_card.dart';
 import 'package:go_router/go_router.dart';
-import 'package:myapp/widgets/sign_in_button.dart';
+import 'package:myapp/widgets/buttons/sign_in_button.dart';
 
 class LoginForm extends StatefulWidget {
   const LoginForm({super.key});

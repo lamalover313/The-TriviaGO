@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 import 'package:myapp/classes/models.dart';
 import 'package:myapp/classes/providerArte.dart';
+import 'package:myapp/widgets/custum/custum_appbar.dart';
 
 class ArtePage extends StatelessWidget {
   ArtePage({super.key});
@@ -13,16 +13,7 @@ class ArtePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          centerTitle: true,
-          title: const Text('Arte'),
-          leading: IconButton(
-            icon: const Icon(Icons.home),
-            onPressed: () {
-              context.go('/home');
-            },
-          ),
-        ),
+        appBar: const CustomAppBar(title: 'Arte'),
         body: FutureBuilder(
             future: AFProvider().getProductsAsync(),
             builder: (context, snapshot) {

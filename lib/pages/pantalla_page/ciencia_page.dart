@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
-import 'package:myapp/classes/models.dart';
 import 'package:myapp/classes/providerArte.dart';
+import 'package:myapp/widgets/custum/custom_elevatedButton.dart';
+import 'package:myapp/widgets/custum/custum_appbar.dart';
+import 'package:myapp/widgets/custum/custum_backgroundOverlay.dart';
 
 class CienciaPage extends StatelessWidget {
   final ceprovider = CEProvider();
@@ -12,84 +13,41 @@ class CienciaPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        title: const Text('Ciencia'),
-        leading: IconButton(
-          icon: const Icon(Icons.home),
-          onPressed: () {
-            context.go('/home');
-          },
-        ),
-      ),
+      appBar: const CustomAppBar(title: 'Ciencia'),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Stack(
-              children: [
-                Positioned.fill(
-                  child: Opacity(
-                    opacity: 0.3,
-                    child: Image.asset(
-                      'lib/assets/images/ciencia.png',
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                ),
-                Container(
-                  alignment: Alignment.center,
-                  padding: const EdgeInsets.all(16.0),
-                  color: Colors.green.withOpacity(0.6),
-                  height: 200,
-                  child: const Text(
-                    'Bienvenido a la página de Ciencia',
-                    style: TextStyle(
-                      fontSize: 24,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                    ),
-                  ),
-                ),
-              ],
+            const BackgroundWithOverlay(
+              imagePath: 'lib/assets/images/ciencia.png',
+              overlayText: 'Bienvenido a la página de Ciencia',
+              overlayColor: Colors.green,
             ),
             const SizedBox(height: 20),
             Expanded(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  ElevatedButton(
-                    onPressed: () {},
-                    style: ElevatedButton.styleFrom(
-                      minimumSize: const Size(double.infinity, 70),
-                    ),
-                    child: const Text('Botón 1'),
+                  CustomElevatedButton(
+                    label: 'Boton 1',
+                    onPressed: () => print('Boton 1'),
                   ),
                   const SizedBox(height: 10),
-                  ElevatedButton(
-                    onPressed: () {},
-                    style: ElevatedButton.styleFrom(
-                      minimumSize: const Size(double.infinity, 70),
-                    ),
-                    child: const Text('Botón 2'),
+                  CustomElevatedButton(
+                    label: 'Boton 2',
+                    onPressed: () => print('Boton 2'),
                   ),
                   const SizedBox(height: 10),
-                  ElevatedButton(
-                    onPressed: () {},
-                    style: ElevatedButton.styleFrom(
-                      minimumSize: const Size(double.infinity, 70),
-                    ),
-                    child: const Text('Botón 3'),
+                  CustomElevatedButton(
+                    label: 'Boton 3',
+                    onPressed: () => print('Boton 3'),
                   ),
                   const SizedBox(height: 10),
-                  ElevatedButton(
-                    onPressed: () {},
-                    style: ElevatedButton.styleFrom(
-                      minimumSize: const Size(double.infinity, 70),
-                    ),
-                    child: const Text('Botón 4'),
+                  CustomElevatedButton(
+                    label: 'Boton 4',
+                    onPressed: () => print('Boton 4'),
                   ),
                 ],
               ),

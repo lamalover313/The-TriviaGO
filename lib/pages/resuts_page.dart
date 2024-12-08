@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:myapp/widgets/boton_resultado.dart';
+import 'package:myapp/widgets/buttons/boton_resultado.dart';
 
 class ResultsPage extends StatelessWidget {
   const ResultsPage({super.key});
@@ -15,7 +15,7 @@ class ResultsPage extends StatelessWidget {
           children: [
             Column(
               children: [
-                Text(
+                const Text(
                   'Fin del Juego',
                   style: TextStyle(
                     fontSize: 40,
@@ -33,25 +33,25 @@ class ResultsPage extends StatelessWidget {
               ],
             ),
             const Spacer(),
-            Column(
+            const Column(
               children: [
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Icon(Icons.check_circle, size: 50, color: Colors.green),
-                    const SizedBox(width: 10),
+                    SizedBox(width: 10),
                     Text(
                       'Respuestas correctas: 10',
                       style: TextStyle(fontSize: 24),
                     ),
                   ],
                 ),
-                const SizedBox(height: 20),
+                SizedBox(height: 20),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Icon(Icons.cancel, size: 50, color: Colors.red),
-                    const SizedBox(width: 10),
+                    SizedBox(width: 10),
                     Text(
                       'Respuestas incorrectas: 2',
                       style: TextStyle(fontSize: 24),
