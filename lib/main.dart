@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
       routes: [
         GoRoute(
           path: '/',
-          builder: (context, state) => const ArtePage(),//AuthStreamWidget(),
+          builder: (context, state) => const CategoriesPage(),//ArtePage(),//AuthStreamWidget(),
         ),
         GoRoute(
           path: '/home',
