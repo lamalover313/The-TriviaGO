@@ -257,7 +257,7 @@ class GHProvider {
 class HEProvider {
   Future<List<api>> getProductsAsync() async {
     final Uri url = Uri.parse(
-        'https://trivia-unah-is-77b832a4cf3f.herokuapp.com/histoy_questions_easy');
+        'https://trivia-unah-is-77b832a4cf3f.herokuapp.com/history_questions_easy');
 
     try {
       final response = await http.get(url);
@@ -278,7 +278,7 @@ class HEProvider {
 class HMProvider {
   Future<List<api>> getProductsAsync() async {
     final Uri url = Uri.parse(
-        'https://trivia-unah-is-77b832a4cf3f.herokuapp.com/histoy_questions_medium');
+        'https://trivia-unah-is-77b832a4cf3f.herokuapp.com/history_questions_medium');
 
     try {
       final response = await http.get(url);
@@ -299,7 +299,7 @@ class HMProvider {
 class HHProvider {
   Future<List<api>> getProductsAsync() async {
     final Uri url = Uri.parse(
-        'https://trivia-unah-is-77b832a4cf3f.herokuapp.com/histoy_questions_hard');
+        'https://trivia-unah-is-77b832a4cf3f.herokuapp.com/history_questions_hard');
 
     try {
       final response = await http.get(url);
