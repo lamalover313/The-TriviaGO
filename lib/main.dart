@@ -10,6 +10,7 @@ import 'package:myapp/pages/pantalla_page/ciencia_page.dart';
 import 'package:myapp/pages/pantalla_page/deporte_page.dart';
 import 'package:myapp/pages/pantalla_page/geografia_page.dart';
 import 'package:myapp/pages/pantalla_page/historia_page.dart';
+import 'package:myapp/pages/resuts_page.dart';
 //import 'package:myapp/services/auth_streams.dart';  
 
 void main() async {
@@ -27,14 +28,14 @@ class MyApp extends StatelessWidget {
       routes: [
         GoRoute(
           path: '/',
-          builder: (context, state) => const CategoriesPage(),//ArtePage(),//AuthStreamWidget(),
+          builder: (context, state) => const ResultsPage(),//AuthStreamWidget(),
         ),
         GoRoute(
           path: '/home',
           builder: (context, state) => const HomePage(),
         ),
         GoRoute(
-          path: '/categories',  
+          path: '/categoria',  
           builder: (context, state) => const CategoriesPage(),
         ),
         GoRoute(
@@ -56,6 +57,10 @@ class MyApp extends StatelessWidget {
         GoRoute(
           path: '/historia',  
           builder: (context, state) => const HistoriaPage(),
+        ),
+        GoRoute(
+          path: '/resultado',  
+          builder: (context, state) => const ResultsPage(),
         ),
       ],
     );
