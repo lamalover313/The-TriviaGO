@@ -46,9 +46,26 @@ class ArtePage extends StatelessWidget {
                 itemCount: snapshot.data!.length,
                 itemBuilder: (context, index) {
                   final api apppi = snapshot.data![index];
-                  return ListTile(
-                    title: Text(apppi.question),
-                    //subtitle: Text(apppi.incorrectanswers),
+                  return Card(
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        ListTile(
+                          title: Text(apppi.question),
+                        ),
+                        Column(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: [
+                            TextButton(
+                                onPressed: () {},
+                                child: Text(apppi.correctanswer)),
+                            TextButton(
+                                onPressed: () {},
+                                child: Text(apppi.incorrectanswers.toString()))
+                          ],
+                        )
+                      ],
+                    ),
                   );
                 },
               );
