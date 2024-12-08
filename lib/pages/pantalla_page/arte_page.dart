@@ -20,6 +20,7 @@ class ArtePage extends StatelessWidget {
               alignment: Alignment.center,
               padding: const EdgeInsets.all(16.0),
               color: Colors.blue.shade100,
+              height: 200,
               child: const Text(
                 'Bienvenido a la página de Arte',
                 style: TextStyle(
@@ -29,31 +30,33 @@ class ArtePage extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 20),
-            Expanded(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  ElevatedButton(
-                    onPressed: () {},
-                    child: const Text('Botón 1'),
-                  ),
-                  const SizedBox(height: 10),
-                  ElevatedButton(
-                    onPressed: () {},
-                    child: const Text('Botón 2'),
-                  ),
-                  const SizedBox(height: 10),
-                  ElevatedButton(
-                    onPressed: () {},
-                    child: const Text('Botón 3'),
-                  ),
-                  const SizedBox(height: 10),
-                  ElevatedButton(
-                    onPressed: () {},
-                    child: const Text('Botón 4'),
-                  ),
-                ],
+            ElevatedButton(
+              onPressed: () {},
+              style: ElevatedButton.styleFrom(
+                minimumSize: Size(double.infinity, 70), 
               ),
+              child: const Text('Botón 1'),
+            ),
+            ElevatedButton(
+              onPressed: () {},
+              style: ElevatedButton.styleFrom(
+                minimumSize: Size(double.infinity, 70), 
+              ),
+              child: const Text('Botón 2'),
+            ),
+            ElevatedButton(
+              onPressed: () {},
+              style: ElevatedButton.styleFrom(
+                minimumSize: Size(double.infinity, 70), 
+              ),
+              child: const Text('Botón 3'),
+            ),
+            ElevatedButton(
+              onPressed: () {},
+              style: ElevatedButton.styleFrom(
+                minimumSize: Size(double.infinity, 70), 
+              ), 
+              child: const Text('Botón 4'),
             ),
           ],
         ),
