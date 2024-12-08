@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:myapp/widgets/boton_resultado.dart';
 
 class ResultsPage extends StatelessWidget {
   const ResultsPage({super.key});
@@ -62,70 +64,29 @@ class ResultsPage extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                Expanded(
-                  child: ElevatedButton(
-                    onPressed: () {},
-                    style: ElevatedButton.styleFrom(
-                      padding: const EdgeInsets.symmetric(vertical: 20),
-                      backgroundColor: Colors.amber[700],
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      foregroundColor: Colors.white,
-                    ),
-                    child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      children: const [
-                        Icon(Icons.category, size: 30),
-                        SizedBox(height: 8),
-                        Text('Categorías'),
-                      ],
-                    ),
-                  ),
+                BotonResultado(
+                  icon: Icons.category,
+                  text: 'Categorías',
+                  color: Colors.amber[700]!,
+                  onPressed: () {
+                    context.go('/categoria');
+                  },
                 ),
                 const SizedBox(width: 10),
-                Expanded(
-                  child: ElevatedButton(
-                    onPressed: () {},
-                    style: ElevatedButton.styleFrom(
-                      padding: const EdgeInsets.symmetric(vertical: 20),
-                      backgroundColor: Colors.red[700],
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      foregroundColor: Colors.white,
-                    ),
-                    child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      children: const [
-                        Icon(Icons.home, size: 30),
-                        SizedBox(height: 8),
-                        Text('Home'),
-                      ],
-                    ),
-                  ),
+                BotonResultado(
+                  icon: Icons.home,
+                  text: 'Home',
+                  color: Colors.red[700]!,
+                  onPressed: () {
+                    context.go('/home');
+                  },
                 ),
                 const SizedBox(width: 10),
-                Expanded(
-                  child: ElevatedButton(
-                    onPressed: () {},
-                    style: ElevatedButton.styleFrom(
-                      padding: const EdgeInsets.symmetric(vertical: 20),
-                      backgroundColor: Colors.teal[400],
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      foregroundColor: Colors.white,
-                    ),
-                    child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      children: const [
-                        Icon(Icons.refresh, size: 30),
-                        SizedBox(height: 8),
-                        Text('Reintentar'),
-                      ],
-                    ),
-                  ),
+                BotonResultado(
+                  icon: Icons.refresh,
+                  text: 'Reintentar',
+                  color: Colors.teal[400]!,
+                  onPressed: () {},
                 ),
               ],
             ),
