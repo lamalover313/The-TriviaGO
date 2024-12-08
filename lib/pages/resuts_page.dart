@@ -9,7 +9,6 @@ class ResultsPage extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Column(
@@ -31,6 +30,7 @@ class ResultsPage extends StatelessWidget {
                 ),
               ],
             ),
+            const Spacer(),
             Column(
               children: [
                 Row(
@@ -58,20 +58,74 @@ class ResultsPage extends StatelessWidget {
                 ),
               ],
             ),
+            const Spacer(),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                ElevatedButton(
-                  onPressed: () {},
-                  child: const Text('Reintentar'),
+                Expanded(
+                  child: ElevatedButton(
+                    onPressed: () {},
+                    style: ElevatedButton.styleFrom(
+                      padding: const EdgeInsets.symmetric(vertical: 20),
+                      backgroundColor: Colors.amber[700],
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      foregroundColor: Colors.white,
+                    ),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: const [
+                        Icon(Icons.category, size: 30),
+                        SizedBox(height: 8),
+                        Text('Categorías'),
+                      ],
+                    ),
+                  ),
                 ),
-                ElevatedButton(
-                  onPressed: () {},
-                  child: const Text('Volver al menú'),
+                const SizedBox(width: 10),
+                Expanded(
+                  child: ElevatedButton(
+                    onPressed: () {},
+                    style: ElevatedButton.styleFrom(
+                      padding: const EdgeInsets.symmetric(vertical: 20),
+                      backgroundColor: Colors.red[700],
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      foregroundColor: Colors.white,
+                    ),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: const [
+                        Icon(Icons.home, size: 30),
+                        SizedBox(height: 8),
+                        Text('Home'),
+                      ],
+                    ),
+                  ),
                 ),
-                ElevatedButton(
-                  onPressed: () {},
-                  child: const Text('Salir'),
+                const SizedBox(width: 10),
+                Expanded(
+                  child: ElevatedButton(
+                    onPressed: () {},
+                    style: ElevatedButton.styleFrom(
+                      padding: const EdgeInsets.symmetric(vertical: 20),
+                      backgroundColor: Colors.teal[400],
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      foregroundColor: Colors.white,
+                    ),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: const [
+                        Icon(Icons.refresh, size: 30),
+                        SizedBox(height: 8),
+                        Text('Reintentar'),
+                      ],
+                    ),
+                  ),
                 ),
               ],
             ),
