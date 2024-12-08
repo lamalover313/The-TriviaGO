@@ -52,7 +52,13 @@ class ArtePage extends StatelessWidget {
                                 child: Text(apppi.correctanswer)),
                             TextButton(
                                 onPressed: () {},
-                                child: Text(apppi.incorrectanswers.toString()))
+                                child: Text(apppi.incorrectanswer1)),
+                            TextButton(
+                                onPressed: () {},
+                                child: Text(apppi.incorrectanswer2)),
+                            TextButton(
+                                onPressed: () {},
+                                child: Text(apppi.incorrectanswer3)),
                           ],
                         )
                       ],
