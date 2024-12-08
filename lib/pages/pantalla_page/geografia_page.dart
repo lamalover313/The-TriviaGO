@@ -1,8 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:myapp/classes/models.dart';
+import 'package:myapp/classes/providerArte.dart';
 
 class GeografiaPage extends StatelessWidget {
-  const GeografiaPage({super.key});
+  final geprovider = GEProvider();
+  final gmprovider = GMProvider();
+  final ghprovider = GHProvider();
+
+  GeografiaPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +35,7 @@ class GeografiaPage extends StatelessWidget {
                   child: Opacity(
                     opacity: 0.3,
                     child: Image.asset(
-                      'lib/assets/images/geografia.png',  
+                      'lib/assets/images/geografia.png',
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -37,7 +43,7 @@ class GeografiaPage extends StatelessWidget {
                 Container(
                   alignment: Alignment.center,
                   padding: const EdgeInsets.all(16.0),
-                  color: Colors.blue.withOpacity(0.6),  
+                  color: Colors.blue.withOpacity(0.6),
                   height: 200,
                   child: const Text(
                     'Bienvenido a la página de Geografía',

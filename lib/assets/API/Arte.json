@@ -1,5 +1,5 @@
 {
-    "art_questions": [
+    "art_questions_easy": [
       {
         "difficulty": "easy",
         "question": "¿Quién pintó la Mona Lisa?",
@@ -149,7 +149,10 @@
           "La Escuela de Atenas",
           "El Juicio Final"
         ]
-      },
+      }
+    ],
+
+    "art_questions_medium": [
       {
         "difficulty": "medium",
         "question": "¿Qué técnica de pintura es conocida por su uso de pequeños puntos de color?",
@@ -299,8 +302,10 @@
           "El Greco",
           "Bartolomé Esteban Murillo"
         ]
-      },
-      {
+      }
+    ],
+      "art_question_hard":[
+        {
         "difficulty": "hard",
         "question": "¿Qué pintor renacentista es famoso por su uso de la perspectiva en la 'Escuela de Atenas'?",
         "correct_answer": "Rafael",

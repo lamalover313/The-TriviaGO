@@ -1,8 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:myapp/classes/models.dart';
+import 'package:myapp/classes/providerArte.dart';
 
 class DeportePage extends StatelessWidget {
-  const DeportePage({super.key});
+  final deprovider = DEProvider();
+  final dmprovider = DEProvider();
+  final dhprovider = DHProvider();
+
+  DeportePage({super.key});
 
   @override
   Widget build(BuildContext context) {

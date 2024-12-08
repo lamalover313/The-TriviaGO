@@ -81,7 +81,13 @@ flutter:
   - lib/assets/images/deporte.jpg
   - lib/assets/images/geografia.png
   - lib/assets/images/historia.jpg
-
+  #parte de la api
+  
+  - lib/assets/API/Arte.json
+  - lib/assets/API/Ciencia.json
+  - lib/assets/API/Deporte.json
+  - lib/assets/API/Geografia.json
+  - lib/assets/API/Historia.json
   # To add assets to your application, add an assets section, like this:
   # assets:
   #   - images/a_dot_burr.jpeg

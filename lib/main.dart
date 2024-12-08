@@ -1,4 +1,4 @@
-import 'package:firebase_core/firebase_core.dart'; 
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
@@ -11,7 +11,7 @@ import 'package:myapp/pages/pantalla_page/deporte_page.dart';
 import 'package:myapp/pages/pantalla_page/geografia_page.dart';
 import 'package:myapp/pages/pantalla_page/historia_page.dart';
 import 'package:myapp/pages/resuts_page.dart';
-//import 'package:myapp/services/auth_streams.dart';  
+//import 'package:myapp/services/auth_streams.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -28,38 +28,39 @@ class MyApp extends StatelessWidget {
       routes: [
         GoRoute(
           path: '/',
-          builder: (context, state) => const ResultsPage(),//AuthStreamWidget(),
+          builder: (context, state) =>
+              const ResultsPage(), //AuthStreamWidget(),
         ),
         GoRoute(
           path: '/home',
           builder: (context, state) => const HomePage(),
         ),
         GoRoute(
-          path: '/categoria',  
+          path: '/categoria',
           builder: (context, state) => const CategoriesPage(),
         ),
         GoRoute(
-          path: '/arte',  
-          builder: (context, state) => const ArtePage(),
+          path: '/arte',
+          builder: (context, state) => ArtePage(),
         ),
         GoRoute(
-          path: '/ciencia',  
-          builder: (context, state) => const CienciaPage(),
+          path: '/ciencia',
+          builder: (context, state) => CienciaPage(),
         ),
         GoRoute(
-          path: '/deporte',  
-          builder: (context, state) => const DeportePage(),
+          path: '/deporte',
+          builder: (context, state) => DeportePage(),
         ),
         GoRoute(
-          path: '/geografia',  
-          builder: (context, state) => const GeografiaPage(),
+          path: '/geografia',
+          builder: (context, state) => GeografiaPage(),
         ),
         GoRoute(
-          path: '/historia',  
-          builder: (context, state) => const HistoriaPage(),
+          path: '/historia',
+          builder: (context, state) => HistoriaPage(),
         ),
         GoRoute(
-          path: '/resultado',  
+          path: '/resultado',
           builder: (context, state) => const ResultsPage(),
         ),
       ],

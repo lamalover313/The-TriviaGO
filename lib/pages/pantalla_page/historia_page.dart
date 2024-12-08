@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:myapp/classes/models.dart';
+import 'package:myapp/classes/providerArte.dart';
 
 class HistoriaPage extends StatelessWidget {
-  const HistoriaPage({super.key});
+  final heprovider = HEProvider();
+  final hmprovider = HMProvider();
+  final hhprovider = HHProvider();
+  HistoriaPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +34,7 @@ class HistoriaPage extends StatelessWidget {
                   child: Opacity(
                     opacity: 0.3,
                     child: Image.asset(
-                      'lib/assets/images/historia.jpg',  
+                      'lib/assets/images/historia.jpg',
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -37,7 +42,7 @@ class HistoriaPage extends StatelessWidget {
                 Container(
                   alignment: Alignment.center,
                   padding: const EdgeInsets.all(16.0),
-                  color: Colors.yellow.withOpacity(0.6), 
+                  color: Colors.yellow.withOpacity(0.6),
                   height: 200,
                   child: const Text(
                     'Bienvenido a la página de Historia',

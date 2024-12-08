@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:myapp/classes/models.dart';
+import 'package:myapp/classes/providerArte.dart';
 
 class CienciaPage extends StatelessWidget {
-  const CienciaPage({super.key});
+  final ceprovider = CEProvider();
+  final cmprovider = CMProvider();
+  final chprovider = CHProvider();
+  CienciaPage({super.key});
 
   @override
   Widget build(BuildContext context) {
