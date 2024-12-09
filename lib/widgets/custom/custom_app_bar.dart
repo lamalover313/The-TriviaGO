@@ -13,7 +13,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       title: Text(title),
       leading: IconButton(
         icon: const Icon(Icons.home),
-        onPressed: () => context.go('/home'),
+        onPressed: () => context.go('/categoria'),
       ),
     );
   }

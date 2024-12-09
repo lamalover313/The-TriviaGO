@@ -1,46 +1,23 @@
 import 'package:flutter/material.dart';
-import 'package:myapp/classes/providerCategory.dart';
 import 'package:myapp/widgets/cards/category_card.dart';
 
 class CategoriesPage extends StatefulWidget {
   const CategoriesPage({super.key});
 
   @override
-  _CategoriesPageState createState() => _CategoriesPageState();
+  CategoriesPageState createState() => CategoriesPageState();
 }
 
-class _CategoriesPageState extends State<CategoriesPage> {
-  final CategoryProvider _categoryProvider = CategoryProvider();
-  List<String> _categories = [];
-  bool _isLoading = true;
-  int _expandedIndex = -1;
-
-  @override
-  void initState() {
-    super.initState();
-    _loadCategories();
-  }
-
-  Future<void> _loadCategories() async {
-    try {
-      final categories = await _categoryProvider.fetchCategories();
-      setState(() {
-        _categories = categories;
-        _isLoading = false;
-      });
-    } catch (e) {
-      setState(() {
-        _isLoading = false;
-      });
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('Error al cargar categorías: $e')),
-      );
-    }
-  }
+class CategoriesPageState extends State<CategoriesPage> {
+  int? _expandedIndex;
 
   void _toggleExpansion(int index) {
     setState(() {
-      _expandedIndex = _expandedIndex == index ? -1 : index;
+      if (_expandedIndex == index) {
+        _expandedIndex = null;
+      } else {
+        _expandedIndex = index;
+      }
     });
   }
 
@@ -49,26 +26,66 @@ class _CategoriesPageState extends State<CategoriesPage> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: const Text('Categorías'),
+        title: const Text(
+          'Categorías',
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
       ),
       backgroundColor: const Color(0xFF0A0E21),
-      body: _isLoading
-          ? const Center(child: CircularProgressIndicator())
-          : ListView.builder(
-              itemCount: _categories.length,
-              itemBuilder: (context, index) {
-                final category = _categories[index];
-                final imagePath = 'lib/assets/images/${category.toLowerCase()}.png';
-
-                return CategoryCard(
-                  text: category,
-                  color: Colors.primaries[index % Colors.primaries.length],
-                  imagePath: imagePath,
-                  isExpanded: _expandedIndex == index,
-                  toggleExpansion: () => _toggleExpansion(index),
-                );
-              },
-            ),
+      body: ListView.builder(
+        itemCount: 5,
+        itemBuilder: (context, index) {
+          if (index == 0) {
+            return CategoryCard(
+              text: 'Arte',
+              color: Colors.red,
+              imagePath: 'lib/assets/images/arte.png',
+              isExpanded: _expandedIndex == index,
+              toggleExpansion: () => _toggleExpansion(index),
+            );
+          } else if (index == 1) {
+            return CategoryCard(
+              text: 'Ciencia',
+              color: Colors.green,
+              imagePath: 'lib/assets/images/ciencia.png',
+              isExpanded: _expandedIndex == index,
+              toggleExpansion: () => _toggleExpansion(index),
+            );
+          } else if (index == 2) {
+            return CategoryCard(
+              text: 'Deportes',
+              color: Colors.orange,
+              imagePath: 'lib/assets/images/deporte.jpg',
+              isExpanded: _expandedIndex == index,
+              toggleExpansion: () => _toggleExpansion(index),
+            );
+          } else if (index == 3) {
+            return CategoryCard(
+              text: 'Geografía',
+              color: Colors.blue,
+              imagePath: 'lib/assets/images/geografia.png',
+              isExpanded: _expandedIndex == index,
+              toggleExpansion: () => _toggleExpansion(index),
+            );
+          } else {
+            return CategoryCard(
+              text: 'Historia',
+              color: Colors.yellow,
+              imagePath: 'lib/assets/images/historia.jpg',
+              isExpanded: _expandedIndex == index,
+              toggleExpansion: () => _toggleExpansion(index),
+            );
+          }
+        },
+      ),
     );
   }
 }

@@ -1,30 +1,29 @@
 // ignore: camel_case_types
-class Question {
+class api {
+  final String difficulty;
   final String question;
-  final String correctAnswer;
-  final List<String> incorrectAnswers;
+  final String correctanswer;
+  final String incorrectanswer1;
+  final String incorrectanswer2;
+  final String incorrectanswer3;
 
-  Question({
+  api({
+    required this.difficulty,
     required this.question,
-    required this.correctAnswer,
-    required this.incorrectAnswers,
+    required this.correctanswer,
+    required this.incorrectanswer1,
+    required this.incorrectanswer2,
+    required this.incorrectanswer3,
   });
 
-  factory Question.fromJson(Map<String, dynamic> json) {
-    return Question(
-      question: json['question'] as String,
-      correctAnswer: json['correct_answer'] as String,
-      incorrectAnswers: [
-        json['incorrect_answer1'] as String,
-        json['incorrect_answer2'] as String,
-        json['incorrect_answer3'] as String,
-      ],
+  factory api.fromJson(Map<String, dynamic> json) {
+    return api(
+      difficulty: json['difficulty'],
+      question: json['question'],
+      correctanswer: json['correct_answer'],
+      incorrectanswer1: json['incorrect_answer1'],
+      incorrectanswer2: json['incorrect_answer2'],
+      incorrectanswer3: json['incorrect_answer3'],
     );
-  }
-
-  List<String> getShuffledAnswers() {
-    final allAnswers = [...incorrectAnswers, correctAnswer];
-    allAnswers.shuffle();
-    return allAnswers;
   }
 }

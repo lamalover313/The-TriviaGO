@@ -17,10 +17,30 @@ class CategoryCard extends StatelessWidget {
     required this.toggleExpansion,
   });
 
-  void _navigateToPage(BuildContext context, String difficulty) {
-    final sanitizedCategory = text.toLowerCase().replaceAll(' ', '_');
-    context.go('/pantalla/$sanitizedCategory/$difficulty',);
+  void _navigateToPage(BuildContext context) {
+    String route = '';
+    
+    switch (text) {
+      case 'Arte':
+        route = '/arte';
+        break;
+      case 'Ciencia':
+        route = '/ciencia';
+        break;
+      case 'Deportes':
+        route = '/deporte';
+        break;
+      case 'Geografía':
+        route = '/geografia';
+        break;
+      case 'Historia':
+        route = '/historia';
+        break;
+      default:
+        route = '/';
+    }
 
+    context.go(route);
   }
 
   @override
@@ -35,13 +55,10 @@ class CategoryCard extends StatelessWidget {
         children: [
           Positioned.fill(
             child: Opacity(
-              opacity: 0.5, 
+              opacity: 0.3,
               child: Image.asset(
                 imagePath,
                 fit: BoxFit.cover,
-                errorBuilder: (context, error, stackTrace) {
-                  return const Center(child: Icon(Icons.error));
-                },
               ),
             ),
           ),
@@ -72,36 +89,54 @@ class CategoryCard extends StatelessWidget {
                   Container(
                     padding: const EdgeInsets.all(10),
                     child: Column(
-                      children: ['easy', 'medium', 'hard'].map((difficulty) {
-                        final color = difficulty == 'easy'
-                            ? Colors.white
-                            : difficulty == 'medium'
-                                ? Colors.grey.shade300
-                                : Colors.grey.shade700;
-                        return Padding(
-                          padding: const EdgeInsets.only(bottom: 10),
-                          child: Container(
-                            height: 50,
-                            color: color,
-                            alignment: Alignment.center,
-                            child: TextButton(
-                              onPressed: () =>
-                                  _navigateToPage(context, difficulty.toLowerCase()),
-                              child: Text(
-                                difficulty,
-                                style: TextStyle(
-                                  color: difficulty == 'hard'
-                                      ? Colors.white70
-                                      : Colors.black,
-                                  fontWeight: difficulty == 'hard'
-                                      ? FontWeight.bold
-                                      : null,
-                                ),
-                              ),
+                      children: [
+                        Container(
+                          height: 50,
+                          color: Colors.white,
+                          alignment: Alignment.center,
+                          child: TextButton(
+                            onPressed: () {
+                              _navigateToPage(context);
+                            },
+                            style: TextButton.styleFrom(
+                                fixedSize: const Size.fromWidth(500)),
+                            child: const Text("Facil"),
+                          ),
+                        ),
+                        const SizedBox(height: 10),
+                        Container(
+                          height: 50,
+                          color: Colors.grey.shade300,
+                          alignment: Alignment.center,
+                          child: TextButton(
+                            onPressed: () {
+                              _navigateToPage(context);
+                            },
+                            style: TextButton.styleFrom(
+                                fixedSize: const Size.fromWidth(500)),
+                            child: const Text("Medio"),
+                          ),
+                        ),
+                        const SizedBox(height: 10),
+                        Container(
+                          height: 50,
+                          color: Colors.grey.shade700,
+                          alignment: Alignment.center,
+                          child: TextButton(
+                            onPressed: () {
+                              _navigateToPage(context);
+                            },
+                            style: TextButton.styleFrom(
+                                fixedSize: const Size.fromWidth(500)),
+                            child: const Text(
+                              "Dificil",
+                              style: TextStyle(
+                                  color: Colors.white70,
+                                  fontWeight: FontWeight.bold),
                             ),
                           ),
-                        );
-                      }).toList(),
+                        ),
+                      ],
                     ),
                   ),
               ],
