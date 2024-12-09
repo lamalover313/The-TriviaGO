@@ -45,6 +45,19 @@ class MyApp extends StatelessWidget {
         path: '/resultado',
         builder: (context, state) => const ResultsPage(),
       ),
+      GoRoute(
+        path: '/pantalla/:category/:difficulty',
+        builder: (context, state) {
+          final category = state.pathParameters['category'] ?? '';
+          final difficulty = state.pathParameters['difficulty'] ?? '';
+          return PantallaPage(
+            params: {
+              'category': category,
+              'difficulty': difficulty,
+            },
+          );
+        },
+      ),
     ],
   );
 

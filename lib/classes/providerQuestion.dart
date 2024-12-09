@@ -7,8 +7,11 @@ class QuestionProvider {
   static const String _baseUrl = 'https://trivia-unah-is-77b832a4cf3f.herokuapp.com/';
 
   Future<List<api>> fetchQuestions(String category, String difficulty) async {
-    if (category == 'art' && difficulty == 'hard') {
-      throw Exception("No 'hard' questions available for the 'art' category.");
+    final validCategories = ['science', 'sports', 'geography', 'history'];
+    final validDifficulties = ['easy', 'medium', 'hard'];
+
+    if (!validCategories.contains(category) || !validDifficulties.contains(difficulty)) {
+      throw Exception("Categoría o dificultad inválida.");
     }
 
     final String endpoint = '${category}_questions_$difficulty';
@@ -30,7 +33,6 @@ class QuestionProvider {
 }
 
 class QuestionService {
-  // Método para obtener preguntas desde una API externa
   static Future<List<Question>> fetchQuestions(String category, String difficulty) async {
     try {
       final url = Uri.parse(

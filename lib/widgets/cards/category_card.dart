@@ -19,9 +19,10 @@ class CategoryCard extends StatelessWidget {
 
   void _navigateToPage(BuildContext context, String difficulty) {
     final sanitizedText = text.toLowerCase().replaceAll(' ', '_');
-    final route = '/${sanitizedText}_$difficulty';
-    context.go(route);
+    final route = '/pantalla/$sanitizedText/$difficulty';
+    context.go(route);  // Using GoRouter to navigate
   }
+
 
   @override
   Widget build(BuildContext context) {
