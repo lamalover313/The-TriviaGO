@@ -18,11 +18,10 @@ class CategoryCard extends StatelessWidget {
   });
 
   void _navigateToPage(BuildContext context, String difficulty) {
-    final sanitizedText = text.toLowerCase().replaceAll(' ', '_');
-    final route = '/pantalla/$sanitizedText/$difficulty';
-    context.go(route);  // Using GoRouter to navigate
-  }
+    final sanitizedCategory = text.toLowerCase().replaceAll(' ', '_');
+    context.go('/pantalla/$sanitizedCategory/$difficulty',);
 
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -73,10 +72,10 @@ class CategoryCard extends StatelessWidget {
                   Container(
                     padding: const EdgeInsets.all(10),
                     child: Column(
-                      children: ['Facil', 'Medio', 'Dificil'].map((difficulty) {
-                        final color = difficulty == 'Facil'
+                      children: ['easy', 'medium', 'hard'].map((difficulty) {
+                        final color = difficulty == 'easy'
                             ? Colors.white
-                            : difficulty == 'Medio'
+                            : difficulty == 'medium'
                                 ? Colors.grey.shade300
                                 : Colors.grey.shade700;
                         return Padding(
@@ -91,10 +90,10 @@ class CategoryCard extends StatelessWidget {
                               child: Text(
                                 difficulty,
                                 style: TextStyle(
-                                  color: difficulty == 'Dificil'
+                                  color: difficulty == 'hard'
                                       ? Colors.white70
                                       : Colors.black,
-                                  fontWeight: difficulty == 'Dificil'
+                                  fontWeight: difficulty == 'hard'
                                       ? FontWeight.bold
                                       : null,
                                 ),

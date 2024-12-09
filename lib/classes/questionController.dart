@@ -11,21 +11,17 @@ class QuestionController extends GetxController {
   int get correctAnswers => _correctAnswers.value;
   int get incorrectAnswers => _incorrectAnswers.value;
 
-   Future<void> fetchQuestions(String category, String difficulty) async {
+  Future<void> fetchQuestions(String category, String difficulty) async {
     try {
-      final fetchedQuestions = await QuestionService.fetchQuestions(category, difficulty);
+      final fetchedQuestions = await QuestionProvider().fetchQuestions(category, difficulty);
       _questions.assignAll(fetchedQuestions);
       resetScores();
     } catch (e) {
-      Get.snackbar(
-        'Error',
-        'No se pudieron cargar las preguntas: $e',
-        snackPosition: SnackPosition.BOTTOM,
-      );
+      Get.snackbar('Error', 'Failed to load questions: $e');
     }
   }
 
-   void checkAnswer(String selectedAnswer, String correctAnswer) {
+  void checkAnswer(String selectedAnswer, String correctAnswer) {
     if (selectedAnswer == correctAnswer) {
       _correctAnswers.value++;
     } else {
@@ -33,7 +29,7 @@ class QuestionController extends GetxController {
     }
   }
 
-   void resetScores() {
+  void resetScores() {
     _correctAnswers.value = 0;
     _incorrectAnswers.value = 0;
   }

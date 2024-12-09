@@ -51,13 +51,13 @@ class _CategoriesPageState extends State<CategoriesPage> {
         centerTitle: true,
         title: const Text('Categorías'),
       ),
+      backgroundColor: const Color(0xFF0A0E21),
       body: _isLoading
           ? const Center(child: CircularProgressIndicator())
           : ListView.builder(
               itemCount: _categories.length,
               itemBuilder: (context, index) {
                 final category = _categories[index];
-
                 final imagePath = 'lib/assets/images/${category.toLowerCase()}.png';
 
                 return CategoryCard(

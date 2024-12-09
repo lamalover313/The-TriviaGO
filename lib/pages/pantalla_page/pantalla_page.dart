@@ -1,30 +1,27 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
-import 'package:myapp/classes/providerQuestion.dart';
+import 'package:myapp/classes/questionController.dart';
+import 'package:get/get.dart';
 
 class PantallaPage extends StatelessWidget {
-  final Map<String, dynamic> params;
+  final String category;
+  final String difficulty;
 
-  const PantallaPage({super.key, required this.params});
+  const PantallaPage({
+    required this.category,
+    required this.difficulty,
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
-    final category = params['category'];
-    final difficulty = params['difficulty'];
-    final questionProvider = QuestionProvider();
+    final controller = Get.put(QuestionController());
 
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.blueGrey,
-        centerTitle: true,
-        title: Text('Trivia: $category ($difficulty)'),
-        leading: IconButton(
-          icon: const Icon(Icons.home),
-          onPressed: () => context.go('/home'),
-        ),
+        title: Text('$category ($difficulty)'),
       ),
       body: FutureBuilder(
-        future: questionProvider.fetchQuestions(category, difficulty),
+        future: controller.fetchQuestions(category, difficulty),
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
             return const Center(child: CircularProgressIndicator());
@@ -33,9 +30,9 @@ class PantallaPage extends StatelessWidget {
             return Center(child: Text('Error: ${snapshot.error}'));
           }
 
-          final questions = snapshot.data ?? [];
+          final questions = controller.questions;
           if (questions.isEmpty) {
-            return const Center(child: Text('No hay preguntas disponibles.',style: TextStyle(fontSize: 18)));
+            return const Center(child: Text('No questions available'));
           }
 
           return ListView.builder(
@@ -44,17 +41,12 @@ class PantallaPage extends StatelessWidget {
               final question = questions[index];
               return Card(
                 child: Column(
-                  mainAxisSize: MainAxisSize.min,
                   children: [
                     ListTile(title: Text(question.question)),
-                    ...[
-                      question.correctanswer,
-                      question.incorrectanswer1,
-                      question.incorrectanswer2,
-                      question.incorrectanswer3,
-                    ].map((answer) {
+                    ...question.getShuffledAnswers().map((answer) {
                       return TextButton(
                         onPressed: () {
+                          controller.checkAnswer(answer, question.correctAnswer);
                         },
                         child: Text(answer),
                       );

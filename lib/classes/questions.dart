@@ -9,7 +9,6 @@ class Question {
     required this.incorrectAnswers,
   });
 
-  // Constructor para crear instancias a partir de datos JSON
   factory Question.fromJson(Map<String, dynamic> json) {
     return Question(
       question: json['question'] as String,
@@ -18,7 +17,6 @@ class Question {
     );
   }
 
-  // Método para obtener todas las opciones en orden aleatorio
   List<String> getShuffledAnswers() {
     final allAnswers = [...incorrectAnswers, correctAnswer];
     allAnswers.shuffle();
