@@ -17,31 +17,12 @@ class CategoryCard extends StatelessWidget {
     required this.toggleExpansion,
   });
 
-  void _navigateToPage(BuildContext context) {
-    String route = '';
-    
-    switch (text) {
-      case 'Arte':
-        route = '/arte';
-        break;
-      case 'Ciencia':
-        route = '/ciencia';
-        break;
-      case 'Deportes':
-        route = '/deporte';
-        break;
-      case 'Geografía':
-        route = '/geografia';
-        break;
-      case 'Historia':
-        route = '/historia';
-        break;
-      default:
-        route = '/';
-    }
-
+  void _navigateToPage(BuildContext context, String difficulty) {
+    final sanitizedText = text.toLowerCase().replaceAll(' ', '_');
+    final route = '/${sanitizedText}_$difficulty';
     context.go(route);
   }
+
 
   @override
   Widget build(BuildContext context) {
@@ -89,56 +70,33 @@ class CategoryCard extends StatelessWidget {
                   Container(
                     padding: const EdgeInsets.all(10),
                     child: Column(
-                      children: [
-                        Container(
+                      children: ['Facil', 'Medio', 'Dificil'].map((difficulty) {
+                        final color = difficulty == 'Facil'
+                          ? Colors.white
+                          : difficulty == 'Medio'
+                          ? Colors.grey.shade300
+                          : Colors.grey.shade700;
+                        return Padding(
+                        padding: const EdgeInsets.only(bottom: 10),
+                        child: Container(
                           height: 50,
-                          color: Colors.white,
+                          color: color,
                           alignment: Alignment.center,
                           child: TextButton(
-                            onPressed: () {
-                              _navigateToPage(context);
-                            },
-                            style: TextButton.styleFrom(
-                                fixedSize: const Size.fromWidth(500)),
-                            child: const Text("Facil"),
-                          ),
-                        ),
-                        const SizedBox(height: 10),
-                        Container(
-                          height: 50,
-                          color: Colors.grey.shade300,
-                          alignment: Alignment.center,
-                          child: TextButton(
-                            onPressed: () {
-                              _navigateToPage(context);
-                            },
-                            style: TextButton.styleFrom(
-                                fixedSize: const Size.fromWidth(500)),
-                            child: const Text("Medio"),
-                          ),
-                        ),
-                        const SizedBox(height: 10),
-                        Container(
-                          height: 50,
-                          color: Colors.grey.shade700,
-                          alignment: Alignment.center,
-                          child: TextButton(
-                            onPressed: () {
-                              _navigateToPage(context);
-                            },
-                            style: TextButton.styleFrom(
-                                fixedSize: const Size.fromWidth(500)),
-                            child: const Text(
-                              "Dificil",
+                            onPressed: () => _navigateToPage(context, difficulty.toLowerCase()),
+                            child: Text(
+                              difficulty,
                               style: TextStyle(
-                                  color: Colors.white70,
-                                  fontWeight: FontWeight.bold),
+                                color: difficulty == 'Dificil' ? Colors.white70 : Colors.black,
+                                fontWeight: difficulty == 'Dificil' ? FontWeight.bold : null,
+                              ),
                             ),
                           ),
                         ),
-                      ],
-                    ),
+                      );
+                    }).toList(),
                   ),
+                )
               ],
             ),
           ),
@@ -147,3 +105,9 @@ class CategoryCard extends StatelessWidget {
     );
   }
 }
+
+/* 
+
+ Inside `if (isExpanded)`
+
+*/

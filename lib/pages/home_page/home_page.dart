@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
-import 'package:myapp/widgets/buttons/sign_out_button.dart';
+import 'package:myapp/pages/home_page/profile_selector.dart';
+import 'package:myapp/widgets/custom/header_section.dart';
+import 'package:myapp/widgets/buttons/start_trivia_button.dart';
 
 class HomePage extends StatelessWidget {
   final String? title;
@@ -10,55 +11,31 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(title != null ? 'Welcome, $title' : 'Welcome'),
-        actions: const [
-          SignOutButton(),
-        ],
-      ),
-      drawer: Drawer(
-        child: ListView(
-          padding: EdgeInsets.zero,
-          children: [
-            DrawerHeader(
-              decoration: BoxDecoration(
-                color: Theme.of(context).primaryColor,
-              ),
+      body: Stack(
+        children: [
+          Container(
+            decoration: const BoxDecoration(
+              color: Color(0xFF0A0E21), 
+            ),
+          ),
+          SafeArea(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  CircleAvatar(
-                    radius: 30,
-                    backgroundColor: Colors.white,
-                    child: Icon(
-                      Icons.person,
-                      size: 40,
-                      color: Theme.of(context).primaryColor,
-                    ),
-                  ),
-                  const SizedBox(height: 10),
-                  Text(
-                    title != null ? 'Hello, $title!' : 'Hello, Guest!',
-                    style: const TextStyle(
-                      color: Colors.white,
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
+                  const Spacer(flex: 2),
+                  HeaderSection(title: title),
+                  const Spacer(),
+                  const ProfileSelector(),
+                  const Spacer(),
+                  const StartTriviaButton(),
+                  const Spacer(flex: 2),
                 ],
               ),
             ),
-          ],
-        ),
-      ),
-      body: Center(
-        child: ElevatedButton(
-          onPressed: () {
-            context.go('/categories');
-          },
-          child: const Text('Go to Categories'),
-        ),
+          ),
+        ],
       ),
     );
   }
