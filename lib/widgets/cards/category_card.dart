@@ -23,7 +23,6 @@ class CategoryCard extends StatelessWidget {
     context.go(route);
   }
 
-
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -36,10 +35,13 @@ class CategoryCard extends StatelessWidget {
         children: [
           Positioned.fill(
             child: Opacity(
-              opacity: 0.3,
+              opacity: 0.5, 
               child: Image.asset(
                 imagePath,
                 fit: BoxFit.cover,
+                errorBuilder: (context, error, stackTrace) {
+                  return const Center(child: Icon(Icons.error));
+                },
               ),
             ),
           ),
@@ -72,31 +74,36 @@ class CategoryCard extends StatelessWidget {
                     child: Column(
                       children: ['Facil', 'Medio', 'Dificil'].map((difficulty) {
                         final color = difficulty == 'Facil'
-                          ? Colors.white
-                          : difficulty == 'Medio'
-                          ? Colors.grey.shade300
-                          : Colors.grey.shade700;
+                            ? Colors.white
+                            : difficulty == 'Medio'
+                                ? Colors.grey.shade300
+                                : Colors.grey.shade700;
                         return Padding(
-                        padding: const EdgeInsets.only(bottom: 10),
-                        child: Container(
-                          height: 50,
-                          color: color,
-                          alignment: Alignment.center,
-                          child: TextButton(
-                            onPressed: () => _navigateToPage(context, difficulty.toLowerCase()),
-                            child: Text(
-                              difficulty,
-                              style: TextStyle(
-                                color: difficulty == 'Dificil' ? Colors.white70 : Colors.black,
-                                fontWeight: difficulty == 'Dificil' ? FontWeight.bold : null,
+                          padding: const EdgeInsets.only(bottom: 10),
+                          child: Container(
+                            height: 50,
+                            color: color,
+                            alignment: Alignment.center,
+                            child: TextButton(
+                              onPressed: () =>
+                                  _navigateToPage(context, difficulty.toLowerCase()),
+                              child: Text(
+                                difficulty,
+                                style: TextStyle(
+                                  color: difficulty == 'Dificil'
+                                      ? Colors.white70
+                                      : Colors.black,
+                                  fontWeight: difficulty == 'Dificil'
+                                      ? FontWeight.bold
+                                      : null,
+                                ),
                               ),
                             ),
                           ),
-                        ),
-                      );
-                    }).toList(),
+                        );
+                      }).toList(),
+                    ),
                   ),
-                )
               ],
             ),
           ),
@@ -105,9 +112,3 @@ class CategoryCard extends StatelessWidget {
     );
   }
 }
-
-/* 
-
- Inside `if (isExpanded)`
-
-*/
