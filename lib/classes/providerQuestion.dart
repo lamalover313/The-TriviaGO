@@ -8,7 +8,7 @@ class QuestionProvider {
   static const List<String> categories = ['science', 'sports', 'geography', 'history'];
   static const List<String> difficulties = ['easy', 'medium', 'hard'];
 
-  Future<List<api>> fetchQuestions(String category, String difficulty) async {
+  Future<List<Question>> fetchQuestions(String category, String difficulty) async {
     if (!categories.contains(category) || !difficulties.contains(difficulty)) {
       throw Exception('Invalid category or difficulty');
     }
