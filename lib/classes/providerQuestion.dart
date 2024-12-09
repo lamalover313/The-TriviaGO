@@ -7,6 +7,10 @@ class QuestionProvider {
   static const String _baseUrl = 'https://trivia-unah-is-77b832a4cf3f.herokuapp.com/';
 
   Future<List<api>> fetchQuestions(String category, String difficulty) async {
+    if (category == 'art' && difficulty == 'hard') {
+      throw Exception("No 'hard' questions available for the 'art' category.");
+    }
+
     final String endpoint = '${category}_questions_$difficulty';
     final Uri url = Uri.parse('$_baseUrl$endpoint');
 
@@ -36,7 +40,6 @@ class QuestionService {
       if (response.statusCode == 200) {
         final data = jsonDecode(response.body);
 
-        // Verificamos que la respuesta de la API tenga resultados
         if (data['response_code'] == 0) {
           final questions = data['results'] as List;
 

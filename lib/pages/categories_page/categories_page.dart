@@ -15,10 +15,10 @@ class _CategoriesPageState extends State<CategoriesPage> {
   final QuestionProvider _questionProvider = QuestionProvider();
   final CategoryProvider _categoryProvider = CategoryProvider();
 
-  bool _isLoading = false; 
-  List<String> _categories = []; 
-  List<Map<String, dynamic>> _questions = []; 
-  int _expandedIndex = -1; 
+  bool _isLoading = false;
+  List<String> _categories = [];
+  List<Map<String, dynamic>> _questions = [];
+  int _expandedIndex = -1;
 
   @override
   void initState() {
@@ -30,8 +30,9 @@ class _CategoriesPageState extends State<CategoriesPage> {
     setState(() => _isLoading = true);
     try {
       final categories = await _categoryProvider.fetchCategories();
+      // Exclude "art" category from the list entirely
       setState(() {
-        _categories = categories;
+        _categories = categories.where((category) => category != 'art').toList();
         _isLoading = false;
       });
     } catch (e) {
@@ -65,13 +66,9 @@ class _CategoriesPageState extends State<CategoriesPage> {
     showModalBottomSheet(
       context: context,
       builder: (BuildContext context) {
-        List<String> availableDifficulties = (category == 'art') 
-            ? ['easy', 'medium']  
-            : difficulties;
-
         return Column(
           mainAxisSize: MainAxisSize.min,
-          children: availableDifficulties.map((difficulty) {
+          children: difficulties.map((difficulty) {
             return ListTile(
               title: Text(difficulty.toUpperCase()),
               onTap: () {
