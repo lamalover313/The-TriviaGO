@@ -48,15 +48,15 @@ class MyApp extends StatelessWidget {
         ),
         GoRoute(
           path: '/deporte',
-          builder: (context, state) => DeportePage(),
+          builder: (context, state) => const DeportePage(),
         ),
         GoRoute(
           path: '/geografia',
-          builder: (context, state) => GeografiaPage(),
+          builder: (context, state) => const GeografiaPage(),
         ),
         GoRoute(
           path: '/historia',
-          builder: (context, state) => HistoriaPage(),
+          builder: (context, state) => const HistoriaPage(),
         ),
         GoRoute(
           path: '/resultado',

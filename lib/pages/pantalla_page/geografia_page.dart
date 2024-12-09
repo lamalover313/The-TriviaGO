@@ -23,6 +23,7 @@ class _GeografiaPageState extends State<GeografiaPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const CustomAppBar(title: 'Geografía'),
+      backgroundColor: const Color(0xFF0A0E21),
       body: FutureBuilder(
         future: geprovider.getProductsAsync(),
         builder: (context, snapshot) {
@@ -95,7 +96,7 @@ class _GeografiaPageState extends State<GeografiaPage> {
                             ),
                             elevation: 5,
                             shadowColor: Colors.blue.withOpacity(0.5),
-                            side: BorderSide(color: Colors.blueAccent, width: 2),
+                            side: const BorderSide(color: Colors.blueAccent, width: 2),
                           ),
                           onPressed: () {
                             setState(() {
@@ -109,20 +110,20 @@ class _GeografiaPageState extends State<GeografiaPage> {
                           ),
                         ),
                       );
-                    }).toList(),
+                    }),
 
                     // Confirmación de respuesta
                     if (isAnswerCorrect)
-                      Padding(
-                        padding: const EdgeInsets.only(top: 16),
+                      const Padding(
+                        padding: EdgeInsets.only(top: 16),
                         child: Text(
                           '¡Respuesta Correcta!',
                           style: TextStyle(color: Colors.green, fontSize: 20, fontWeight: FontWeight.bold),
                         ),
                       )
-                    else if (isAnswerCorrect != null && !isAnswerCorrect)
-                      Padding(
-                        padding: const EdgeInsets.only(top: 16),
+                    else if (!isAnswerCorrect)
+                      const Padding(
+                        padding: EdgeInsets.only(top: 16),
                         child: Text(
                           'Respuesta Incorrecta',
                           style: TextStyle(color: Colors.red, fontSize: 20, fontWeight: FontWeight.bold),

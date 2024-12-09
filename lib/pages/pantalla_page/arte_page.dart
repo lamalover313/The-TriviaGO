@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:myapp/classes/models.dart';
 import 'package:myapp/classes/providerCategory.dart';
+import 'package:myapp/classes/questionController.dart';
 import 'package:myapp/widgets/custom/custom_app_bar.dart';
 
 class ArtePage extends StatelessWidget {
@@ -14,6 +16,7 @@ class ArtePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const CustomAppBar(title: 'Arte'),
+      backgroundColor: const Color(0xFF0A0E21),
       body: FutureBuilder(
         future: afprovider.getProductsAsync(),
         builder: (context, snapshot) {
@@ -34,7 +37,8 @@ class ArtePage extends StatelessWidget {
             itemBuilder: (context, index) {
               final api apppi = snapshot.data![index];
               return Padding(
-                padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+                padding:
+                    const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
                 child: Card(
                   elevation: 8,
                   shape: RoundedRectangleBorder(
@@ -43,7 +47,7 @@ class ArtePage extends StatelessWidget {
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(16),
                     child: Container(
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                         gradient: LinearGradient(
                           colors: [Colors.orangeAccent, Colors.pinkAccent],
                           begin: Alignment.topLeft,
@@ -57,23 +61,37 @@ class ArtePage extends StatelessWidget {
                           ListTile(
                             title: Text(
                               apppi.question,
-                              style: TextStyle(
+                              style: const TextStyle(
                                 fontSize: 20,
                                 fontWeight: FontWeight.bold,
                                 color: Colors.white,
-                                fontFamily: 'Georgia', // Estilo tipográfico artístico
+                                fontFamily:
+                                    'Georgia', // Estilo tipográfico artístico
                               ),
                             ),
                           ),
                           // Opciones de respuesta con botones interactivos
                           Column(
                             children: [
-                              _buildAnswerButton(context, apppi.correctanswer, Colors.green),
-                              _buildAnswerButton(context, apppi.incorrectanswer1, Colors.red),
-                              _buildAnswerButton(context, apppi.incorrectanswer2, Colors.blue),
-                              _buildAnswerButton(context, apppi.incorrectanswer3, Colors.yellow),
+                              _buildAnswerButton(context, apppi.correctanswer,
+                                  0, apppi.correctanswer),
+                              _buildAnswerButton(
+                                  context,
+                                  apppi.incorrectanswer1,
+                                  1,
+                                  apppi.correctanswer),
+                              _buildAnswerButton(
+                                  context,
+                                  apppi.incorrectanswer2,
+                                  2,
+                                  apppi.correctanswer),
+                              _buildAnswerButton(
+                                  context,
+                                  apppi.incorrectanswer3,
+                                  3,
+                                  apppi.correctanswer),
                             ],
-                          ),
+                          )
                         ],
                       ),
                     ),
@@ -87,29 +105,54 @@ class ArtePage extends StatelessWidget {
     );
   }
 
-  // Función para crear botones con respuesta estilizados
-  Widget _buildAnswerButton(BuildContext context, String answer, Color color) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 6, horizontal: 20),
-      child: ElevatedButton(
-        style: ElevatedButton.styleFrom(
-          foregroundColor: Colors.white, backgroundColor: color,
-          padding: const EdgeInsets.symmetric(vertical: 14),
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(12),
-          ),
-          elevation: 5,
-          shadowColor: color.withOpacity(0.4),
+  Widget _buildAnswerButton(
+      BuildContext context, String answer, int index, String correctAnswer) {
+    QuestionController controller = Get.put(QuestionController());
+    return GestureDetector(
+      onTap: () {
+        controller.checkAnswer(answer, correctAnswer);
+      },
+      child: Container(
+        margin: const EdgeInsets.only(top: 10),
+        padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
+        decoration: BoxDecoration(
+          border: Border.all(color: Colors.grey.shade300),
+          borderRadius: BorderRadius.circular(15),
+          color: Colors.white,
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withOpacity(0.1),
+              blurRadius: 5,
+              spreadRadius: 1,
+              offset: const Offset(0, 2),
+            ),
+          ],
         ),
-        onPressed: () {
-          print("Respuesta seleccionada: $answer");
-        },
-        child: Text(
-          answer,
-          style: const TextStyle(
-            fontSize: 18,
-            fontWeight: FontWeight.bold,
-          ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            // Número de la opción
+            Text(
+              "${index + 1}. $answer",
+              style: const TextStyle(color: Colors.black, fontSize: 16),
+            ),
+            // Indicador de selección
+            Container(
+              height: 26,
+              width: 26,
+              decoration: BoxDecoration(
+                color: Colors.transparent,
+                borderRadius: BorderRadius.circular(50),
+                border: Border.all(color: Colors.grey.shade300),
+              ),
+              child: const Icon(
+                Icons.check_circle_outline,
+                size: 20,
+                color: Colors
+                    .transparent, // Esto puede cambiar cuando la respuesta sea seleccionada
+              ),
+            ),
+          ],
         ),
       ),
     );

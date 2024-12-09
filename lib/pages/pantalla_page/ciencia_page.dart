@@ -23,6 +23,7 @@ class _CienciaPageState extends State<CienciaPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const CustomAppBar(title: 'Ciencia'),
+      backgroundColor: const Color(0xFF0A0E21),
       body: FutureBuilder(
         future: ceprovider.getProductsAsync(),
         builder: (context, snapshot) {
