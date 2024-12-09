@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:myapp/classes/providerCategory.dart';
 import 'package:myapp/widgets/cards/category_card.dart';
 
-const List<String> difficulties = ['easy', 'medium', 'hard'];
+const List<String> difficulties = ['easy', 'medium'];
 
 class CategoriesPage extends StatefulWidget {
   const CategoriesPage({super.key});
@@ -30,7 +30,6 @@ class _CategoriesPageState extends State<CategoriesPage> {
     setState(() => _isLoading = true);
     try {
       final categories = await _categoryProvider.fetchCategories();
-      // Exclude "art" category from the list entirely
       setState(() {
         _categories = categories.where((category) => category != 'art').toList();
         _isLoading = false;
