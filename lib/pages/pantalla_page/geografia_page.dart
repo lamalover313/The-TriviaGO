@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:myapp/classes/models.dart';
 import 'package:myapp/classes/providerCategory.dart';
 import 'package:myapp/widgets/custom/custom_app_bar.dart';
@@ -146,7 +147,22 @@ class _GeografiaPageState extends State<GeografiaPage> {
                       ),
                     ),
                   );
-                }),
+                }).toList(),
+                if (_currentIndex >= _controller.questions.length - 1)
+                  ElevatedButton(
+                    onPressed: () => context.go('/resultado'),
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.green,
+                      padding: const EdgeInsets.symmetric(vertical: 12),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                    ),
+                    child: const Text(
+                      'Finalizar',
+                      style: TextStyle(fontSize: 18, color: Colors.white),
+                    ),
+                  ),
               ],
             ),
           );

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/classes/models.dart';
+import 'package:go_router/go_router.dart';
 import 'package:myapp/classes/providerCategory.dart';
 import 'package:myapp/widgets/custom/custom_app_bar.dart';
 import 'package:get/get.dart';
@@ -38,8 +39,8 @@ class _DeportePageState extends State<DeportePage> {
 
       final questionList =
           apiQuestions.map((apiQuestion) => apiQuestion.toQuestion()).toList();
-      _controller.resetQuestions();
-      _controller.questions.assignAll(questionList);
+          _controller.resetQuestions();
+          _controller.questions.assignAll(questionList);
 
       setState(() {
         _currentIndex = 0;
@@ -54,8 +55,6 @@ class _DeportePageState extends State<DeportePage> {
       setState(() {
         _currentIndex++;
       });
-    } else {
-      Get.toNamed('/resultados');
     }
   }
 
@@ -145,7 +144,22 @@ class _DeportePageState extends State<DeportePage> {
                       ),
                     ),
                   );
-                }),
+                }).toList(),
+                if (_currentIndex >= _controller.questions.length - 1)
+                  ElevatedButton(
+                    onPressed: () => context.go('/resultado'),
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.green,
+                      padding: const EdgeInsets.symmetric(vertical: 12),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                    ),
+                    child: const Text(
+                      'Finalizar',
+                      style: TextStyle(fontSize: 18, color: Colors.white),
+                    ),
+                  ),
               ],
             ),
           );

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:myapp/classes/models.dart';
 import 'package:myapp/classes/providerCategory.dart';
 import 'package:myapp/widgets/custom/custom_app_bar.dart';
@@ -42,7 +43,7 @@ class _CienciaPageState extends State<CienciaPage> {
       _controller.questions.assignAll(questionList);
 
       setState(() {
-        _currentIndex = 0; // Reset index when loading new questions
+        _currentIndex = 0; 
       });
     } catch (e) {
       Get.snackbar('Error', 'No se pudieron cargar las preguntas.');
@@ -150,7 +151,22 @@ class _CienciaPageState extends State<CienciaPage> {
                       ),
                     ),
                   );
-                }),
+                }).toList(),
+                if (_currentIndex >= _controller.questions.length - 1)
+                  ElevatedButton(
+                    onPressed: () => context.go('/resultado'),
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.green,
+                      padding: const EdgeInsets.symmetric(vertical: 12),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                    ),
+                    child: const Text(
+                      'Finalizar',
+                      style: TextStyle(fontSize: 18, color: Colors.white),
+                    ),
+                  ),
               ],
             ),
           );
