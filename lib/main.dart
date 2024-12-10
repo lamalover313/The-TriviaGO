@@ -40,7 +40,7 @@ class MyApp extends StatelessWidget {
         ),
         GoRoute(
           path: '/arte',
-          builder: (context, state) => ArtePage(),
+          builder: (context, state) => const ArtePage(),
         ),
         GoRoute(
           path: '/ciencia',

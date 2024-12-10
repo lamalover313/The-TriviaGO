@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:myapp/classes/models.dart';
 import 'package:myapp/classes/providerCategory.dart';
 import 'package:myapp/widgets/custom/custom_app_bar.dart';
 import 'package:get/get.dart';
@@ -15,150 +16,136 @@ class _DeportePageState extends State<DeportePage> {
   final deprovider = DEProvider();
   final dmprovider = DMProvider();
   final dhprovider = DHProvider();
-  final questionController = Get.put(QuestionController());
-  int currentQuestionIndex = 0;
-  bool isAnswerCorrect = false;
+  final QuestionController _controller = Get.put(QuestionController());
+  int _currentIndex = 0;
+
+  @override
+  void initState() {
+    super.initState();
+    _loadQuestions(difficulty: "easy");
+  }
+
+  Future<void> _loadQuestions({required String difficulty}) async {
+    try {
+      var apiQuestions = <api>[];
+      if (difficulty == "easy") {
+        apiQuestions = await deprovider.getProductsAsync();
+      } else if (difficulty == "medium") {
+        apiQuestions = await dmprovider.getProductsAsync();
+      } else if (difficulty == "hard") {
+        apiQuestions = await dhprovider.getProductsAsync();
+      }
+
+      final questionList =
+          apiQuestions.map((apiQuestion) => apiQuestion.toQuestion()).toList();
+      _controller.resetQuestions();
+      _controller.questions.assignAll(questionList);
+
+      setState(() {
+        _currentIndex = 0;
+      });
+    } catch (e) {
+      Get.snackbar('Error', 'No se pudieron cargar las preguntas.');
+    }
+  }
+
+  void _nextQuestionOrFinish() {
+    if (_currentIndex < _controller.questions.length - 1) {
+      setState(() {
+        _currentIndex++;
+      });
+    } else {
+      Get.toNamed('/resultados');
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const CustomAppBar(title: 'Deporte'),
-      backgroundColor: const Color(0xFF0A0E21),
-      body: FutureBuilder(
-        future: deprovider.getProductsAsync(),
-        builder: (context, snapshot) {
-          if (snapshot.connectionState == ConnectionState.waiting) {
+      backgroundColor: const Color(0xFF1A1A2E),
+      body: Obx(
+        () {
+          if (_controller.questions.isEmpty) {
             return const Center(child: CircularProgressIndicator());
           }
-          if (snapshot.hasError) {
-            return const Center(child: Text('Error al obtener los productos'));
-          }
-          if (!snapshot.hasData) {
-            return const Center(child: Text('No hay productos'));
-          }
 
-          final questionData = snapshot.data!;
-          final currentQuestion = questionData[currentQuestionIndex];
+          final currentQuestion = _controller.questions[_currentIndex];
+          final shuffledOptions = currentQuestion.getShuffledAnswers();
 
           return Padding(
             padding: const EdgeInsets.all(16.0),
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                // Titulo de la pregunta y barra de progreso
-                Padding(
-                  padding: const EdgeInsets.only(bottom: 24),
-                  child: Column(
-                    children: [
-                      Text(
-                        'Pregunta ${currentQuestionIndex + 1}/${questionData.length}',
-                        style: const TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.blueAccent,
-                        ),
-                      ),
-                      const SizedBox(height: 8),
-                      LinearProgressIndicator(
-                        value: (currentQuestionIndex + 1) / questionData.length,
-                        backgroundColor: Colors.grey[200],
-                        valueColor: const AlwaysStoppedAnimation<Color>(Colors.blueAccent),
-                      ),
-                    ],
-                  ),
-                ),
-
-                // Pregunta
-                Text(
-                  currentQuestion.question,
-                  textAlign: TextAlign.center,
-                  style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-                ),
-                const SizedBox(height: 32),
-
-                // Opciones de respuesta
                 Column(
                   children: [
-                    ...[
-                      currentQuestion.correctanswer,
-                      currentQuestion.incorrectanswer1,
-                      currentQuestion.incorrectanswer2,
-                      currentQuestion.incorrectanswer3,
-                    ].map((option) {
-                      return Padding(
-                        padding: const EdgeInsets.only(bottom: 10),
-                        child: ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                            foregroundColor: Colors.white, 
-                            backgroundColor: Colors.blueAccent,
-                            padding: const EdgeInsets.symmetric(vertical: 15),
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(12),
-                            ),
-                            elevation: 5,
-                            shadowColor: Colors.blue.withOpacity(0.5),
-                            side: const BorderSide(color: Colors.blueAccent, width: 2),
-                          ),
-                          onPressed: () {
-                            setState(() {
-                              isAnswerCorrect = option == currentQuestion.correctanswer;
-                            });
-                            questionController.checkAnswer(option, currentQuestion.correctanswer);
-                          },
-                          child: Text(
-                            option,
-                            style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-                          ),
-                        ),
-                      );
-                    }),
-
-                    // Confirmación de respuesta
-                    if (isAnswerCorrect)
-                      const Padding(
-                        padding: EdgeInsets.only(top: 16),
-                        child: Text(
-                          '¡Respuesta Correcta!',
-                          style: TextStyle(color: Colors.green, fontSize: 20, fontWeight: FontWeight.bold),
-                        ),
-                      )
-                    else if (!isAnswerCorrect)
-                      const Padding(
-                        padding: EdgeInsets.only(top: 16),
-                        child: Text(
-                          'Respuesta Incorrecta',
-                          style: TextStyle(color: Colors.red, fontSize: 20, fontWeight: FontWeight.bold),
-                        ),
+                    Text(
+                      'Pregunta ${_currentIndex + 1}/${_controller.questions.length}',
+                      style: const TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.orange,
                       ),
-                    const SizedBox(height: 20),
-
-                    // Botón para siguiente pregunta
-                    ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.teal[400],
-                        padding: const EdgeInsets.symmetric(vertical: 15),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(12),
-                        ),
-                        elevation: 5,
-                      ),
-                      onPressed: () {
-                        if (currentQuestionIndex < questionData.length - 1) {
-                          setState(() {
-                            currentQuestionIndex++;
-                            isAnswerCorrect = false;
-                          });
-                        } else {
-                          Navigator.pushNamed(context, '/results');
-                        }
-                      },
-                      child: const Text(
-                        'Siguiente Pregunta',
-                        style: TextStyle(fontSize: 18, color: Colors.white),
-                      ),
+                    ),
+                    const SizedBox(height: 8),
+                    LinearProgressIndicator(
+                      value: (_currentIndex + 1) / _controller.questions.length,
+                      backgroundColor: Colors.grey[200],
+                      valueColor: const AlwaysStoppedAnimation<Color>(
+                          Colors.orange),
                     ),
                   ],
                 ),
+                const SizedBox(height: 16),
+                Text(
+                  currentQuestion.question,
+                  textAlign: TextAlign.center,
+                  style: const TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                  ),
+                ),
+                const SizedBox(height: 24),
+                ...shuffledOptions.map((option) {
+                  return GestureDetector(
+                    onTap: () {
+                      _controller.checkAnswer(
+                          option, currentQuestion.correctAnswer);
+                      _nextQuestionOrFinish();
+                    },
+                    child: Container(
+                      margin: const EdgeInsets.only(bottom: 10),
+                      padding: const EdgeInsets.symmetric(
+                          vertical: 15, horizontal: 16),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(12),
+                        gradient: const LinearGradient(
+                          colors: [Colors.orange, Colors.deepOrange],
+                          begin: Alignment.topLeft,
+                          end: Alignment.bottomRight,
+                        ),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.black.withOpacity(0.2),
+                            blurRadius: 5,
+                            offset: const Offset(0, 3),
+                          ),
+                        ],
+                      ),
+                      child: Text(
+                        option,
+                        textAlign: TextAlign.center,
+                        style: const TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                        ),
+                      ),
+                    ),
+                  );
+                }),
               ],
             ),
           );

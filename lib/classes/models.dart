@@ -1,4 +1,6 @@
 // ignore: camel_case_types
+import 'package:myapp/classes/questions.dart';
+
 class api {
   final String difficulty;
   final String question;
@@ -26,4 +28,13 @@ class api {
       incorrectanswer3: json['incorrect_answer3'],
     );
   }
+
+  Question toQuestion() {
+    return Question(
+      question: question,
+      correctAnswer: correctanswer,
+      incorrectAnswers: [incorrectanswer1, incorrectanswer2, incorrectanswer3],
+    );
+  }
+
 }
