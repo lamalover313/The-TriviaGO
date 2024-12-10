@@ -93,7 +93,9 @@ class ResultsPage extends StatelessWidget {
                   text: 'Reintentar',
                   color: const Color(0xFF26A69A), // Teal
                   onPressed: () {
-                    // Add retry functionality
+                    final questionController = Get.find<QuestionController>();
+                    final selectedDifficulty = questionController.selectedDifficulty; // Assume this is set earlier
+                    context.go('/categoria?difficulty=$selectedDifficulty');
                   },
                 ),
               ],

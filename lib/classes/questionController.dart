@@ -8,6 +8,7 @@ class QuestionController extends GetxController {
   final _incorrectAnswers = 0.obs;
 
   List<Question> get questions => _questions;
+  var selectedDifficulty = "easy"; // Default difficulty
   int get correctAnswers => _correctAnswers.value;
   int get incorrectAnswers => _incorrectAnswers.value;
 
