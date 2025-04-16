@@ -3,7 +3,6 @@ import 'package:go_router/go_router.dart';
 import 'package:myapp/widgets/buttons/boton_resultado.dart';
 import 'package:myapp/classes/questionController.dart';
 import 'package:get/get.dart';
-import 'package:myapp/classes/questionController.dart';
 
 class ResultsPage extends StatelessWidget {
   const ResultsPage({super.key});
