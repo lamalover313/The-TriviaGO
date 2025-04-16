@@ -144,7 +144,7 @@ class _DeportePageState extends State<DeportePage> {
                       ),
                     ),
                   );
-                }).toList(),
+                }),
                 if (_currentIndex >= _controller.questions.length - 1)
                   ElevatedButton(
                     onPressed: () => context.go('/resultado'),

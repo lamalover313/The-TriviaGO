@@ -151,7 +151,7 @@ class _CienciaPageState extends State<CienciaPage> {
                       ),
                     ),
                   );
-                }).toList(),
+                }),
                 if (_currentIndex >= _controller.questions.length - 1)
                   ElevatedButton(
                     onPressed: () => context.go('/resultado'),

@@ -19,7 +19,6 @@ class CategoryCard extends StatelessWidget {
 
   void _navigateToPage(BuildContext context) {
     String route = '';
-    
     switch (text) {
       case 'Arte':
         route = '/arte';
