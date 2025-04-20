@@ -26,7 +26,9 @@ class TriviaController extends GetxController {
         throw Exception('Error al obtener preguntas. Código: ${response.statusCode}');
       }
 
-      final List<dynamic> data = json.decode(response.body);
+      final decoded = json.decode(response.body);
+      final List<dynamic> data = decoded.values.first as List<dynamic>;
+
       final allQuestions = data.map((json) => Question.fromJson(json)).toList();
       final filtered = allQuestions.where(
         (q) => q.difficulty.toLowerCase() == difficulty.toLowerCase()

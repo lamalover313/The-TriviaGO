@@ -26,7 +26,7 @@ class CategoriesPageState extends State<CategoriesPage> {
       appBar: AppBar(
         centerTitle: true,
         title: const Text(
-          'Categorías',
+          'Categorias',
           style: TextStyle(
             fontWeight: FontWeight.bold,
           ),

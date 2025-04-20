@@ -39,11 +39,11 @@ class MyApp extends StatelessWidget {
           builder: (context, state) {
             final data = state.extra as Map<String, dynamic>;
             return TriviaGO(
-              category: data['category'],
-              difficulty: data['difficulty'],
-              baseColor1: data['baseColor1'],
-              baseColor2: data['baseColor2'],
-              apiUrl: data['apiUrl'],
+                category: data['category'] as String,
+                difficulty: data['difficulty'] as String,
+                baseColor1: data['color1'] as Color,
+                baseColor2: data['color2'] as Color,
+                apiUrl: data['apiUrl'] as String,
               );
             },
           ),

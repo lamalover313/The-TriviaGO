@@ -35,9 +35,9 @@ const Map<String, CategoryConfig> categoryMap = {
 Color getColorByDifficulty(Color baseColor, String difficulty) {
   switch (difficulty.toLowerCase()) {
     case 'easy':
-      return baseColor.withOpacity(0.7);
+      return baseColor.withOpacity(0.45);
     case 'medium':
-      return baseColor.withOpacity(1.5);
+      return baseColor.withOpacity(0.85);
     case 'hard':
       return baseColor;
     default:

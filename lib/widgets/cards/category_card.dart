@@ -95,14 +95,14 @@ class CategoryCard extends StatelessWidget {
                           label: 'Medio',
                           difficulty: 'medium',
                           onPressed: () => _navigateToTriviaPage(context, 'medium'),
-                          color: getColorByDifficulty(color.withOpacity(0.5), 'easy'),
+                          color: getColorByDifficulty(color.withOpacity(0.5), 'medium'),
                           textStyle: const TextStyle(color: Colors.black87),
                         ),
                         DifficultyButton(
                           label: 'Difícil',
                           difficulty: 'hard',
                           onPressed: () => _navigateToTriviaPage(context, 'hard'),
-                          color: getColorByDifficulty(color.withOpacity(0.5), 'easy'),
+                          color: getColorByDifficulty(color.withOpacity(0.5), 'hard'),
                           textStyle: const TextStyle(
                             color: Colors.white70,
                             fontWeight: FontWeight.bold,
