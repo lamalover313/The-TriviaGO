@@ -10,7 +10,6 @@ class CategoriesPage extends StatefulWidget {
 
 class CategoriesPageState extends State<CategoriesPage> {
   int? _expandedIndex;
-
   void _toggleExpansion(int index) {
     setState(() {
       if (_expandedIndex == index) {

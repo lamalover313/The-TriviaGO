@@ -1,51 +1,41 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:go_router/go_router.dart';
-import 'package:myapp/classes/models.dart';
-import 'package:myapp/classes/providerCategory.dart';
-import 'package:myapp/classes/questionController.dart';
+import 'package:myapp/classes/triviaController.dart';
+import 'package:myapp/widgets/cards/question_card.dart';
 import 'package:myapp/widgets/custom/custom_app_bar.dart';
 
-class ArtePage extends StatefulWidget {
-  const ArtePage({super.key});
+class TriviaGO extends StatefulWidget {
+  final String apiUrl;
+  final String category;
+  final String difficulty;
+  final Color baseColor1;
+  final Color baseColor2;
+
+  const TriviaGO({
+    super.key,
+    required this.category,
+    required this.difficulty,
+    required this.baseColor1,
+    required this.baseColor2,
+    required this.apiUrl,
+  });
 
   @override
-  State<ArtePage> createState() => _ArtePageState();
+  State<TriviaGO> createState() => _TriviaGOState();
 }
 
-class _ArtePageState extends State<ArtePage> {
-  final afprovider = AFProvider();
-  final amprovider = AMProvider();
-  final ahprovider = AHProvider();
-
-  final QuestionController _controller = Get.put(QuestionController());
+class _TriviaGOState extends State<TriviaGO> {
+  final TriviaController _controller = Get.put(TriviaController());
   int _currentIndex = 0;
 
   @override
+  @override
   void initState() {
     super.initState();
-    _loadQuestions(difficulty: "easy");
+    _controller.fetchQuestionsFromUrl(widget.apiUrl, widget.difficulty);
   }
 
-  Future<void> _loadQuestions({required String difficulty}) async {
-    try {
-      var apiQuestions = <api>[];
-      if (difficulty == "easy") {
-        apiQuestions = await afprovider.getProductsAsync();
-      } else if (difficulty == "medium") {
-        apiQuestions = await amprovider.getProductsAsync();
-      } else if (difficulty == "hard") {
-        apiQuestions = await ahprovider.getProductsAsync();
-      }
-
-      final questionList =
-          apiQuestions.map((apiQuestion) => apiQuestion.toQuestion()).toList();
-          _controller.resetQuestions();
-          _controller.questions.assignAll(questionList);
-        } catch (e) {
-          Get.snackbar('Error', 'No se pudieron cargar las preguntas.');
-        }
-  }
 
   void _nextQuestionOrFinish() {
     if (_currentIndex < _controller.questions.length - 1) {
@@ -53,7 +43,7 @@ class _ArtePageState extends State<ArtePage> {
         _currentIndex++;
       });
     } else {
-      () => context.go('/resultado');
+      context.go('/resultado');
     }
   }
 
@@ -110,7 +100,7 @@ class _ArtePageState extends State<ArtePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const CustomAppBar(title: 'Arte'),
+      appBar: CustomAppBar(title: widget.category),
       backgroundColor: const Color(0xFF0A0E21),
       body: Obx(
         () {
@@ -144,43 +134,15 @@ class _ArtePageState extends State<ArtePage> {
                 ],
               ),
               const SizedBox(height: 16),
-              Card(
-                elevation: 8,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(16),
-                ),
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(16),
-                  child: Container(
-                    decoration: const BoxDecoration(
-                      gradient: LinearGradient(
-                        colors: [Colors.orangeAccent, Colors.pinkAccent],
-                        begin: Alignment.topLeft,
-                        end: Alignment.bottomRight,
-                      ),
-                    ),
-                    padding: const EdgeInsets.all(16),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.stretch,
-                      children: [
-                        Text(
-                          currentQuestion.question,
-                          textAlign: TextAlign.center,
-                          style: const TextStyle(
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white,
-                          ),
-                        ),
-                        const SizedBox(height: 16),
-                        ...shuffledOptions.map(
-                          (option) => _buildAnswerButton(
-                              context, option, currentQuestion.correctAnswer),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
+              QuestionCard(
+                question: currentQuestion,
+                shuffledOptions: shuffledOptions,
+                baseColor1: widget.baseColor1,
+                baseColor2: widget.baseColor2,
+                onAnswerSelected: (selected, correct) {
+                  _controller.checkAnswer(selected, correct);
+                  _nextQuestionOrFinish();
+                },
               ),
               const SizedBox(height: 16),
               if (_currentIndex >= _controller.questions.length - 1)

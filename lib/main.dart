@@ -2,14 +2,10 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
+import 'package:myapp/pages/pantalla_page/TriviaGO.dart';
 import 'package:myapp/pages/home_page/home_page.dart';
 import 'package:myapp/pages/categories_page/categories_page.dart';
 import 'package:myapp/pages/login_pages/login_page.dart';
-import 'package:myapp/pages/pantalla_page/arte_page.dart';
-import 'package:myapp/pages/pantalla_page/ciencia_page.dart';
-import 'package:myapp/pages/pantalla_page/deporte_page.dart';
-import 'package:myapp/pages/pantalla_page/geografia_page.dart';
-import 'package:myapp/pages/pantalla_page/historia_page.dart';
 import 'package:myapp/pages/results_page/results_page.dart';
 
 void main() async {
@@ -39,29 +35,22 @@ class MyApp extends StatelessWidget {
           builder: (context, state) => const CategoriesPage(),
         ),
         GoRoute(
-          path: '/arte',
-          builder: (context, state) => const ArtePage(),
-        ),
-        GoRoute(
-          path: '/ciencia',
-          builder: (context, state) => const CienciaPage(),
-        ),
-        GoRoute(
-          path: '/deporte',
-          builder: (context, state) => const DeportePage(),
-        ),
-        GoRoute(
-          path: '/geografia',
-          builder: (context, state) => const GeografiaPage(),
-        ),
-        GoRoute(
-          path: '/historia',
-          builder: (context, state) => const HistoriaPage(),
-        ),
-        GoRoute(
-          path: '/resultado',
-          builder: (context, state) => const ResultsPage(),
-        ),
+          path: '/trivia',
+          builder: (context, state) {
+            final data = state.extra as Map<String, dynamic>;
+            return TriviaGO(
+              category: data['category'],
+              difficulty: data['difficulty'],
+              baseColor1: data['baseColor1'],
+              baseColor2: data['baseColor2'],
+              apiUrl: data['apiUrl'],
+              );
+            },
+          ),
+          GoRoute(
+            path: '/resultado',
+            builder: (context, state) => const ResultsPage(),
+          ),
       ],
     );
 

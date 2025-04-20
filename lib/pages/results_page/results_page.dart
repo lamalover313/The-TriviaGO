@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:myapp/widgets/buttons/boton_resultado.dart';
-import 'package:myapp/classes/questionController.dart';
+import 'package:myapp/classes/triviaController.dart';
 import 'package:get/get.dart';
 
 class ResultsPage extends StatelessWidget {
@@ -45,7 +45,7 @@ class ResultsPage extends StatelessWidget {
             // Results Section
             Obx(
               () {
-                final questionController = Get.find<QuestionController>();
+                final questionController = Get.find<TriviaController>();
                 return Column(
                   children: [
                     _buildResultRow(
@@ -93,8 +93,8 @@ class ResultsPage extends StatelessWidget {
                   text: 'Reintentar',
                   color: const Color(0xFF26A69A), // Teal
                   onPressed: () {
-                    final questionController = Get.find<QuestionController>();
-                    final selectedDifficulty = questionController.selectedDifficulty; // Assume this is set earlier
+                    final questionController = Get.find<TriviaController>();
+                    final selectedDifficulty = questionController.selectedDifficulty;
                     context.go('/categoria?difficulty=$selectedDifficulty');
                   },
                 ),

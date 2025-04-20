@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:myapp/classes/categoryConfig.dart';
+import 'package:myapp/widgets/buttons/difficulty_button.dart';
 
 class CategoryCard extends StatelessWidget {
   final String text;
@@ -17,29 +19,24 @@ class CategoryCard extends StatelessWidget {
     required this.toggleExpansion,
   });
 
-  void _navigateToPage(BuildContext context) {
-    String route = '';
-    switch (text) {
-      case 'Arte':
-        route = '/arte';
-        break;
-      case 'Ciencia':
-        route = '/ciencia';
-        break;
-      case 'Deportes':
-        route = '/deporte';
-        break;
-      case 'Geografía':
-        route = '/geografia';
-        break;
-      case 'Historia':
-        route = '/historia';
-        break;
-      default:
-        route = '/';
+  void _navigateToTriviaPage(BuildContext context, String difficulty) {
+    final config = categoryMap[text];
+    if (config != null) {
+      context.go(
+        '/trivia',
+        extra: {
+          'category': text,
+          'difficulty': difficulty,
+          'color1': config.baseColor1,
+          'color2': config.baseColor2,
+          'apiUrl': config.apiUrl,
+        },
+      );
+    } else {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('Configuración no encontrada para $text')),
+      );
     }
-
-    context.go(route);
   }
 
   @override
@@ -47,9 +44,7 @@ class CategoryCard extends StatelessWidget {
     return Card(
       margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
       elevation: 5,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(10),
-      ),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
       child: Stack(
         children: [
           Positioned.fill(
@@ -89,50 +84,28 @@ class CategoryCard extends StatelessWidget {
                     padding: const EdgeInsets.all(10),
                     child: Column(
                       children: [
-                        Container(
-                          height: 50,
-                          color: Colors.white,
-                          alignment: Alignment.center,
-                          child: TextButton(
-                            onPressed: () {
-                              _navigateToPage(context);
-                            },
-                            style: TextButton.styleFrom(
-                                fixedSize: const Size.fromWidth(500)),
-                            child: const Text("Facil"),
-                          ),
+                        DifficultyButton(
+                          label: 'Fácil',
+                          difficulty: 'easy',
+                          onPressed: () => _navigateToTriviaPage(context, 'easy'),
+                          color: getColorByDifficulty(color.withOpacity(0.5), 'easy'),
+                          textStyle: const TextStyle(color: Colors.black87),
                         ),
-                        const SizedBox(height: 10),
-                        Container(
-                          height: 50,
-                          color: Colors.grey.shade300,
-                          alignment: Alignment.center,
-                          child: TextButton(
-                            onPressed: () {
-                              _navigateToPage(context);
-                            },
-                            style: TextButton.styleFrom(
-                                fixedSize: const Size.fromWidth(500)),
-                            child: const Text("Medio"),
-                          ),
+                        DifficultyButton(
+                          label: 'Medio',
+                          difficulty: 'medium',
+                          onPressed: () => _navigateToTriviaPage(context, 'medium'),
+                          color: getColorByDifficulty(color.withOpacity(0.5), 'easy'),
+                          textStyle: const TextStyle(color: Colors.black87),
                         ),
-                        const SizedBox(height: 10),
-                        Container(
-                          height: 50,
-                          color: Colors.grey.shade700,
-                          alignment: Alignment.center,
-                          child: TextButton(
-                            onPressed: () {
-                              _navigateToPage(context);
-                            },
-                            style: TextButton.styleFrom(
-                                fixedSize: const Size.fromWidth(500)),
-                            child: const Text(
-                              "Dificil",
-                              style: TextStyle(
-                                  color: Colors.white70,
-                                  fontWeight: FontWeight.bold),
-                            ),
+                        DifficultyButton(
+                          label: 'Difícil',
+                          difficulty: 'hard',
+                          onPressed: () => _navigateToTriviaPage(context, 'hard'),
+                          color: getColorByDifficulty(color.withOpacity(0.5), 'easy'),
+                          textStyle: const TextStyle(
+                            color: Colors.white70,
+                            fontWeight: FontWeight.bold,
                           ),
                         ),
                       ],
