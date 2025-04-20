@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
+import 'categoryConfig.dart';
 import 'package:myapp/classes/questions.dart';
 
 class TriviaController extends GetxController {
@@ -41,6 +42,37 @@ class TriviaController extends GetxController {
     }
   }
 
+  Future<void> fetchRandomMixedQuestions(Map<String, CategoryConfig> categoryMap) async {
+  try {
+    final Set<String> seenQuestions = {};
+    final List<Question> mixedQuestions = [];
+
+    for (final config in categoryMap.values) {
+      final response = await http.get(Uri.parse(config.apiUrl));
+      if (response.statusCode != 200) continue;
+
+      final decoded = json.decode(response.body);
+      final List<dynamic> questionsList = decoded.values.first as List<dynamic>;
+
+      for (var q in questionsList) {
+        final question = Question.fromJson(q);
+        if (!seenQuestions.contains(question.question)) {
+          seenQuestions.add(question.question);
+          mixedQuestions.add(question);
+        }
+      }
+    }
+
+    mixedQuestions.shuffle();
+    final selectedQuestions = mixedQuestions.take(50).toList();
+
+    _questions.assignAll(selectedQuestions);
+    resetScores();
+  } catch (e) {
+    Get.snackbar('Error', 'No se pudieron cargar preguntas aleatorias: $e');
+  }
+}
+
   void checkAnswer(String selectedAnswer, String correctAnswer) {
     if (selectedAnswer == correctAnswer) {
       _correctAnswers.value++;
@@ -58,3 +90,4 @@ class TriviaController extends GetxController {
     _questions.clear();
   }
 }
+

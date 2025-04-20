@@ -12,18 +12,18 @@ class ProfileSelector extends StatelessWidget {
       children: [
         ProfileOption(
           imagePath: 'lib/assets/images/profile_sailboat.png',
-          label: 'Explorer',
+          label: 'Sala de Trofeos',
           onTap: () => context.go('/categoria'),
         ),
         ProfileOption(
           imagePath: 'lib/assets/images/profile_bulldog.png',
-          label: 'Challenger',
+          label: 'Categorias',
           onTap: () => context.go('/categoria'),
         ),
         ProfileOption(
           imagePath: 'lib/assets/images/profile_mountain.jpg',
-          label: 'Adventurer',
-          onTap: () => context.go('/categoria'),
+          label: 'Random',
+          onTap: () => context.go('/trivia-random'),
         ),
       ],
     );
