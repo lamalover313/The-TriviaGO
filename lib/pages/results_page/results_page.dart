@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:myapp/score_service.dart';
 import 'package:myapp/widgets/buttons/boton_resultado.dart';
 import 'package:myapp/classes/triviaController.dart';
 import 'package:get/get.dart';
@@ -9,6 +10,21 @@ class ResultsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final questionController = Get.find<TriviaController>();
+    final correct = questionController.correctAnswers;
+    final incorrect = questionController.incorrectAnswers;
+    final total = correct + incorrect;
+    final score = (correct * 100 ~/ total);
+
+    // Guardar puntuación
+    ScoreService.saveScore(
+      correct: questionController.correctAnswers,
+      incorrect: questionController.incorrectAnswers,
+      score: score,
+      isRandom: questionController.isRandomMode,
+      category: questionController.isRandomMode ? null : questionController.currentCategory,
+    );
+
     return Scaffold(
       backgroundColor: const Color(0xFF1A1A2E),
       body: Padding(
@@ -16,117 +32,94 @@ class ResultsPage extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            // Title Section
-            Column(
-              children: [
-                const Text(
-                  'Fin del Juego',
-                  style: TextStyle(
-                    fontSize: 36,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.orange,
-                  ),
-                  textAlign: TextAlign.center,
-                ),
-                Container(
-                  height: 3,
-                  width: 200,
-                  decoration: BoxDecoration(
-                    gradient: const LinearGradient(
-                      colors: [Colors.orange, Colors.deepOrange],
-                    ),
-                    borderRadius: BorderRadius.circular(5),
-                  ),
-                  margin: const EdgeInsets.only(top: 8),
-                ),
-              ],
+            const SizedBox(height: 40),
+            const Text(
+              'Fin del Juego',
+              style: TextStyle(
+                fontSize: 36,
+                fontWeight: FontWeight.bold,
+                color: Colors.orange,
+              ),
+              textAlign: TextAlign.center,
             ),
-            const Spacer(),
-            // Results Section
-            Obx(
-              () {
-                final questionController = Get.find<TriviaController>();
-                return Column(
-                  children: [
-                    _buildResultRow(
-                      icon: Icons.check_circle,
-                      iconColor: Colors.green,
-                      label: 'Respuestas correctas:',
-                      value: questionController.correctAnswers.toString(),
-                      textColor: Colors.green,
-                    ),
-                    const SizedBox(height: 20),
-                    _buildResultRow(
-                      icon: Icons.cancel,
-                      iconColor: Colors.red,
-                      label: 'Respuestas incorrectas:',
-                      value: questionController.incorrectAnswers.toString(),
-                      textColor: Colors.red,
-                    ),
-                  ],
-                );
-              },
+            Container(
+              height: 3,
+              width: 200,
+              margin: const EdgeInsets.only(top: 8, bottom: 32),
+              decoration: BoxDecoration(
+                gradient: const LinearGradient(
+                  colors: [Colors.orange, Colors.deepOrange],
+                ),
+                borderRadius: BorderRadius.circular(5),
+              ),
             ),
+            _buildStatCard(Icons.emoji_events, 'Puntaje total', '$score%', Colors.amber),
+            const SizedBox(height: 20),
+            _buildStatCard(Icons.check_circle, 'Respuestas correctas', correct.toString(), Colors.green),
+            const SizedBox(height: 20),
+            _buildStatCard(Icons.cancel, 'Respuestas incorrectas', incorrect.toString(), Colors.red),
             const Spacer(),
-            // Action Buttons
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            Wrap(
+              spacing: 12,
+              alignment: WrapAlignment.center,
               children: [
+                BotonResultado(
+                  icon: Icons.leaderboard,
+                  text: 'Tabla',
+                  color: Colors.indigo,
+                  onPressed: () => context.go('/leaderboard'),
+                ),
                 BotonResultado(
                   icon: Icons.category,
                   text: 'Categorías',
-                  color: const Color(0xFFF9A825), // Amber
-                  onPressed: () {
-                    context.go('/categoria');
-                  },
+                  color: const Color(0xFFF9A825),
+                  onPressed: () => context.go('/categoria'),
                 ),
                 BotonResultado(
                   icon: Icons.home,
                   text: 'Home',
-                  color: const Color(0xFFEF5350), // Red
-                  onPressed: () {
-                    context.go('/home');
-                  },
+                  color: const Color(0xFFEF5350),
+                  onPressed: () => context.go('/home'),
                 ),
                 BotonResultado(
                   icon: Icons.refresh,
                   text: 'Reintentar',
-                  color: const Color(0xFF26A69A), // Teal
+                  color: const Color(0xFF26A69A),
                   onPressed: () {
-                    final questionController = Get.find<TriviaController>();
                     final selectedDifficulty = questionController.selectedDifficulty;
                     context.go('/categoria?difficulty=$selectedDifficulty');
                   },
                 ),
               ],
             ),
+            const SizedBox(height: 20),
           ],
         ),
       ),
     );
   }
 
-  Widget _buildResultRow({
-    required IconData icon,
-    required Color iconColor,
-    required String label,
-    required String value,
-    required Color textColor,
-  }) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Icon(icon, size: 50, color: iconColor),
-        const SizedBox(width: 12),
-        Text(
-          '$label $value',
-          style: TextStyle(
-            fontSize: 22,
-            fontWeight: FontWeight.bold,
-            color: textColor,
-          ),
+  Widget _buildStatCard(IconData icon, String title, String value, Color color) {
+    return Card(
+      color: Colors.white10,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 20),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(icon, size: 32, color: color),
+            const SizedBox(width: 16),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(title, style: const TextStyle(fontSize: 18, color: Colors.white70)),
+                Text(value, style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold, color: color)),
+              ],
+            ),
+          ],
         ),
-      ],
+      ),
     );
   }
 }

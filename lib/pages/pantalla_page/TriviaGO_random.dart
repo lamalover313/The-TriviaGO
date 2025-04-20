@@ -49,7 +49,6 @@ class _TriviaRandomPageState extends State<TriviaRandomPage> {
         if (_controller.questions.isEmpty) {
           return const Center(child: CircularProgressIndicator());
         }
-
         final question = _controller.questions[_currentIndex];
         final options = question.getShuffledAnswers();
 

@@ -13,7 +13,7 @@ class ProfileSelector extends StatelessWidget {
         ProfileOption(
           imagePath: 'lib/assets/images/profile_sailboat.png',
           label: 'Sala de Trofeos',
-          onTap: () => context.go('/categoria'),
+          onTap: () => context.go('/leaderboard'),
         ),
         ProfileOption(
           imagePath: 'lib/assets/images/profile_bulldog.png',

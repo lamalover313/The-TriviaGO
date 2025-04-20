@@ -30,12 +30,12 @@ class _TriviaGOState extends State<TriviaGO> {
   int _currentIndex = 0;
 
   @override
-  @override
   void initState() {
     super.initState();
+    _controller.setRandomMode(false);
+    _controller.setCategory(widget.category);
     _controller.fetchQuestionsFromUrl(widget.apiUrl, widget.difficulty);
   }
-
 
   void _nextQuestionOrFinish() {
     if (_currentIndex < _controller.questions.length - 1) {

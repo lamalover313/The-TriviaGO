@@ -5,10 +5,14 @@ import 'categoryConfig.dart';
 import 'package:myapp/classes/questions.dart';
 
 class TriviaController extends GetxController {
+  //TriviaGO
   final _questions = <Question>[].obs;
   final _correctAnswers = 0.obs;
   final _incorrectAnswers = 0.obs;
   final selectedDifficulty = ''.obs;
+  //results page
+  final RxBool _isRandomMode = false.obs;
+  final RxString _currentCategory = ''.obs;
 
   List<Question> get questions => _questions;
   int get correctAnswers => _correctAnswers.value;
@@ -73,6 +77,7 @@ class TriviaController extends GetxController {
   }
 }
 
+//TriviaGO
   void checkAnswer(String selectedAnswer, String correctAnswer) {
     if (selectedAnswer == correctAnswer) {
       _correctAnswers.value++;
@@ -89,5 +94,17 @@ class TriviaController extends GetxController {
   void resetQuestions() {
     _questions.clear();
   }
-}
 
+  //results page - setters
+  void setRandomMode(bool isRandom) {
+    _isRandomMode.value = isRandom;
+  }
+
+  void setCategory(String category) {
+    _currentCategory.value = category;
+  }
+  // results page - Getters
+  bool get isRandomMode => _isRandomMode.value;
+  String get currentCategory => _currentCategory.value;
+
+}
