@@ -20,7 +20,8 @@ class TriviaController extends GetxController {
 
   String get difficulty => selectedDifficulty.value;
   set difficulty(String value) => selectedDifficulty.value = value;
-
+  
+  //normal
   Future<void> fetchQuestionsFromUrl(String apiUrl, String difficulty) async {
     try {
       selectedDifficulty.value = difficulty;
@@ -45,7 +46,7 @@ class TriviaController extends GetxController {
       Get.snackbar('Error', 'Falló al cargar preguntas: $e');
     }
   }
-
+  //random
   Future<void> fetchRandomMixedQuestions(Map<String, CategoryConfig> categoryMap) async {
   try {
     final Set<String> seenQuestions = {};

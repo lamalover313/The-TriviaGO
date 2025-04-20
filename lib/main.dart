@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
-import 'package:myapp/leaderboard_page.dart';
+import 'package:myapp/pages/leaderboard_page.dart';
 
 import 'package:myapp/pages/login_pages/login_page.dart';
 import 'package:myapp/pages/home_page/home_page.dart';

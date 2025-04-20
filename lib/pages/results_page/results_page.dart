@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:myapp/score_service.dart';
+import 'package:myapp/services/score_service.dart';
 import 'package:myapp/widgets/buttons/boton_resultado.dart';
 import 'package:myapp/classes/triviaController.dart';
 import 'package:get/get.dart';
