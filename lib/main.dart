@@ -2,16 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
-import 'package:myapp/pages/leaderboard_page.dart';
 
 import 'package:myapp/pages/login_pages/login_page.dart';
 import 'package:myapp/pages/home_page/home_page.dart';
 
-import 'package:myapp/pages/pantalla_page/TriviaGO_random.dart';
-import 'package:myapp/pages/pantalla_page/TriviaGO.dart';
+import 'package:myapp/pages/trivia_page/TriviaGO_random.dart';
+import 'package:myapp/pages/trivia_page/TriviaGO.dart';
 import 'package:myapp/pages/categories_page/categories_page.dart';
 
 import 'package:myapp/pages/results_page/results_page.dart';
+import 'package:myapp/pages/leaderboard_page/leaderboard_page.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

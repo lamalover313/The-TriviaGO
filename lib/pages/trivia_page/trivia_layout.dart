@@ -5,36 +5,34 @@ import 'package:myapp/classes/triviaController.dart';
 import 'package:myapp/widgets/cards/question_card.dart';
 import 'package:myapp/widgets/custom/custom_app_bar.dart';
 
-class TriviaGO extends StatefulWidget {
-  final String apiUrl;
-  final String category;
-  final String difficulty;
+class TriviaLayout extends StatefulWidget {
+  final String title;
   final Color baseColor1;
   final Color baseColor2;
+  final VoidCallback onInit;
+  final String backgroundImagePath;
 
-  const TriviaGO({
+  const TriviaLayout({
     super.key,
-    required this.category,
-    required this.difficulty,
+    required this.title,
     required this.baseColor1,
     required this.baseColor2,
-    required this.apiUrl,
+    required this.onInit,
+    this.backgroundImagePath = 'lib/assets/images/Background_01.png',
   });
 
   @override
-  State<TriviaGO> createState() => _TriviaGOState();
+  State<TriviaLayout> createState() => _TriviaLayoutState();
 }
 
-class _TriviaGOState extends State<TriviaGO> {
+class _TriviaLayoutState extends State<TriviaLayout> {
   final TriviaController _controller = Get.put(TriviaController());
   int _currentIndex = 0;
 
   @override
   void initState() {
     super.initState();
-    _controller.setRandomMode(false);
-    _controller.setCategory(widget.category);
-    _controller.fetchQuestionsFromUrl(widget.apiUrl, widget.difficulty);
+    widget.onInit();
   }
 
   void _nextQuestionOrFinish() {
@@ -50,27 +48,25 @@ class _TriviaGOState extends State<TriviaGO> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(title: widget.category),
+      appBar: CustomAppBar(title: widget.title),
       backgroundColor: const Color(0xFF0A0E21),
       body: Stack(
         children: [
-          // Imagen de fondo
           Positioned.fill(
             child: Image.asset(
-              'lib/assets/images/Background_01.png',
+              widget.backgroundImagePath,
               fit: BoxFit.cover,
               color: Colors.black.withOpacity(0.5),
               colorBlendMode: BlendMode.darken,
             ),
           ),
-
           Obx(() {
             if (_controller.questions.isEmpty) {
               return const Center(child: CircularProgressIndicator());
             }
 
-            final currentQuestion = _controller.questions[_currentIndex];
-            final shuffledOptions = currentQuestion.getShuffledAnswers();
+            final question = _controller.questions[_currentIndex];
+            final options = question.getShuffledAnswers();
 
             return ListView(
               padding: const EdgeInsets.all(16.0),
@@ -90,13 +86,12 @@ class _TriviaGOState extends State<TriviaGO> {
                       value: (_currentIndex + 1) / _controller.questions.length,
                       backgroundColor: Colors.grey[200],
                       valueColor: const AlwaysStoppedAnimation<Color>(
-                        Colors.blueAccent
+                        Colors.blueAccent,
                       ),
                     ),
                   ],
                 ),
                 const SizedBox(height: 16),
-                
                 AnimatedSwitcher(
                   duration: const Duration(milliseconds: 400),
                   transitionBuilder: (child, animation) => FadeTransition(
@@ -109,9 +104,9 @@ class _TriviaGOState extends State<TriviaGO> {
                     ),
                   ),
                   child: QuestionCard(
-                    key: ValueKey(_currentIndex), 
-                    question: currentQuestion,
-                    shuffledOptions: shuffledOptions,
+                    key: ValueKey(_currentIndex),
+                    question: question,
+                    shuffledOptions: options,
                     baseColor1: widget.baseColor1,
                     baseColor2: widget.baseColor2,
                     onAnswerSelected: (selected, correct) {
@@ -120,7 +115,6 @@ class _TriviaGOState extends State<TriviaGO> {
                     },
                   ),
                 ),
-                const SizedBox(height: 16),
               ],
             );
           }),

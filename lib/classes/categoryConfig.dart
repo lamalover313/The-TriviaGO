@@ -16,7 +16,7 @@ const Map<String, CategoryConfig> categoryMap = {
   ),
   'Ciencia': CategoryConfig(
     'https://api-theta-rouge-20.vercel.app/Ciencia_Json.json',
-    Color.fromARGB(255, 75, 182, 78), Colors.lightGreen
+    Colors.lightGreenAccent, Color.fromARGB(255, 0, 150, 90)
   ),
   'Deportes': CategoryConfig(
     'https://api-theta-rouge-20.vercel.app/Deporte_Json.json',
@@ -28,7 +28,7 @@ const Map<String, CategoryConfig> categoryMap = {
   ),
   'Historia': CategoryConfig(
     'https://api-theta-rouge-20.vercel.app/Historia_Json.json',
-    Colors.red, Colors.deepOrange
+    Colors.yellowAccent, Color.fromARGB(255, 255, 204, 0)
   ),
 };
 

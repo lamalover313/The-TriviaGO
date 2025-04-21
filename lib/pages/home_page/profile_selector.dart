@@ -35,7 +35,7 @@ class _ProfileSelectorState extends State<ProfileSelector>
   Widget build(BuildContext context) {
     final options = [
       {
-        'image': 'lib/assets/images/Category.png',
+        'image': 'lib/assets/images/Categoria_homePage.png',
         'label': 'Categorias',
         'route': '/categoria'
       },
@@ -45,8 +45,8 @@ class _ProfileSelectorState extends State<ProfileSelector>
         'route': '/trivia-random'
       },
       {
-        'image': 'lib/assets/images/profile_sailboat.png',
-        'label': 'Sala de Trofeos',
+        'image': 'lib/assets/images/Leaderboard_homePage.png',
+        'label': 'Tabla de Posiciones',
         'route': '/leaderboard'
       },
     ];
