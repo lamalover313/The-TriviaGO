@@ -77,12 +77,17 @@ flutter:
   - lib/assets/images/deportes.png
   - lib/assets/images/geografia.png
   - lib/assets/images/historia.png
+  - lib/assets/images/Background_01.png
+  - lib/assets/images/Background_02.png
   - lib/assets/images/background_04.jpeg
+  - lib/assets/images/Trivia_Random.png
+  - lib/assets/images/Category.png
   - lib/assets/images/illustration.png
   - lib/assets/images/profile_bulldog.png
   - lib/assets/images/profile_sailboat.png
   - lib/assets/images/TriviaLUJO.gif
   - lib/assets/images/profile_mountain.jpg
+ 
   # To add assets to your application, add an assets section, like this:
   # assets:
   #   - images/a_dot_burr.jpeg

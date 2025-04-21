@@ -55,8 +55,8 @@ class MyApp extends StatelessWidget {
           GoRoute(
             path: '/trivia-random',
             builder: (context, state) => const TriviaRandomPage(
-              baseColor1: Colors.deepPurple,
-              baseColor2: Colors.indigo,
+              baseColor1: Color.fromARGB(236, 78, 16, 186),
+              baseColor2: Color.fromARGB(255, 0, 31, 207),
             ),
           ),
           GoRoute(

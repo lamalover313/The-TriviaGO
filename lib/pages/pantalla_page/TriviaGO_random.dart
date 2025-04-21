@@ -4,7 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:myapp/classes/categoryConfig.dart';
 import 'package:myapp/classes/triviaController.dart';
 import 'package:myapp/widgets/cards/question_card.dart';
-import 'package:myapp/widgets/custom/custom_app_bar.dart'; 
+import 'package:myapp/widgets/custom/custom_app_bar.dart';
 
 class TriviaRandomPage extends StatefulWidget {
   final Color baseColor1;
@@ -27,6 +27,7 @@ class _TriviaRandomPageState extends State<TriviaRandomPage> {
   @override
   void initState() {
     super.initState();
+    _controller.setRandomMode(true);
     _controller.fetchRandomMixedQuestions(categoryMap);
   }
 
@@ -45,40 +46,64 @@ class _TriviaRandomPageState extends State<TriviaRandomPage> {
     return Scaffold(
       appBar: const CustomAppBar(title: 'Trivia Random'),
       backgroundColor: const Color(0xFF0A0E21),
-      body: Obx(() {
-        if (_controller.questions.isEmpty) {
-          return const Center(child: CircularProgressIndicator());
-        }
-        final question = _controller.questions[_currentIndex];
-        final options = question.getShuffledAnswers();
+      body: Stack(
+        children: [
+          // Imagen de fondo
+          Positioned.fill(
+            child: Image.asset(
+              'lib/assets/images/Background_01.png',
+              fit: BoxFit.cover,
+              color: Colors.black.withOpacity(0.5),
+              colorBlendMode: BlendMode.darken,
+            ),
+          ),
+          Obx(() {
+            if (_controller.questions.isEmpty) {
+              return const Center(child: CircularProgressIndicator());
+            }
+            final question = _controller.questions[_currentIndex];
+            final options = question.getShuffledAnswers();
 
-        return ListView(
-          padding: const EdgeInsets.all(16.0),
-          children: [
-            Text(
-              'Pregunta ${_currentIndex + 1}/${_controller.questions.length}',
-              style: const TextStyle(fontSize: 18, color: Colors.white),
-            ),
-            const SizedBox(height: 8),
-            LinearProgressIndicator(
-              value: (_currentIndex + 1) / _controller.questions.length,
-              backgroundColor: Colors.grey[200],
-              valueColor: const AlwaysStoppedAnimation<Color>(Colors.green),
-            ),
-            const SizedBox(height: 16),
-            QuestionCard(
-              question: question,
-              shuffledOptions: options,
-              baseColor1: widget.baseColor1,
-              baseColor2: widget.baseColor2,
-              onAnswerSelected: (selected, correct) {
-                _controller.checkAnswer(selected, correct);
-                _nextQuestionOrFinish();
-              },
-            ),
-          ],
-        );
-      }),
+            return ListView(
+              padding: const EdgeInsets.all(16.0),
+              children: [
+                Column(
+                  children: [
+                    Text(
+                      'Pregunta ${_currentIndex + 1}/${_controller.questions.length}',
+                      style: const TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.blueAccent,
+                      ),
+                    ),
+                    const SizedBox(height: 8),
+                    LinearProgressIndicator(
+                      value: (_currentIndex + 1) /
+                          _controller.questions.length,
+                      backgroundColor: Colors.grey[200],
+                      valueColor: const AlwaysStoppedAnimation<Color>(
+                        Colors.blueAccent,
+                      ),
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 16),
+                QuestionCard(
+                  question: question,
+                  shuffledOptions: options,
+                  baseColor1: widget.baseColor1,
+                  baseColor2: widget.baseColor2,
+                  onAnswerSelected: (selected, correct) {
+                    _controller.checkAnswer(selected, correct);
+                    _nextQuestionOrFinish();
+                  },
+                ),
+              ],
+            );
+          }),
+        ],
+      ),
     );
   }
 }

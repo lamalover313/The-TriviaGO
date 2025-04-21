@@ -16,7 +16,7 @@ const Map<String, CategoryConfig> categoryMap = {
   ),
   'Ciencia': CategoryConfig(
     'https://api-theta-rouge-20.vercel.app/Ciencia_Json.json',
-    Colors.tealAccent, Colors.cyan
+    Color.fromARGB(255, 75, 182, 78), Colors.lightGreen
   ),
   'Deportes': CategoryConfig(
     'https://api-theta-rouge-20.vercel.app/Deporte_Json.json',
@@ -24,7 +24,7 @@ const Map<String, CategoryConfig> categoryMap = {
   ),
   'Geografía': CategoryConfig(
     'https://api-theta-rouge-20.vercel.app/Geografia_Json.json',
-    Colors.green, Colors.lightGreen
+    Colors.tealAccent, Colors.cyan
   ),
   'Historia': CategoryConfig(
     'https://api-theta-rouge-20.vercel.app/Historia_Json.json',
@@ -35,11 +35,11 @@ const Map<String, CategoryConfig> categoryMap = {
 Color getColorByDifficulty(Color baseColor, String difficulty) {
   switch (difficulty.toLowerCase()) {
     case 'easy':
-      return baseColor.withOpacity(0.45);
+      return baseColor.withOpacity(0.35);
     case 'medium':
-      return baseColor.withOpacity(0.85);
+      return baseColor.withOpacity(0.75);
     case 'hard':
-      return baseColor;
+      return baseColor.withOpacity(0.95);
     default:
       return Colors.grey;
   }

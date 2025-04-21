@@ -16,12 +16,12 @@ class ProfileSelector extends StatelessWidget {
           onTap: () => context.go('/leaderboard'),
         ),
         ProfileOption(
-          imagePath: 'lib/assets/images/profile_bulldog.png',
+          imagePath: 'lib/assets/images/CategoUIy.png',
           label: 'Categorias',
           onTap: () => context.go('/categoria'),
         ),
         ProfileOption(
-          imagePath: 'lib/assets/images/profile_mountain.jpg',
+          imagePath: 'lib/assets/images/Trivia_Random.png',
           label: 'Random',
           onTap: () => context.go('/trivia-random'),
         ),

@@ -47,112 +47,82 @@ class _TriviaGOState extends State<TriviaGO> {
     }
   }
 
-  Widget _buildAnswerButton(
-      BuildContext context, String answer, String correctAnswer) {
-    return GestureDetector(
-      onTap: () {
-        _controller.checkAnswer(answer, correctAnswer);
-        _nextQuestionOrFinish();
-      },
-      child: Container(
-        margin: const EdgeInsets.only(top: 10),
-        padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
-        decoration: BoxDecoration(
-          border: Border.all(color: Colors.grey.shade300),
-          borderRadius: BorderRadius.circular(15),
-          color: Colors.white,
-          boxShadow: [
-            BoxShadow(
-              color: Colors.black.withOpacity(0.1),
-              blurRadius: 5,
-              spreadRadius: 1,
-              offset: const Offset(0, 2),
-            ),
-          ],
-        ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Text(
-              answer,
-              style: const TextStyle(color: Colors.black, fontSize: 16),
-            ),
-            Container(
-              height: 26,
-              width: 26,
-              decoration: BoxDecoration(
-                color: Colors.transparent,
-                borderRadius: BorderRadius.circular(50),
-                border: Border.all(color: Colors.grey.shade300),
-              ),
-              child: const Icon(
-                Icons.check_circle_outline,
-                size: 20,
-                color: Colors.transparent,
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CustomAppBar(title: widget.category),
       backgroundColor: const Color(0xFF0A0E21),
-      body: Obx(
-        () {
-          if (_controller.questions.isEmpty) {
-            return const Center(child: CircularProgressIndicator());
-          }
+      body: Stack(
+        children: [
+          // Imagen de fondo
+          Positioned.fill(
+            child: Image.asset(
+              'lib/assets/images/Background_01.png',
+              fit: BoxFit.cover,
+              color: Colors.black.withOpacity(0.5),
+              colorBlendMode: BlendMode.darken,
+            ),
+          ),
 
-          final currentQuestion = _controller.questions[_currentIndex];
-          final shuffledOptions = currentQuestion.getShuffledAnswers();
+          Obx(() {
+            if (_controller.questions.isEmpty) {
+              return const Center(child: CircularProgressIndicator());
+            }
 
-          return ListView(
-            padding: const EdgeInsets.all(16.0),
-            children: [
-              Column(
-                children: [
-                  Text(
-                    'Pregunta ${_currentIndex + 1}/${_controller.questions.length}',
-                    style: const TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.blueAccent,
+            final currentQuestion = _controller.questions[_currentIndex];
+            final shuffledOptions = currentQuestion.getShuffledAnswers();
+
+            return ListView(
+              padding: const EdgeInsets.all(16.0),
+              children: [
+                Column(
+                  children: [
+                    Text(
+                      'Pregunta ${_currentIndex + 1}/${_controller.questions.length}',
+                      style: const TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.blueAccent,
+                      ),
+                    ),
+                    const SizedBox(height: 8),
+                    LinearProgressIndicator(
+                      value: (_currentIndex + 1) / _controller.questions.length,
+                      backgroundColor: Colors.grey[200],
+                      valueColor: const AlwaysStoppedAnimation<Color>(Colors.blueAccent),
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 16),
+                
+                AnimatedSwitcher(
+                  duration: const Duration(milliseconds: 400),
+                  transitionBuilder: (child, animation) => FadeTransition(
+                    opacity: animation,
+                    child: ScaleTransition(
+                      scale: Tween<double>(begin: 0.95, end: 1.0).animate(
+                        CurvedAnimation(parent: animation, curve: Curves.easeOut),
+                      ),
+                      child: child,
                     ),
                   ),
-                  const SizedBox(height: 8),
-                  LinearProgressIndicator(
-                    value: (_currentIndex + 1) / _controller.questions.length,
-                    backgroundColor: Colors.grey[200],
-                    valueColor:
-                        const AlwaysStoppedAnimation<Color>(Colors.blueAccent),
+                  child: QuestionCard(
+                    key: ValueKey(_currentIndex), 
+                    question: currentQuestion,
+                    shuffledOptions: shuffledOptions,
+                    baseColor1: widget.baseColor1,
+                    baseColor2: widget.baseColor2,
+                    onAnswerSelected: (selected, correct) {
+                      _controller.checkAnswer(selected, correct);
+                      Future.delayed(const Duration(milliseconds: 300), _nextQuestionOrFinish);
+                    },
                   ),
-                ],
-              ),
-              const SizedBox(height: 16),
-              QuestionCard(
-                question: currentQuestion,
-                shuffledOptions: shuffledOptions,
-                baseColor1: widget.baseColor1,
-                baseColor2: widget.baseColor2,
-                onAnswerSelected: (selected, correct) {
-                  _controller.checkAnswer(selected, correct);
-                  _nextQuestionOrFinish();
-                },
-              ),
-              const SizedBox(height: 16),
-              if (_currentIndex >= _controller.questions.length - 1)
-                ElevatedButton(
-                  onPressed: () => context.go('/resultado'),
-                  child: const Text('Finalizar'),
                 ),
-            ],
-          );
-        },
+                const SizedBox(height: 16),
+              ],
+            );
+          }),
+        ],
       ),
     );
   }
