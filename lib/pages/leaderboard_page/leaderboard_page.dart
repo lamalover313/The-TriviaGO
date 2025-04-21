@@ -7,6 +7,8 @@ import 'package:myapp/pages/leaderboard_page/leaderboard_top3_custom.dart';
 import 'package:myapp/pages/leaderboard_page/leaderboard_filter_custom.dart';
 import 'dart:math';
 
+import 'package:myapp/widgets/custom/custom_app_bar.dart';
+
 class LeaderboardPage extends StatefulWidget {
   const LeaderboardPage({super.key});
 
@@ -37,15 +39,15 @@ class _LeaderboardPageState extends State<LeaderboardPage> {
     confettiController.dispose();
     super.dispose();
   }
-
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xFF1A1A2E),
-      appBar: AppBar(
-        title: const Text("Tabla de Posiciones"),
-        backgroundColor: const Color(0xFF1A1A2E),
-      ),
+      appBar: const CustomAppBar(
+        title: 'Tabla de Posiciones',
+        location: '/home'
+        ),
       body: Column(
         children: [
           LeaderboardFilter(
@@ -94,7 +96,7 @@ class _LeaderboardPageState extends State<LeaderboardPage> {
                           final data = entry.value.data() as Map<String, dynamic>;
                           final isCurrentUser = data['uid'] == currentUserId;
                           return ListItem(data: data, index: index, isCurrentUser: isCurrentUser);
-                        }).toList(),
+                        }),
                       ],
                     ),
                     Align(

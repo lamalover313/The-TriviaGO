@@ -7,6 +7,7 @@ import 'package:myapp/widgets/custom/custom_app_bar.dart';
 
 class TriviaLayout extends StatefulWidget {
   final String title;
+  final String location;
   final Color baseColor1;
   final Color baseColor2;
   final VoidCallback onInit;
@@ -15,6 +16,7 @@ class TriviaLayout extends StatefulWidget {
   const TriviaLayout({
     super.key,
     required this.title,
+    required this.location,
     required this.baseColor1,
     required this.baseColor2,
     required this.onInit,
@@ -48,7 +50,10 @@ class _TriviaLayoutState extends State<TriviaLayout> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(title: widget.title),
+      appBar: CustomAppBar(
+        title: widget.title,
+        location: widget.location
+        ),
       backgroundColor: const Color(0xFF0A0E21),
       body: Stack(
         children: [
