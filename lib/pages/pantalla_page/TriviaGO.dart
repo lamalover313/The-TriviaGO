@@ -89,7 +89,9 @@ class _TriviaGOState extends State<TriviaGO> {
                     LinearProgressIndicator(
                       value: (_currentIndex + 1) / _controller.questions.length,
                       backgroundColor: Colors.grey[200],
-                      valueColor: const AlwaysStoppedAnimation<Color>(Colors.blueAccent),
+                      valueColor: const AlwaysStoppedAnimation<Color>(
+                        Colors.blueAccent
+                      ),
                     ),
                   ],
                 ),
@@ -114,7 +116,7 @@ class _TriviaGOState extends State<TriviaGO> {
                     baseColor2: widget.baseColor2,
                     onAnswerSelected: (selected, correct) {
                       _controller.checkAnswer(selected, correct);
-                      Future.delayed(const Duration(milliseconds: 300), _nextQuestionOrFinish);
+                      Future.delayed(const Duration(milliseconds: 500), _nextQuestionOrFinish);
                     },
                   ),
                 ),

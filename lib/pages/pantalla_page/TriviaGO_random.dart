@@ -44,7 +44,7 @@ class _TriviaRandomPageState extends State<TriviaRandomPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const CustomAppBar(title: 'Trivia Random'),
+      appBar: const CustomAppBar(title: 'TriviaGO - Random'),
       backgroundColor: const Color(0xFF0A0E21),
       body: Stack(
         children: [
@@ -57,10 +57,12 @@ class _TriviaRandomPageState extends State<TriviaRandomPage> {
               colorBlendMode: BlendMode.darken,
             ),
           ),
+
           Obx(() {
             if (_controller.questions.isEmpty) {
               return const Center(child: CircularProgressIndicator());
             }
+
             final question = _controller.questions[_currentIndex];
             final options = question.getShuffledAnswers();
 
@@ -79,8 +81,7 @@ class _TriviaRandomPageState extends State<TriviaRandomPage> {
                     ),
                     const SizedBox(height: 8),
                     LinearProgressIndicator(
-                      value: (_currentIndex + 1) /
-                          _controller.questions.length,
+                      value: (_currentIndex + 1) / _controller.questions.length,
                       backgroundColor: Colors.grey[200],
                       valueColor: const AlwaysStoppedAnimation<Color>(
                         Colors.blueAccent,
@@ -89,15 +90,30 @@ class _TriviaRandomPageState extends State<TriviaRandomPage> {
                   ],
                 ),
                 const SizedBox(height: 16),
-                QuestionCard(
-                  question: question,
-                  shuffledOptions: options,
-                  baseColor1: widget.baseColor1,
-                  baseColor2: widget.baseColor2,
-                  onAnswerSelected: (selected, correct) {
-                    _controller.checkAnswer(selected, correct);
-                    _nextQuestionOrFinish();
-                  },
+
+                // AnimatedSwitcher para transición entre preguntas
+                AnimatedSwitcher(
+                  duration: const Duration(milliseconds: 400),
+                  transitionBuilder: (child, animation) => FadeTransition(
+                    opacity: animation,
+                    child: ScaleTransition(
+                      scale: Tween<double>(begin: 0.95, end: 1.0).animate(
+                        CurvedAnimation(parent: animation, curve: Curves.easeOut),
+                      ),
+                      child: child,
+                    ),
+                  ),
+                  child: QuestionCard(
+                    key: ValueKey(_currentIndex),
+                    question: question,
+                    shuffledOptions: options,
+                    baseColor1: widget.baseColor1,
+                    baseColor2: widget.baseColor2,
+                    onAnswerSelected: (selected, correct) {
+                      _controller.checkAnswer(selected, correct);
+                      Future.delayed(const Duration(milliseconds: 500), _nextQuestionOrFinish);
+                    },
+                  ),
                 ),
               ],
             );

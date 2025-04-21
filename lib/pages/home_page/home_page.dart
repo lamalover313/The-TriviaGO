@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/pages/home_page/profile_selector.dart';
 import 'package:myapp/widgets/custom/header_section.dart';
-import 'package:myapp/widgets/buttons/start_trivia_button.dart';
 
 class HomePage extends StatelessWidget {
   final String? title;
@@ -13,24 +12,28 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       body: Stack(
         children: [
-          Container(
-            decoration: const BoxDecoration(
-              color: Color(0xFF0A0E21), 
+          Positioned.fill(
+            child: Image.asset(
+              'lib/assets/images/Background_02.png',
+              fit: BoxFit.cover,
+              color: Colors.black.withOpacity(0.4),
+              colorBlendMode: BlendMode.darken,
             ),
           ),
           SafeArea(
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20.0),
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   const Spacer(flex: 2),
                   HeaderSection(title: title),
                   const Spacer(),
-                  const ProfileSelector(),
-                  const Spacer(),
-                  const StartTriviaButton(),
-                  const Spacer(flex: 2),
+                  const SizedBox(
+                    height: 320,
+                    child: ProfileSelector(),
+                  ),
+                  const Spacer(flex: 3),
                 ],
               ),
             ),
