@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:myapp/pages/home_page/profile_selector.dart';
 import 'package:myapp/widgets/custom/cutom_background.dart';
 import 'package:myapp/widgets/custom/header_section.dart';
@@ -8,14 +9,14 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      backgroundColor: Color(0xFF161218),
+    return Scaffold(
+      backgroundColor: const Color(0xFF161218),
       body: Stack(
         children: [
-          DarkenedBackground(
+          const DarkenedBackground(
             imagePath: 'lib/assets/images/Background_02.png',
           ),
-          SafeArea(
+          const SafeArea(
             child: SingleChildScrollView(
               padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 20),
               child: Column(
@@ -28,6 +29,17 @@ class HomePage extends StatelessWidget {
                   SizedBox(height: 40),
                 ],
               ),
+            ),
+          ),
+          Positioned(
+            bottom: 20,
+            right: 20,
+            child: IconButton(
+              icon: const Icon(Icons.logout, color: Color.fromARGB(255, 245, 11, 11), size: 30),
+              tooltip: 'Cerrar sesión',
+              onPressed: () {
+                context.go('/');
+              },
             ),
           ),
         ],

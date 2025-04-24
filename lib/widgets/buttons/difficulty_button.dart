@@ -22,7 +22,7 @@ class DifficultyButton extends StatelessWidget {
       children: [
         Container(
           decoration: BoxDecoration(
-            color: color, // Color dentro de decoration
+            color: color, 
             boxShadow: const [
               BoxShadow(
                 color: Colors.black26,
@@ -43,7 +43,7 @@ class DifficultyButton extends StatelessWidget {
             child: Text(label, style: textStyle),
           ),
         ),
-        const SizedBox(height: 10), // <- Estaba mal posicionado
+        const SizedBox(height: 10), 
       ],
     );
   }

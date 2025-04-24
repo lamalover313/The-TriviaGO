@@ -68,7 +68,7 @@ class FormCard extends StatelessWidget {
             obscureText: true,
             decoration: const InputDecoration(
               labelText: "Contraseña",
-              hintText: "********",
+              hintText: "[ password ]",
             ),
             validator: (value) => value == null || value.trim().isEmpty
                 ? 'La contraseña es obligatoria'

@@ -58,7 +58,6 @@ class LoginController {
     await _auth.signOut();
   }
 
-  // 🔁 Reutilización
   static Future<String> _getEmailFromUsername(String username) async {
     final query = await _firestore
         .collection('users')

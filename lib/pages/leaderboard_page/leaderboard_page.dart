@@ -1,7 +1,7 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:confetti/confetti.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 import 'package:myapp/widgets/custom/custom_app_bar.dart';
@@ -35,31 +35,7 @@ class _LeaderboardPageState extends State<LeaderboardPage> {
         .collection('scores')
         .orderBy('score', descending: true)
         .snapshots();
-  /*
-    try {
-      CollectionReference scoresRef = FirebaseFirestore.instance.collection('scores');
-      Query query = scoresRef.orderBy('score', descending: true);
-    
-      if (selectedMode != null && selectedMode != 'Todos') {
-        query = query.where('mode', isEqualTo: selectedMode);
-
-        if (selectedMode == 'categoria') {
-          if (selectedCategory != null && selectedCategory != 'Todos') {
-            query = query.where('category', isEqualTo: selectedCategory);
-          }
-          if (selectedDifficulty != null && selectedDifficulty != 'Todos') {
-            query = query.where('difficulty', isEqualTo: selectedDifficulty);
-          }
-        }
-        
-      }
-      return query.snapshots();
-    } catch (e) {
-      print('Error en getScoresStream: $e');
-      return const Stream.empty();
-    }
-    */
-}
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -73,7 +49,6 @@ class _LeaderboardPageState extends State<LeaderboardPage> {
           ),
           Column(
             children: [
-              /*
               LeaderboardFilter(
                 selectedCategory: selectedCategory,
                 selectedMode: selectedMode,
@@ -94,7 +69,6 @@ class _LeaderboardPageState extends State<LeaderboardPage> {
                   });
                 },
               ),
-              */
               Expanded(
                 child: StreamBuilder<QuerySnapshot>(
                   stream: getScoresStream(),
@@ -112,7 +86,15 @@ class _LeaderboardPageState extends State<LeaderboardPage> {
 
                     final docs = snapshot.data?.docs ?? [];
 
-                    if (docs.isEmpty) {
+                    final filteredDocs = docs.where((doc) {
+                      final data = doc.data() as Map<String, dynamic>;
+                      final matchesMode = selectedMode == null || data['mode'] == selectedMode;
+                      final matchesCategory = selectedMode != 'categoria' || selectedCategory == null || data['category'] == selectedCategory;
+                      final matchesDifficulty = selectedMode != 'categoria' || selectedDifficulty == null || data['difficulty'] == selectedDifficulty;
+                      return matchesMode && matchesCategory && matchesDifficulty;
+                    }).toList();
+
+                    if (filteredDocs.isEmpty) {
                       return const Center(
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -125,8 +107,8 @@ class _LeaderboardPageState extends State<LeaderboardPage> {
                       );
                     }
 
-                    final top3 = docs.take(3).toList();
-                    final others = docs.skip(3).toList();
+                    final top3 = filteredDocs.take(3).toList();
+                    final others = filteredDocs.skip(3).toList();
 
                     WidgetsBinding.instance.addPostFrameCallback((_) {
                       confettiController.play();

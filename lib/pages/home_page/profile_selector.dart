@@ -49,7 +49,6 @@ class _ProfileSelectorState extends State<ProfileSelector> with SingleTickerProv
         'route': '/leaderboard'
       },
     ];
-
     return LayoutBuilder(
       builder: (context, constraints) {
         final isSmallScreen = constraints.maxWidth < 500;
@@ -66,24 +65,20 @@ class _ProfileSelectorState extends State<ProfileSelector> with SingleTickerProv
                   physics: const NeverScrollableScrollPhysics(),
                   itemCount: options.length,
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 2, // << aquí
+                    crossAxisCount: 2, 
                     mainAxisSpacing: 20,
                     crossAxisSpacing: 20,
                     childAspectRatio: 0.9,
                   ),
                   itemBuilder: (context, index) {
                     final option = options[index];
-
-                    final isLastCentered =
-                        options.length % 2 != 0 && index == options.length - 1;
-
+                    final isLastCentered =  options.length % 2 != 0 && index == options.length - 1;
                     final child = ProfileOption(
                       key: ValueKey(option['label']),
                       imagePath: option['image']!,
                       label: option['label']!,
                       onTap: () => context.go(option['route']!),
                     );
-
                     return isLastCentered
                         ? Align(
                             alignment: Alignment.center,
