@@ -15,15 +15,11 @@ class LoginPage extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Stack(
-              children: [
-                Image.asset(
-                  "lib/assets/images/TriviaLUJO.gif",
-                  height: 250.h,
-                  width: double.infinity,
-                  fit: BoxFit.cover,
-                ),
-              ],
+            Image.asset(
+              "lib/assets/images/TriviaLUJO.gif",
+              height: 250.h,
+              width: double.infinity,
+              fit: BoxFit.cover,
             ),
             SizedBox(height: 20.h),
             const LoginForm(),

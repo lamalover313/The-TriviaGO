@@ -47,7 +47,6 @@ home: StreamBuilder<User?>(
     return Center(child: CircularProgressIndicator(),)
 )
 
-
 actions: [
   IconButton(onPressed: () async{
     await GoogleSignIn().signOut();

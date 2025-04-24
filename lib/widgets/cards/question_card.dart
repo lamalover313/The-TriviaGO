@@ -74,9 +74,9 @@ class _QuestionCardState extends State<QuestionCard> {
                   if (_selectedAnswer == null) {
                     buttonColor = Colors.white.withOpacity(0.9);
                   } else if (isSelected && isCorrect) {
-                    buttonColor = Colors.green;
+                    buttonColor = const Color.fromARGB(255, 74, 235, 79);
                   } else if (isSelected && !isCorrect) {
-                    buttonColor = Colors.red;
+                    buttonColor = const Color.fromARGB(255, 242, 27, 11);
                   } else {
                     buttonColor = Colors.white.withOpacity(0.9);
                   }

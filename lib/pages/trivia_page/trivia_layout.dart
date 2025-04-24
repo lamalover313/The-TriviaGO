@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:myapp/classes/triviaController.dart';
 import 'package:myapp/widgets/cards/question_card.dart';
 import 'package:myapp/widgets/custom/custom_app_bar.dart';
+import 'package:myapp/widgets/custom/cutom_background.dart';
 
 class TriviaLayout extends StatefulWidget {
   final String title;
@@ -11,7 +12,6 @@ class TriviaLayout extends StatefulWidget {
   final Color baseColor1;
   final Color baseColor2;
   final VoidCallback onInit;
-  final String backgroundImagePath;
 
   const TriviaLayout({
     super.key,
@@ -20,7 +20,6 @@ class TriviaLayout extends StatefulWidget {
     required this.baseColor1,
     required this.baseColor2,
     required this.onInit,
-    this.backgroundImagePath = 'lib/assets/images/Background_01.png',
   });
 
   @override
@@ -57,13 +56,8 @@ class _TriviaLayoutState extends State<TriviaLayout> {
       backgroundColor: const Color(0xFF0A0E21),
       body: Stack(
         children: [
-          Positioned.fill(
-            child: Image.asset(
-              widget.backgroundImagePath,
-              fit: BoxFit.cover,
-              color: Colors.black.withOpacity(0.5),
-              colorBlendMode: BlendMode.darken,
-            ),
+          const DarkenedBackground(
+            imagePath: 'lib/assets/images/Background_01.png',
           ),
           Obx(() {
             if (_controller.questions.isEmpty) {

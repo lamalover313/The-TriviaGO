@@ -8,45 +8,61 @@ class Top3Podium extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final user1 = top3.isNotEmpty ? top3[0].data() as Map<String, dynamic> : null;
+    final user2 = top3.length > 1 ? top3[1].data() as Map<String, dynamic> : null;
+    final user3 = top3.length > 2 ? top3[2].data() as Map<String, dynamic> : null;
+
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      children: List.generate(3, (i) {
-        final index = i == 0 ? 1 : (i == 1 ? 0 : 2);
-        final data = index < top3.length ? top3[index].data() as Map<String, dynamic> : null;
+      children: [
+        _buildPodiumBlock(user2, 2, Colors.grey[400], 160),
+        _buildPodiumBlock(user1, 1, Colors.amber[600], 200),
+        _buildPodiumBlock(user3, 3, Colors.brown[300], 140),
+      ],
+    );
+  }
 
-        return AnimatedContainer(
-          duration: const Duration(milliseconds: 500),
-          padding: const EdgeInsets.all(8),
-          width: 100,
-          height: 160 + (index == 1 ? 40 : 0),
-          decoration: BoxDecoration(
-            color: index == 1
-                ? Colors.amber[600]
-                : index == 0
-                    ? Colors.grey[400]
-                    : Colors.brown[300],
-            borderRadius: BorderRadius.circular(16),
+  Widget _buildPodiumBlock(Map<String, dynamic>? data, int position, Color? color, double height) {
+    final username = data?['username'] ?? '???';
+    final score = data?['score'] ?? 0;
+
+    return AnimatedContainer(
+      duration: const Duration(milliseconds: 500),
+      padding: const EdgeInsets.all(8),
+      width: 100,
+      height: height,
+      decoration: BoxDecoration(
+        color: color,
+        borderRadius: BorderRadius.circular(16),
+      ),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.end,
+        children: [
+          CircleAvatar(
+            radius: 30,
+            backgroundColor: Colors.white24,
+            child: Text(
+              '$position',
+              style: const TextStyle(fontSize: 20, color: Colors.white),
+            ),
           ),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: [
-              const Icon(Icons.person, size: 36, color: Colors.white),
-              const SizedBox(height: 4),
-              Text(
-                data?['email']?.split('@').first ?? 'Vacío',
-                style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
-                textAlign: TextAlign.center,
-              ),
-              Text(
-                '${data?['score'] ?? 0}%',
-                style: const TextStyle(color: Colors.white),
-              ),
-              const SizedBox(height: 8),
-              Text('${index + 1}°', style: const TextStyle(color: Colors.white, fontSize: 16)),
-            ],
+          const SizedBox(height: 6),
+          Text(
+            username,
+            style: const TextStyle(
+              color: Colors.white,
+              fontWeight: FontWeight.bold,
+              overflow: TextOverflow.ellipsis,
+            ),
+            textAlign: TextAlign.center,
           ),
-        );
-      }),
+          const SizedBox(height: 4),
+          Text(
+            '$score pts',
+            style: const TextStyle(color: Colors.white70),
+          ),
+        ],
+      ),
     );
   }
 }

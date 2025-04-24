@@ -9,8 +9,7 @@ class ProfileSelector extends StatefulWidget {
   State<ProfileSelector> createState() => _ProfileSelectorState();
 }
 
-class _ProfileSelectorState extends State<ProfileSelector>
-    with SingleTickerProviderStateMixin {
+class _ProfileSelectorState extends State<ProfileSelector> with SingleTickerProviderStateMixin {
   late AnimationController _controller;
   late Animation<double> _animation;
 
@@ -46,36 +45,61 @@ class _ProfileSelectorState extends State<ProfileSelector>
       },
       {
         'image': 'lib/assets/images/Leaderboard_homePage.png',
-        'label': 'Tabla de Posiciones',
+        'label': 'Tabla Record',
         'route': '/leaderboard'
       },
     ];
 
-    return FadeTransition(
-      opacity: _animation,
-      child: ScaleTransition(
-        scale: _animation,
-        child: GridView.builder(
-          shrinkWrap: true,
-          physics: const NeverScrollableScrollPhysics(),
-          itemCount: options.length,
-          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 2,
-            mainAxisSpacing: 20,
-            crossAxisSpacing: 20,
-            childAspectRatio: 0.9,
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        final isSmallScreen = constraints.maxWidth < 500;
+        final horizontalPadding = isSmallScreen ? 20.0 : 40.0;
+        return Padding(
+          padding: EdgeInsets.fromLTRB(horizontalPadding, 20, horizontalPadding, 30),
+          child: FadeTransition(
+            opacity: _animation,
+            child: ScaleTransition(
+              scale: _animation,
+              child: Center(
+                child: GridView.builder(
+                  shrinkWrap: true,
+                  physics: const NeverScrollableScrollPhysics(),
+                  itemCount: options.length,
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2, // << aquí
+                    mainAxisSpacing: 20,
+                    crossAxisSpacing: 20,
+                    childAspectRatio: 0.9,
+                  ),
+                  itemBuilder: (context, index) {
+                    final option = options[index];
+
+                    final isLastCentered =
+                        options.length % 2 != 0 && index == options.length - 1;
+
+                    final child = ProfileOption(
+                      key: ValueKey(option['label']),
+                      imagePath: option['image']!,
+                      label: option['label']!,
+                      onTap: () => context.go(option['route']!),
+                    );
+
+                    return isLastCentered
+                        ? Align(
+                            alignment: Alignment.center,
+                            child: SizedBox(
+                              width: 140,
+                              child: child,
+                            ),
+                          )
+                        : child;
+                  },
+                ),
+              ),
+            ),
           ),
-          itemBuilder: (context, index) {
-            final option = options[index];
-            return ProfileOption(
-              key: ValueKey(option['label']),
-              imagePath: option['image']!,
-              label: option['label']!,
-              onTap: () => context.go(option['route']!),
-            );
-          },
-        ),
-      ),
+        );
+      },
     );
   }
 }

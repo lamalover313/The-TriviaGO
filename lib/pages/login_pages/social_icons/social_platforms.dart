@@ -24,7 +24,7 @@ class SocialPlatforms {
               Navigator.pushReplacement(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => HomePage(title: user.displayName ?? 'Home'),
+                  builder: (context) => const HomePage(),
                 ),
               );
             } else {

@@ -16,13 +16,14 @@ class ResultsPage extends StatelessWidget {
     final total = correct + incorrect;
     final score = (correct * 100 ~/ total);
 
-    // Guardar puntuación
+    // guardar puntuación
     ScoreService.saveScore(
       correct: questionController.correctAnswers,
       incorrect: questionController.incorrectAnswers,
       score: score,
       isRandom: questionController.isRandomMode,
-      category: questionController.isRandomMode ? null : questionController.currentCategory,
+      category: questionController.isRandomMode ? 'random' : questionController.currentCategory,
+      difficulty: questionController.difficulty,
     );
 
     return Scaffold(
