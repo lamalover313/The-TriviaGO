@@ -7,6 +7,7 @@ class LeaderboardFilter extends StatelessWidget {
   final void Function(String?) onCategoryChanged;
   final void Function(String?) onModeChanged;
   final void Function(String?) onDifficultyChanged;
+  
 
   const LeaderboardFilter({
     super.key,
